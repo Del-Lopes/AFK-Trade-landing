@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #0f172a;
+  --color-brand-green: #10b981;
+  --color-brand-emerald: #059669;
+  --color-brand-gold: #f59e0b;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}
+
+body {
+  @apply bg-brand-dark text-white font-sans antialiased selection:bg-brand-green/30 selection:text-brand-green;
+}

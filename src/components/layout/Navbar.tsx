@@ -1,0 +1,109 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ExternalLink } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Button } from '@/components/ui/Button';
+
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Features', href: '#features' },
+    { name: 'Academy', href: '#academy' },
+    { name: 'Partners', href: '#partners' },
+  ];
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+          isScrolled
+            ? 'bg-brand-dark/80 backdrop-blur-lg border-white/5 py-4'
+            : 'bg-transparent border-transparent py-6'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+             <div className="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center text-brand-dark font-bold text-xl shadow-lg shadow-brand-green/20 group-hover:scale-105 transition-transform">
+               A
+             </div>
+             <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-green transition-colors">
+               AFK Trade
+             </span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <a href="https://app.afktrade.com/login" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-brand-green transition-colors">
+              Login
+            </a>
+            <Button size="sm" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
+              Get Started <ExternalLink size={14} className="ml-2" />
+            </Button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden text-white p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-brand-dark pt-24 px-6 md:hidden"
+          >
+            <div className="flex flex-col gap-6 text-center">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl font-bold text-white hover:text-brand-green"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="h-px bg-white/10 w-full my-4" />
+              <Button size="lg" className="w-full" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
+                Get Started
+              </Button>
+               <a href="https://app.afktrade.com/login" className="text-lg text-gray-400 hover:text-white py-2">
+                  Login to Member Area
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
