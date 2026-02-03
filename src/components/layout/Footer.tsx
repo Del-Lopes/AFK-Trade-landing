@@ -11,7 +11,7 @@ export const Footer = () => {
               AFK Trade
             </h3>
             <p className="text-gray-400 max-w-sm">
-              Automated trading solutions for the modern investor. Institutional grade security, retail accessibility.
+              Soluções de trading automatizado para o investidor moderno. Segurança de nível institucional, acessibilidade para o varejo.
             </p>
             <div className="flex gap-4 text-gray-400">
               <a href="#" className="hover:text-brand-green transition-colors"><Twitter size={20} /></a>
@@ -21,11 +21,11 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold text-white mb-6">Product</h4>
+            <h4 className="font-bold text-white mb-6">Produto</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-brand-green transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Live Performance</a></li>
+              <li><a href="#" className="hover:text-brand-green transition-colors">Funcionalidades</a></li>
+              <li><a href="#" className="hover:text-brand-green transition-colors">Preços</a></li>
+              <li><a href="#" className="hover:text-brand-green transition-colors">Performance ao Vivo</a></li>
               <li><a href="#" className="hover:text-brand-green transition-colors">Roadmap</a></li>
             </ul>
           </div>
@@ -33,19 +33,19 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-6">Legal</h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-brand-green transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Risk Disclosure</a></li>
+              <li><a href="#" className="hover:text-brand-green transition-colors">Política de Privacidade</a></li>
+              <li><a href="#" className="hover:text-brand-green transition-colors">Termos de Serviço</a></li>
+              <li><a href="#" className="hover:text-brand-green transition-colors">Aviso de Risco</a></li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-brand-dark">
            <p className="text-xs text-gray-500">
-             © {new Date().getFullYear()} AFK Trade. All rights reserved.
+             © {new Date().getFullYear()} AFK Trade. Todos os direitos reservados.
            </p>
            <p className="text-xs text-gray-600 mt-2 md:mt-0">
-             Trading involves substantial risk and is not suitable for every investor.
+             Trading envolve riscos substanciais e não é adequado para todos os investidores.
            </p>
         </div>
       </Section>

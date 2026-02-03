@@ -15,9 +15,9 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Academy', href: '#academy' },
-    { name: 'Partners', href: '#partners' },
+    { name: 'Funcionalidades', href: '#features' },
+    { name: 'Academia', href: '#academy' },
+    { name: 'Parceiros', href: '#partners' },
   ];
 
   return (
@@ -56,10 +56,10 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <a href="https://app.afktrade.com/login" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-brand-green transition-colors">
-              Login
+              Entrar
             </a>
             <Button size="sm" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
-              Get Started <ExternalLink size={14} className="ml-2" />
+              Começar Agora <ExternalLink size={14} className="ml-2" />
             </Button>
           </div>
 
@@ -95,10 +95,10 @@ export const Navbar = () => {
               ))}
               <div className="h-px bg-white/10 w-full my-4" />
               <Button size="lg" className="w-full" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
-                Get Started
+                Criar Conta
               </Button>
                <a href="https://app.afktrade.com/login" className="text-lg text-gray-400 hover:text-white py-2">
-                  Login to Member Area
+                  Acessar Área de Membros
               </a>
             </div>
           </motion.div>

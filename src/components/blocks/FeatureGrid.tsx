@@ -6,32 +6,32 @@ const FEATURES = [
   {
     icon: <Cpu className="w-8 h-8 text-brand-green" />,
     title: "Expert Advisors",
-    description: "Access our library of verified trading bots. Plug, play, and profit."
+    description: "Acesse nossa biblioteca de robôs verificados. Plugue, ative e lucre."
   },
   {
     icon: <Key className="w-8 h-8 text-brand-gold" />,
-    title: "Instant Licensing",
-    description: "Manage your trading licenses in real-time. Activate or revoke access instantly."
+    title: "Licenciamento Instantâneo",
+    description: "Gerencie suas licenças em tempo real. Ative ou revogue acesso instantaneamente."
   },
   {
     icon: <Zap className="w-8 h-8 text-blue-500" />,
-    title: "Ultra-Low Latency",
-    description: "Built on high-performance infrastructure to ensure execution at the perfect price."
+    title: "Latência Ultra-Baixa",
+    description: "Construído em infraestrutura de alta performance para garantir execução no preço perfeito."
   },
   {
     icon: <Shield className="w-8 h-8 text-purple-500" />,
-    title: "Verified Security",
-    description: "Institutional-grade encryption protects your strategies and personal data."
+    title: "Segurança Verificada",
+    description: "Criptografia de nível institucional protege suas estratégias e dados pessoais."
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-orange-500" />,
-    title: "Live Analytics",
-    description: "Track performance across all your connected accounts in one dashboard."
+    title: "Analytics em Tempo Real",
+    description: "Acompanhe a performance de todas as suas contas conectadas em um único painel."
   },
   {
     icon: <Layers className="w-8 h-8 text-pink-500" />,
-    title: "Strategy Builder",
-    description: "Design your own custom logic without writing a single line of code."
+    title: "Construtor de Estratégias",
+    description: "Desenhe sua própria lógica personalizada sem escrever uma única linha de código."
   }
 ];
 
@@ -40,10 +40,10 @@ export const FeatureGrid = () => {
     <Section id="features" className="bg-brand-dark relative">
       <div className="text-center max-w-2xl mx-auto mb-16">
          <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
-           Everything you need to <span className="text-brand-green">automate</span> wealth.
+           Tudo que você precisa para <span className="text-brand-green">automatizar</span> riqueza.
          </h2>
          <p className="text-gray-400 text-lg">
-           From battle-tested algo strategies to seamless license management. AFK Trade is the complete operating system for modern traders.
+           De estratégias de algotrading testadas a um gerenciamento de licenças perfeito. AFK Trade é o sistema operacional completo para traders modernos.
          </p>
       </div>
 

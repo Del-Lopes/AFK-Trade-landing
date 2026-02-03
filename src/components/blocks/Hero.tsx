@@ -22,35 +22,35 @@ export const Hero = () => {
         >
            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-brand-green text-sm font-medium">
               <ShieldCheck size={14} />
-              <span>Institutional Grade Security</span>
+              <span>Segurança de Nível Institucional</span>
            </div>
            
            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white">
-             Freedom to <br />
-             <span className="bg-gradient-to-r from-brand-green to-brand-emerald bg-clip-text text-transparent">Profit.</span>
+             Liberdade para <br />
+             <span className="bg-gradient-to-r from-brand-green to-brand-emerald bg-clip-text text-transparent">Lucrar.</span>
            </h1>
            
            <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
-             Stop staring at charts. Let our verified Expert Advisors automate your trading strategy while you enjoy life away from the keyboard.
+             Pare de olhar par gráficos o dia todo. Deixe nossos Robôs verificados automatizarem sua estratégia enquanto você aproveita a vida longe do teclado.
            </p>
 
            <div className="flex flex-col sm:flex-row gap-4">
              <Button size="lg" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
-               Start Automating <ArrowRight className="ml-2 w-5 h-5" />
+               Começar a Automatizar <ArrowRight className="ml-2 w-5 h-5" />
              </Button>
              <Button size="lg" variant="secondary">
-               <PlayCircle className="mr-2 w-5 h-5" /> Watch Demo
+               <PlayCircle className="mr-2 w-5 h-5" /> Ver Demo
              </Button>
            </div>
            
            <div className="pt-8 border-t border-white/5 flex gap-8 text-gray-500 text-sm">
              <div>
                <strong className="block text-2xl text-white font-bold">100+</strong>
-               <span>Active Traders</span>
+               <span>Traders Ativos</span>
              </div>
              <div>
                <strong className="block text-2xl text-white font-bold">$1M+</strong>
-               <span>Volume Traded</span>
+               <span>Volume Negociado</span>
              </div>
              <div>
                 <strong className="block text-2xl text-white font-bold">24/7</strong>
@@ -77,8 +77,8 @@ export const Hero = () => {
                          <div className="w-20 h-20 absolute bg-brand-green/10 rounded-full animate-ping" />
                          <PlayCircle size={32} />
                     </div>
-                    <p className="text-gray-400 font-medium">Live Dashboard Preview</p>
-                    <span className="text-xs text-gray-500 mt-2 block">Coming Soon in 3D</span>
+                    <p className="text-gray-400 font-medium">Prévia do Dashboard</p>
+                    <span className="text-xs text-gray-500 mt-2 block">Em breve em 3D</span>
                  </div>
                  
                  {/* Floating Card Element */}
@@ -88,7 +88,7 @@ export const Hero = () => {
                     className="absolute bottom-6 right-6 bg-slate-800 border border-white/10 p-4 rounded-xl shadow-xl w-48"
                  >
                     <div className="flex justify-between items-center mb-2">
-                       <span className="text-xs text-gray-400">Profit (24h)</span>
+                       <span className="text-xs text-gray-400">Lucro (24h)</span>
                        <span className="text-xs text-brand-green font-bold">+2.4%</span>
                     </div>
                     <div className="h-1 bg-slate-700 rounded-full overflow-hidden">
