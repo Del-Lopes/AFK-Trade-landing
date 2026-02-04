@@ -17,8 +17,8 @@ export const AlgoEngine = () => {
       <div className="relative max-w-4xl mx-auto h-[700px] md:h-[800px] flex items-center justify-center">
         {/* Central Core */}
         <motion.div 
-          animate={{ scale: [1, 1.05, 1], rotate: 360 }}
-          transition={{ scale: { duration: 4, repeat: Infinity }, rotate: { duration: 100, repeat: Infinity, ease: "linear" } }}
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ scale: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
           className="relative z-20 w-32 h-32 md:w-48 md:h-48 rounded-full border border-brand-green/30 flex items-center justify-center bg-brand-dark/80 backdrop-blur-xl shadow-[0_0_60px_rgba(34,197,94,0.2)]"
         >
           <div className="text-center">
