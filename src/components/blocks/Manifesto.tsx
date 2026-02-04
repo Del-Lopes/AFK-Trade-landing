@@ -5,10 +5,12 @@ import { ArrowRight } from 'lucide-react';
 
 export const Manifesto = () => {
   return (
-    <Section className="relative overflow-hidden py-32">
+    <Section className="relative overflow-hidden py-32 bg-brand-dark">
       {/* Background Ambience */}
-      <div className="absolute inset-0 bg-brand-dark">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05)_0%,transparent_50%)]" />
+      <div className="absolute inset-0">
+        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-brand-green/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-brand-emerald/10 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.03)_0%,transparent_50%)]" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">

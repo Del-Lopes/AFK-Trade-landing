@@ -37,8 +37,12 @@ const FEATURES = [
 
 export const FeatureGrid = () => {
   return (
-    <Section id="features" className="bg-brand-dark relative">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+    <Section id="features" className="bg-brand-dark relative overflow-hidden py-32">
+       {/* Background Grid */}
+       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+       <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent" />
+       
+      <div className="text-center max-w-2xl mx-auto mb-16 relative z-10">
          <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
            Tudo que você precisa para <span className="text-brand-green">automatizar</span> riqueza.
          </h2>
