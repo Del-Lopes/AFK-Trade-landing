@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
                <img src="/images/logo-icon.png" alt="AFK Trade Logo" className="h-8 w-auto" />
-               <span className="text-2xl font-bold bg-gradient-to-r from-brand-green to-brand-emerald bg-clip-text text-transparent">
+               <span className="text-2xl font-bold text-white tracking-tight">
                   AFK Trade
                </span>
             </div>
