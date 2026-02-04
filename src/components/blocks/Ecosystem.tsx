@@ -17,7 +17,7 @@ export const Ecosystem = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Mais que software. <br />
+              Conhecimento liberta. <br />
               <span className="text-gray-400">Domine o mercado.</span>
             </h2>
             
