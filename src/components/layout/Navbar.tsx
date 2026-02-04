@@ -32,12 +32,8 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-             <div className="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center text-brand-dark font-bold text-xl shadow-lg shadow-brand-green/20 group-hover:scale-105 transition-transform">
-               A
-             </div>
-             <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-green transition-colors">
-               AFK Trade
-             </span>
+             <img src="/images/logo-icon.png" alt="AFK Trade Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
+             <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-green transition-colors">AFK Trade</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -82,7 +78,11 @@ export const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-40 bg-brand-dark pt-24 px-6 md:hidden"
           >
-            <div className="flex flex-col gap-6 text-center">
+            <div className="flex flex-col space-y-6 pt-20 px-6">
+              <div className="flex items-center gap-2 mb-4">
+                  <img src="/images/logo-icon.png" alt="AFK Trade" className="h-8 w-auto" /> 
+                  <span className="text-xl font-bold text-white">AFK Trade</span>
+              </div>
               {navLinks.map((link) => (
                 <a
                   key={link.name}
