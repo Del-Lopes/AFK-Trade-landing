@@ -20,14 +20,14 @@ export const Partners = () => {
           </h2>
           
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-             Ganhe comissões vitalícias indicando traders para o ecossistema de trading automatizado mais avançado. Receba por cada licença e assinatura.
+             Ganhe comissões vitalícias e recorrentes através de links de afiliados. Várias formas de ganho atreladas ao ecossistema de trading automatizado mais avançado.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-left">
              <div className="bg-brand-dark/50 p-6 rounded-xl border border-white/5">
                 <DollarSign className="w-10 h-10 text-brand-green mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Comissões Altas</h3>
-                <p className="text-sm text-gray-400">Até 30% de receita recorrente em todas as indicações.</p>
+                <h3 className="text-xl font-bold text-white mb-2">Performance Fee e Rebate</h3>
+                <p className="text-sm text-gray-400">Ganhe até 10% do lucro em todas as indicações + participação no lucro das corretoras.</p>
              </div>
              <div className="bg-brand-dark/50 p-6 rounded-xl border border-white/5">
                 <Globe className="w-10 h-10 text-blue-400 mb-4" />
@@ -36,12 +36,12 @@ export const Partners = () => {
              </div>
              <div className="bg-brand-dark/50 p-6 rounded-xl border border-white/5">
                 <Users className="w-10 h-10 text-brand-gold mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Suporte Dedicado</h3>
-                <p className="text-sm text-gray-400">Tenha um gerente de conta pessoal para te ajudar a escalar.</p>
+                <h3 className="text-xl font-bold text-white mb-2">Licenciatura White Label</h3>
+                <p className="text-sm text-gray-400">Participe dos lucros gerados pela venda de licenças para novos parceiros.</p>
              </div>
           </div>
 
-          <Button size="lg" onClick={() => window.open('https://app.afktrade.com/register?type=partner', '_blank')}>
+          <Button size="lg" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
              Seja um Parceiro <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
        </div>
