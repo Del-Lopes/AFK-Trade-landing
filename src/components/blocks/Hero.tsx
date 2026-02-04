@@ -31,7 +31,7 @@ export const Hero = () => {
            </h1>
            
            <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
-             Pare de olhar gráficos o dia toto. Deixe que os melhores robôs operem nas melhores corretoras pra você enquanto você desfruta sua vida longe das telas.
+             Pare de olhar gráficos o dia todo. Deixe que os melhores robôs operem nas melhores corretoras pra você enquanto você desfruta sua vida longe das telas.
            </p>
 
            <div className="flex flex-col sm:flex-row gap-4">
