@@ -7,12 +7,15 @@ import { SocialProof } from '@/components/blocks/SocialProof';
 import { FeatureGrid } from '@/components/blocks/FeatureGrid';
 import { Ecosystem } from '@/components/blocks/Ecosystem';
 import { Partners } from '@/components/blocks/Partners';
+import { Manifesto } from '@/components/blocks/Manifesto';
+import { Comparison } from '@/components/blocks/Comparison';
+import { AlgoEngine } from '@/components/blocks/AlgoEngine';
 
 function LandingPage() {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>AFK Trade | Automated Trading Freedom</title>
+        <title>AFK Trade | Automatize seus Lucros</title>
         <meta name="description" content="Institutional-grade automated trading systems. Stop staring at charts and start profiting with AFK Trade." />
       </Helmet>
       
@@ -21,7 +24,10 @@ function LandingPage() {
       <main>
         <Hero />
         <SocialProof />
+        <Manifesto />
+        <Comparison />
         <FeatureGrid />
+        <AlgoEngine />
         <Ecosystem />
         <Partners />
       </main>
