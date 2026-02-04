@@ -51,11 +51,8 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="https://app.afktrade.com/login" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:text-brand-green transition-colors">
-              Entrar
-            </a>
-            <Button size="sm" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
-              Começar Agora <ExternalLink size={14} className="ml-2" />
+            <Button size="sm" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
+              Acessar <ExternalLink size={14} className="ml-2" />
             </Button>
           </div>
 
