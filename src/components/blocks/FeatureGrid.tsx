@@ -40,18 +40,18 @@ export const FeatureGrid = () => {
     <Section id="features" className="bg-brand-dark relative overflow-hidden py-32">
        {/* Background Grid */}
        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
-       <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent" />
+       <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent pointer-events-none" />
        
-      <div className="text-center max-w-2xl mx-auto mb-16 relative z-10">
+      <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
          <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
-           Tudo que você precisa para <span className="text-brand-green">automatizar</span> riqueza.
+           Tudo que você precisa para <span className="text-brand-green">gerar renda passiva.</span>
          </h2>
          <p className="text-gray-400 text-lg">
-           De estratégias de algotrading testadas a um gerenciamento de licenças perfeito. AFK Trade é o sistema operacional completo para traders modernos.
+           Hub multibroker com as melhores estratégias, para você rentabilizar sem tirar seu dinheiro da sua própria conta, pare quando quiser, saque a hora que quiser, seu dinheiro suas regras.
          </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
          {FEATURES.map((feature, idx) => (
            <motion.div
              key={idx}
@@ -59,7 +59,7 @@ export const FeatureGrid = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: idx * 0.1 }}
-             className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-green/30 transition-all group"
+             className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-green/30 transition-all duration-300 group hover:shadow-lg hover:shadow-brand-green/5"
            >
               <div className="w-14 h-14 rounded-xl bg-brand-dark border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 {feature.icon}
