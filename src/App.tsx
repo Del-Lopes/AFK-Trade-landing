@@ -10,6 +10,7 @@ import { Partners } from '@/components/blocks/Partners';
 import { Manifesto } from '@/components/blocks/Manifesto';
 import { Comparison } from '@/components/blocks/Comparison';
 import { AlgoEngine } from '@/components/blocks/AlgoEngine';
+import { PlatformTour } from '@/components/blocks/PlatformTour';
 
 function LandingPage() {
   return (
@@ -27,6 +28,7 @@ function LandingPage() {
         <Manifesto />
         <Comparison />
         <FeatureGrid />
+        <PlatformTour />
         <AlgoEngine />
         <Ecosystem />
         <Partners />
