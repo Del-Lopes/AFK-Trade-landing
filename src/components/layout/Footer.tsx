@@ -14,7 +14,7 @@ export const Footer = () => {
                </span>
             </div>
             <p className="text-gray-400 max-w-sm">
-              Soluções de trading automatizado para o investidor moderno. Segurança de nível institucional, acessibilidade para o varejo.
+              Soluções de trading automatizado para o investidor moderno. Tecnologia trabalhando ao seu favor.
             </p>
             <div className="flex gap-4 text-gray-400">
               <a href="#" className="hover:text-brand-green transition-colors"><Twitter size={20} /></a>
