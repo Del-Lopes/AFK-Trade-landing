@@ -58,7 +58,7 @@ export const Ecosystem = () => {
                  className="p-6 rounded-2xl bg-slate-800/50 border border-white/10 hover:border-brand-green/40 transition-colors group cursor-pointer"
               >
                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-xs font-bold text-brand-green uppercase tracking-wide">Novo Guia</span>
+                    <span className="text-xs font-bold text-brand-green uppercase tracking-wide">Novo Artigo</span>
                     <BookOpen className="text-gray-500" size={20} />
                  </div>
                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brand-green transition-colors">A Psicologia do Trading Automatizado</h3>
