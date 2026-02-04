@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BookOpen, GraduationCap, PlayCircle, ArrowRight } from 'lucide-react';
+import { BookOpen, PlayCircle, ArrowRight } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
 
