@@ -6,32 +6,32 @@ const FEATURES = [
   {
     icon: <Cpu className="w-8 h-8 text-brand-green" />,
     title: "Expert Advisors",
-    description: "Acesse nossa biblioteca de robôs verificados. Plugue, ative e lucre."
+    description: "Acesse nossa curadoria de robôs validados. Plugue, ative e comece a operar automaticamente."
   },
   {
     icon: <Key className="w-8 h-8 text-brand-gold" />,
-    title: "Licenciamento Instantâneo",
-    description: "Gerencie suas licenças em tempo real. Ative ou revogue acesso instantaneamente."
+    title: "Licenciamento",
+    description: "Sistema próprio de emissão de licenças para garantir o funcionamento correto e autorizado dos seus robôs."
   },
   {
     icon: <Zap className="w-8 h-8 text-blue-500" />,
-    title: "Latência Ultra-Baixa",
-    description: "Construído em infraestrutura de alta performance para garantir execução no preço perfeito."
+    title: "Brokers de Baixa Latência",
+    description: "Trabalhamos apenas com as melhores corretoras globais para garantir execução rápida e precisa das ordens."
   },
   {
     icon: <Shield className="w-8 h-8 text-purple-500" />,
-    title: "Segurança Verificada",
-    description: "Criptografia de nível institucional protege suas estratégias e dados pessoais."
+    title: "Segurança Total",
+    description: "Seu dinheiro nunca sai da sua conta. As operações são executadas diretamente na sua corretora."
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-orange-500" />,
-    title: "Analytics em Tempo Real",
-    description: "Acompanhe a performance de todas as suas contas conectadas em um único painel."
+    title: "Resultados Auditados",
+    description: "Transparência é nossa prioridade. Acompanhe o histórico verificado de cada estratégia via MyFxBook."
   },
   {
     icon: <Layers className="w-8 h-8 text-pink-500" />,
-    title: "Construtor de Estratégias",
-    description: "Desenhe sua própria lógica personalizada sem escrever uma única linha de código."
+    title: "Desenvolvimento On Demand",
+    description: "Tem um setup vencedor? Nossa equipe pode desenvolver e automatizar sua estratégia personalizada."
   }
 ];
 
@@ -47,7 +47,7 @@ export const FeatureGrid = () => {
            Tudo que você precisa para <span className="text-brand-green">gerar renda passiva.</span>
          </h2>
          <p className="text-gray-400 text-lg">
-           Hub multibroker com as melhores estratégias, para você rentabilizar sem tirar seu dinheiro da sua própria conta, pare quando quiser, saque a hora que quiser, seu dinheiro suas regras.
+           Um "cardápio" simplificado, que reúne as melhores estratégias automáticas, das melhores corretoras, para você rentabilizar sem tirar seu dinheiro da sua própria conta. Comece quando quiser, pare quando quiser. Saque a hora que quiser. Seu dinheiro suas regras.
          </p>
       </div>
 
