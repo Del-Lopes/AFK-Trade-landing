@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Section } from '@/components/layout/Section';
 import { ShoppingBag, Users, LayoutDashboard, PlayCircle, Wallet, MessageCircle } from 'lucide-react';
 
@@ -55,8 +56,12 @@ export const PlatformTour = () => {
   
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {MODULES.map((module, index) => (
-            <div 
+            <motion.div 
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               className="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-green/30 hover:bg-white/10 transition-all duration-300"
             >
               <div className="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center text-brand-green mb-4 group-hover:scale-110 transition-transform">
@@ -66,7 +71,7 @@ export const PlatformTour = () => {
               <p className="text-gray-400 text-sm leading-relaxed">
                 {module.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Section>
