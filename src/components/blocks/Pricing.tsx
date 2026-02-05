@@ -30,10 +30,10 @@ export const Pricing = () => {
           </div>
 
           <ul className="space-y-4 mb-8 flex-1">
-            <ListItem>Acesso a todos os Robôs</ListItem>
+            <ListItem>Acesso ao catálogo de estratégias</ListItem>
+            <ListItem>Acesso à biblioteca de cursos</ListItem>
             <ListItem>Atualizações constantes</ListItem>
-            <ListItem>Comunidade exclusiva</ListItem>
-            <ListItem negative>Acesso ao grupo de fundadores</ListItem>
+            <ListItem negative>Renovação anual grátis</ListItem>
           </ul>
 
           <Button variant="outline" className="w-full mt-auto" disabled>
@@ -48,7 +48,7 @@ export const Pricing = () => {
           </div>
           
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Early Adopter</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Condição de Lançamento</h3>
             <p className="text-sm text-brand-green/80">Exclusivo para os 100 primeiros</p>
           </div>
           
@@ -58,10 +58,10 @@ export const Pricing = () => {
           </div>
 
           <ul className="space-y-4 mb-8 flex-1">
-            <ListItem active>Licença Gratuita Vitalícia</ListItem>
+            <ListItem active>Acesso Gratuito Vitalício</ListItem>
             <ListItem active>Acesso Imediato ao Ecossistema</ListItem>
-            <ListItem active>Prioridade em novos lançamentos</ListItem>
-            <ListItem active>Sem custos de adesão</ListItem>
+            <ListItem active>Acesso à biblioteca de cursos</ListItem>
+            <ListItem active>Condições especiais dos primeiros parceiros</ListItem>
           </ul>
 
           <div className="mb-6 bg-brand-dark/50 rounded-lg p-3 border border-white/10">
@@ -72,7 +72,6 @@ export const Pricing = () => {
              <div className="w-full bg-gray-700 rounded-full h-1.5">
                 <div className="bg-brand-green h-1.5 rounded-full" style={{ width: '63%' }}></div>
              </div>
-             <p className="text-[10px] text-gray-500 mt-1 text-center">37 vagas restantes para gratuidade</p>
           </div>
 
           <Button className="w-full mt-auto" onClick={() => window.open('https://afktrade.com.br', '_blank')}>

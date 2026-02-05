@@ -16,6 +16,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Funcionalidades', href: '#features' },
+    { name: 'Preços', href: '#pricing' },
     { name: 'Biblioteca', href: '#academy' },
     { name: 'Parceiros', href: '#partners' },
   ];
