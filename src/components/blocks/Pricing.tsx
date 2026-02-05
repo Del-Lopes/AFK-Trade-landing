@@ -9,68 +9,75 @@ export const Pricing = () => {
       
       <div className="text-center mb-16 relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Comece agora. <span className="text-brand-green">Sem custos fixos.</span>
+          Oferta de <span className="text-brand-green">Lançamento</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Nosso modelo de negócios é desenhado para o seu sucesso. Escolha como quer operar.
+          Garanta seu acesso vitalício ou antecipado. Condição exclusiva para os membros fundadores.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative z-10 px-4">
-        {/* Card: Particular (Standard) */}
+        {/* Card: Standard Info (Future Price) */}
         <div className="border border-white/10 rounded-2xl p-8 bg-white/5 flex flex-col grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Conta Particular</h3>
-            <p className="text-sm text-gray-400">Para quem já tem conta em corretora</p>
+            <h3 className="text-xl font-bold text-white mb-2">Membro AFK</h3>
+            <p className="text-sm text-gray-400">Valor padrão após o lote promocional</p>
           </div>
           
           <div className="mb-8">
             <span className="text-4xl font-bold text-white">R$ 97</span>
-            <span className="text-gray-500">/mês</span>
+            <span className="text-gray-500">/ano</span>
           </div>
 
           <ul className="space-y-4 mb-8 flex-1">
-            <ListItem>Acesso aos Robôs</ListItem>
-            <ListItem>Suporte via Ticket</ListItem>
-            <ListItem negative>VPS não inclusa (custo extra)</ListItem>
-            <ListItem negative>Taxa de adesão R$ 200</ListItem>
+            <ListItem>Acesso a todos os Robôs</ListItem>
+            <ListItem>Atualizações constantes</ListItem>
+            <ListItem>Comunidade exclusiva</ListItem>
+            <ListItem negative>Acesso ao grupo de fundadores</ListItem>
           </ul>
 
           <Button variant="outline" className="w-full mt-auto" disabled>
-            Em breve
+            Aguarde o próximo lote
           </Button>
         </div>
 
-        {/* Card: Parceiro (Featured) */}
+        {/* Card: Promo Launch (Scarcity) */}
         <div className="border-2 border-brand-green rounded-2xl p-8 bg-brand-green/5 flex flex-col relative transform md:scale-105 shadow-2xl shadow-brand-green/20">
-          <div className="absolute top-0 right-0 bg-brand-green text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-            RECOMENDADO
+          <div className="absolute top-0 right-0 bg-brand-green text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg animate-pulse">
+            RESTAM POUCAS VAGAS
           </div>
           
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Conta Parceira</h3>
-            <p className="text-sm text-brand-green/80">Via Corretora Parceira</p>
+            <h3 className="text-xl font-bold text-white mb-2">Early Adopter</h3>
+            <p className="text-sm text-brand-green/80">Exclusivo para os 100 primeiros</p>
           </div>
           
           <div className="mb-8">
             <span className="text-4xl font-bold text-white">R$ 0</span>
-            <span className="text-gray-500">/mês</span>
+            <span className="text-gray-500">/vitalício*</span>
           </div>
 
           <ul className="space-y-4 mb-8 flex-1">
-            <ListItem active>Acesso ilimitado aos Robôs</ListItem>
-            <ListItem active>VPS Institucional Inclusa (Grátis)</ListItem>
-            <ListItem active>Suporte VIP no WhatsApp</ListItem>
-            <ListItem active>Zero taxa de adesão</ListItem>
+            <ListItem active>Licença Gratuita Vitalícia</ListItem>
+            <ListItem active>Acesso Imediato ao Ecossistema</ListItem>
+            <ListItem active>Prioridade em novos lançamentos</ListItem>
+            <ListItem active>Sem custos de adesão</ListItem>
           </ul>
 
+          <div className="mb-6 bg-brand-dark/50 rounded-lg p-3 border border-white/10">
+             <div className="flex justify-between text-xs text-gray-400 mb-1">
+                <span>Vagas Preenchidas</span>
+                <span>63%</span>
+             </div>
+             <div className="w-full bg-gray-700 rounded-full h-1.5">
+                <div className="bg-brand-green h-1.5 rounded-full" style={{ width: '63%' }}></div>
+             </div>
+             <p className="text-[10px] text-gray-500 mt-1 text-center">37 vagas restantes para gratuidade</p>
+          </div>
+
           <Button className="w-full mt-auto" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
-            Criar Conta Grátis <ArrowRight className="ml-2 w-4 h-4" />
+            Garantir Minha Vaga Grátis <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
-          
-          <p className="text-xs text-center text-gray-500 mt-4">
-            *A corretora paga sua licença enquanto você operar.
-          </p>
         </div>
       </div>
     </Section>

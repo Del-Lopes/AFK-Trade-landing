@@ -21,7 +21,7 @@ export const Footer = () => {
             <h4 className="font-bold text-white mb-6">Produto</h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li><a href="#" className="hover:text-brand-green transition-colors">Funcionalidades</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Preços</a></li>
+              <li><a href="#pricing" className="hover:text-brand-green transition-colors">Preços</a></li>
             </ul>
           </div>
           
