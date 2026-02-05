@@ -37,10 +37,8 @@ const MODULES = [
 
 export const PlatformTour = () => {
     return (
-      <Section className="bg-slate-900 relative z-10 border-t border-white/5 py-32">
-        {/* Subtle Background Highlight */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-green/50 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_50%)]" />
+      <Section className="bg-brand-dark relative z-10 pb-32 pt-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_50%)] pointer-events-none" />
 
         <div className="text-center mb-16 relative z-10">
           <span className="text-brand-green font-bold tracking-wider uppercase text-sm mb-4 block">

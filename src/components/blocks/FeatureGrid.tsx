@@ -37,7 +37,7 @@ const FEATURES = [
 
 export const FeatureGrid = () => {
   return (
-    <Section id="features" className="bg-brand-dark relative overflow-hidden py-32">
+    <Section id="features" className="bg-brand-dark relative overflow-hidden pt-32 pb-10">
        {/* Background Grid */}
        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent pointer-events-none" />
