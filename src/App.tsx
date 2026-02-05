@@ -26,10 +26,10 @@ function LandingPage() {
         <Hero />
         <SocialProof />
         <Manifesto />
+        <AlgoEngine />
         <Comparison />
         <FeatureGrid />
         <PlatformTour />
-        <AlgoEngine />
         <Ecosystem />
         <Partners />
       </main>
