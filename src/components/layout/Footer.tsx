@@ -1,5 +1,4 @@
 import { Section } from '@/components/layout/Section';
-import { Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -16,11 +15,6 @@ export const Footer = () => {
             <p className="text-gray-400 max-w-sm">
               Soluções de trading automatizado para o investidor moderno. Tecnologia trabalhando ao seu favor.
             </p>
-            <div className="flex gap-4 text-gray-400">
-              <a href="#" className="hover:text-brand-green transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-brand-green transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="hover:text-brand-green transition-colors"><Linkedin size={20} /></a>
-            </div>
           </div>
           
           <div>
@@ -28,8 +22,6 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-gray-400">
               <li><a href="#" className="hover:text-brand-green transition-colors">Funcionalidades</a></li>
               <li><a href="#" className="hover:text-brand-green transition-colors">Preços</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Performance ao Vivo</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Roadmap</a></li>
             </ul>
           </div>
           
