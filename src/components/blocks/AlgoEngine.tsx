@@ -4,17 +4,17 @@ import { Cpu, Database, Globe, Layers, Network, Shield, TrendingUp } from 'lucid
 
 export const AlgoEngine = () => {
   return (
-    <Section className="py-24 overflow-hidden">
-      <div className="text-center mb-20 relative z-10">
+    <Section className="py-12 overflow-hidden">
+      <div className="text-center mb-10 relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Um Ecossistema de <span className="text-brand-green">Renda Passiva</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-          Não dependa de uma única estratégia. Nossa plataforma conecta múltiplos algoritmos trabalhando simultaneamente para diversificar seu risco.
+          Não dependa de uma única estratégia. Nossa plataforma oferece múltiplos algoritmos para você se conectar e diversificar seu risco.
         </p>
       </div>
 
-      <div className="relative max-w-4xl mx-auto h-[700px] md:h-[800px] flex items-center justify-center">
+      <div className="relative max-w-4xl mx-auto h-[600px] md:h-[650px] flex items-center justify-center">
         {/* Central Core */}
         <motion.div 
           animate={{ scale: [1, 1.05, 1] }}
