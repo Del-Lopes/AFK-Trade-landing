@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, PlayCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/layout/Section';
 
@@ -64,32 +64,27 @@ export const Hero = () => {
            className="relative"
         >
            <div className="relative rounded-2xl border border-white/10 bg-brand-dark/50 backdrop-blur-xl shadow-2xl shadow-brand-green/10 p-2 overflow-hidden aspect-[4/3] group">
-              {/* Fake UI */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-10" />
               
-              <div className="h-full w-full bg-slate-900 rounded-xl overflow-hidden relative border border-white/5 flex items-center justify-center">
-                 {/* This would be the dashboard image/video */}
-                 <div className="text-center p-8">
-                    <div className="w-16 h-16 bg-brand-green/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-green animate-pulse">
-                         <div className="w-20 h-20 absolute bg-brand-green/10 rounded-full animate-ping" />
-                         <PlayCircle size={32} />
-                    </div>
-                    <p className="text-gray-400 font-medium">Passo a passo simplificado</p>
-                    <span className="text-xs text-gray-500 mt-2 block">Video aulas e material de apoio</span>
-                 </div>
+              <div className="h-full w-full bg-slate-900 rounded-xl overflow-hidden relative border border-white/5 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700">
+                 <img 
+                    src="/images/hero-dashboard.png" 
+                    alt="AFK Dashboard Interface" 
+                    className="w-full h-full object-cover opacity-90"
+                 />
                  
                  {/* Floating Card Element */}
                  <motion.div 
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute bottom-6 right-6 bg-slate-800 border border-white/10 p-4 rounded-xl shadow-xl w-48"
+                    className="absolute bottom-6 right-6 bg-slate-900/90 backdrop-blur-md border border-brand-green/20 p-4 rounded-xl shadow-xl w-48 z-20"
                  >
                     <div className="flex justify-between items-center mb-2">
                        <span className="text-xs text-gray-400">Lucro (24h)</span>
                        <span className="text-xs text-brand-green font-bold">+2.4%</span>
                     </div>
                     <div className="h-1 bg-slate-700 rounded-full overflow-hidden">
-                       <div className="h-full w-[70%] bg-brand-green rounded-full" />
+                       <div className="h-full w-[70%] bg-brand-green rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
                     </div>
                  </motion.div>
               </div>
