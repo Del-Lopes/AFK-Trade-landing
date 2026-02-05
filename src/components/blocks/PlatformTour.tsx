@@ -40,7 +40,7 @@ export const PlatformTour = () => {
       <Section className="bg-slate-900 relative z-10 border-t border-white/5 py-32">
         {/* Subtle Background Highlight */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-green/50 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.05),transparent_50%)] pointer-events-none" />
 
         <div className="text-center mb-16 relative z-10">
           <span className="text-brand-green font-bold tracking-wider uppercase text-sm mb-4 block">
@@ -54,7 +54,7 @@ export const PlatformTour = () => {
           </p>
         </div>
   
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
           {MODULES.map((module, index) => (
             <motion.div 
               key={index}
