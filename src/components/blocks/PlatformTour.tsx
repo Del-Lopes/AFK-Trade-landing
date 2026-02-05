@@ -1,36 +1,36 @@
 import { Section } from '@/components/layout/Section';
-import { BookOpen, ShoppingBag, Key, Users, LayoutDashboard, PlayCircle } from 'lucide-react';
+import { ShoppingBag, Users, LayoutDashboard, PlayCircle, Wallet, MessageCircle } from 'lucide-react';
 
 const MODULES = [
   {
     icon: <LayoutDashboard size={24} />,
-    title: "Dashboard Central",
-    description: "Visão consolidada de todas as suas contas e performance em tempo real."
+    title: "Painel de Controle",
+    description: "Gestão simplificada. Ative, pause e gerencie todas as suas estratégias conectadas em um único lugar."
   },
   {
     icon: <PlayCircle size={24} />,
     title: "Tutoriais Passo a Passo",
-    description: "Guias detalhados do zero ao avançado. Aprenda a configurar seu VPS e ativar seu primeiro robô em minutos."
+    description: "Guias detalhados do zero ao avançado. Aprenda tudo para iniciar a rentabilizar seu capital com poucos cliques."
   },
   {
     icon: <ShoppingBag size={24} />,
     title: "Catálogo de Estratégias",
-    description: "Acesse nosso marketplace de robôs verificados. Filtre por risco, retorno e ativo."
+    description: "Nosso 'Cardápio' de oportunidades. Acesse robôs validados e diversifique seu capital entre diferentes perfis de risco."
   },
   {
-    icon: <Key size={24} />,
-    title: "Gestão de Licenças",
-    description: "Painel administrativo para ativar, pausar ou transferir suas licenças de trading instantaneamente."
+    icon: <Wallet size={24} />,
+    title: "Acessibilidade Real",
+    description: "Não exige grandes capitais. Inicie sua jornada de rentabilização automatizada com bancas a partir de R$ 250."
   },
   {
     icon: <Users size={24} />,
     title: "Hub de Parceiros",
-    description: "Área exclusiva com links de indicação, banners de marketing e relatórios de comissões."
+    description: "Materiais de apoio, apresentações, links exclusivos com comissões recorrentes e vídeo aulas para parceiros."
   },
   {
-    icon: <BookOpen size={24} />,
-    title: "Documentação Técnica",
-    description: "Parâmetros detalhados de cada algoritmo para quem deseja customizar suas operações."
+    icon: <MessageCircle size={24} />,
+    title: "Linguagem Simplificada",
+    description: "Feito para todos. Eliminamos o 'economês' e a complexidade técnica para que qualquer pessoa possa lucrar."
   }
 ];
 

@@ -47,7 +47,7 @@ export const FeatureGrid = () => {
            Tudo que você precisa para <span className="text-brand-green">gerar renda passiva.</span>
          </h2>
          <p className="text-gray-400 text-lg">
-           Um "cardápio" simplificado, que reúne as melhores estratégias automáticas, das melhores corretoras, para você rentabilizar sem tirar seu dinheiro da sua própria conta. Comece quando quiser, pare quando quiser. Saque a hora que quiser. Seu dinheiro suas regras.
+           Um "cardápio" simplificado, que reúne as melhores estratégias automáticas, nas melhores corretoras, para você rentabilizar sem tirar seu dinheiro da sua própria conta. Comece quando quiser, pare quando quiser. Saque a hora que quiser. Seu dinheiro suas regras.
          </p>
       </div>
 
