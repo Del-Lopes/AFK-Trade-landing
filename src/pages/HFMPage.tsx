@@ -30,7 +30,7 @@ export const HFMPage = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="https://www.hfm.com/int/pt/copy-trading" 
+                href="https://www.hfm.com/sv/en/?refid=30501091" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-brand-green text-brand-dark font-bold hover:bg-brand-green/90 transition-colors"
@@ -66,7 +66,7 @@ export const HFMPage = () => {
                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -z-10" />
                <div className="flex flex-col items-center justify-center text-center space-y-6">
                   <div className="w-32 h-32 bg-white/5 rounded-full flex items-center justify-center mb-4 p-6 border border-white/10 backdrop-blur-sm">
-                    <img src="/partners/HFM_Logo.webp" alt="HFM" className="w-full h-full object-contain" />
+                    <img src="/partners/HFM_Logo_redondo.webp" alt="HFM" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
                   <p className="text-gray-400">
@@ -81,9 +81,13 @@ export const HFMPage = () => {
         <Section>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">HF copy: O Poder do Social Trading</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
               Copie automaticamente as operações dos nossos algoritmos diretamente na sua conta HFM.
             </p>
+            
+            <div className="flex justify-center mb-12">
+               <img src="/partners/HFM_Copy_Trading.webp" alt="HF Copy Trading" className="rounded-xl border border-white/10 shadow-2xl max-w-full md:max-w-3xl" />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -111,7 +115,7 @@ export const HFMPage = () => {
                    <p className="text-gray-400">Abra sua conta na HFM e conecte-se às estratégias da AFK Trade hoje mesmo.</p>
                 </div>
                 <a 
-                  href="https://www.hfm.com/int/pt/copy-trading" 
+                  href="https://register.hfm.com/sv/en/new-live-account/?refid=30501091" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-8 py-3 rounded-lg bg-white text-brand-dark font-bold hover:bg-gray-100 transition-colors whitespace-nowrap"
@@ -119,6 +123,12 @@ export const HFMPage = () => {
                   Abrir Conta HFM
                 </a>
              </div>
+          </div>
+
+          <div className="flex justify-center mt-12">
+             <a href="https://banner-api.hfm.com/link/0cbee64e?regulator=HFSV&refid=30501091" target="_top">
+                <img src="https://banner-api.hfm.com/banner/0cbee64e?regulator=HFSV&refid=30501091" width="728" height="90" alt="HFM Banner" className="max-w-full h-auto" />
+             </a>
           </div>
         </Section>
 
