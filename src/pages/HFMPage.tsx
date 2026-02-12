@@ -19,8 +19,9 @@ export const HFMPage = () => {
               <span>Parceria Oficial</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              AFK Trade <span className="text-gray-500 mx-2">×</span> <span className="text-brand-green">HFM</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
+              AFK Trade <span className="text-gray-500 mx-2">×</span> 
+              <img src="/partners/HFM_Logo.webp" alt="HFM" className="h-12 md:h-20 object-contain" />
             </h1>
             
             <p className="text-xl text-gray-400 max-w-2xl mb-10">
@@ -64,9 +65,8 @@ export const HFMPage = () => {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-brand-dark/50 p-8">
                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -z-10" />
                <div className="flex flex-col items-center justify-center text-center space-y-6">
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4">
-                    {/* Placeholder for HFM Logo if available, using text for now */}
-                    <span className="text-brand-dark font-bold text-2xl">HFM</span>
+                  <div className="w-32 h-32 bg-white/5 rounded-full flex items-center justify-center mb-4 p-6 border border-white/10 backdrop-blur-sm">
+                    <img src="/partners/HFM_Logo.webp" alt="HFM" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
                   <p className="text-gray-400">
