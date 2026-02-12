@@ -40,12 +40,15 @@ function LandingPage() {
   );
 }
 
+import { HFMPage } from '@/pages/HFMPage';
+
 function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-           <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/hfm" element={<HFMPage />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

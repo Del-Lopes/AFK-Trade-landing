@@ -3,7 +3,7 @@ import { Section } from '@/components/layout/Section';
 const LOGOS = [
   { name: 'Hantec', url: '#' },
   { name: 'Vantage', url: '#' },
-  { name: 'HFM', url: '#' },
+  { name: 'HFM', url: '/hfm' },
   { name: 'RoboForex', url: '#' },
   { name: 'MetaTrader 5', url: '#' },
 ];
@@ -23,16 +23,24 @@ export const SocialProof = () => {
         <div className="flex w-full overflow-hidden mask-gradient select-none">
           <div className="flex min-w-full shrink-0 animate-infinite-scroll items-center justify-around gap-20 pr-20">
             {LOGOS.map((logo, idx) => (
-              <div key={`${logo.name}-1-${idx}`} className="flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                <span className="text-2xl font-bold text-gray-400 whitespace-nowrap">{logo.name}</span>
-              </div>
+              <a 
+                href={logo.url} 
+                key={`${logo.name}-1-${idx}`} 
+                className={`flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
+              >
+                <span className="text-2xl font-bold text-gray-400 whitespace-nowrap hover:text-white transition-colors">{logo.name}</span>
+              </a>
             ))}
           </div>
           <div className="flex min-w-full shrink-0 animate-infinite-scroll items-center justify-around gap-20 pr-20" aria-hidden="true">
             {LOGOS.map((logo, idx) => (
-              <div key={`${logo.name}-2-${idx}`} className="flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                <span className="text-2xl font-bold text-gray-400 whitespace-nowrap">{logo.name}</span>
-              </div>
+              <a 
+                href={logo.url} 
+                key={`${logo.name}-2-${idx}`} 
+                className={`flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
+              >
+                <span className="text-2xl font-bold text-gray-400 whitespace-nowrap hover:text-white transition-colors">{logo.name}</span>
+              </a>
             ))}
           </div>
         </div>

@@ -52,7 +52,7 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
+            <Button size="sm" onClick={() => window.open('https://app.afktrade.com.br', '_blank')}>
               Acessar <ExternalLink size={14} className="ml-2" />
             </Button>
           </div>
