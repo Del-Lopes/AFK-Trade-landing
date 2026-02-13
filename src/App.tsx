@@ -59,6 +59,9 @@ import { HFMPage } from '@/pages/HFMPage';
 import { StartPage } from '@/pages/StartPage';
 import { MissionPage } from '@/pages/MissionPage';
 import { PartnersPage } from '@/pages/PartnersPage';
+import { HantecPage } from '@/pages/HantecPage';
+import { VantagePage } from '@/pages/VantagePage';
+import { RoboForexPage } from '@/pages/RoboForexPage';
 
 
 function App() {
@@ -71,6 +74,9 @@ function App() {
           <Route path="/start" element={<StartPage />} />
           <Route path="/mission" element={<MissionPage />} />
           <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/hantec" element={<HantecPage />} />
+          <Route path="/vantage" element={<VantagePage />} />
+          <Route path="/roboforex" element={<RoboForexPage />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

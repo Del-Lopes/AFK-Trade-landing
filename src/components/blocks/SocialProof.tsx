@@ -1,10 +1,10 @@
 import { Section } from '@/components/layout/Section';
 
 const LOGOS = [
-  { name: 'Hantec', url: '#' },
-  { name: 'Vantage', url: '#' },
+  { name: 'Hantec', url: '/hantec' },
+  { name: 'Vantage', url: '/vantage' },
   { name: 'HFM', url: '/hfm' },
-  { name: 'RoboForex', url: '#' },
+  { name: 'RoboForex', url: '/roboforex' },
   { name: 'MetaTrader 5', url: '#' },
 ];
 
