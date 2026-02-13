@@ -26,9 +26,9 @@ export const SocialProof = () => {
               <a 
                 href={logo.url} 
                 key={`${logo.name}-1-${idx}`} 
-                className={`flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
+                className={`flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                <span className="text-2xl font-bold text-gray-400 whitespace-nowrap hover:text-white transition-colors">{logo.name}</span>
+                <span className="text-2xl font-bold text-white whitespace-nowrap hover:text-brand-green transition-colors">{logo.name}</span>
               </a>
             ))}
           </div>
@@ -37,9 +37,9 @@ export const SocialProof = () => {
               <a 
                 href={logo.url} 
                 key={`${logo.name}-2-${idx}`} 
-                className={`flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
+                className={`flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                <span className="text-2xl font-bold text-white whitespace-nowrap hover:text-white transition-colors">{logo.name}</span>
+                <span className="text-2xl font-bold text-white whitespace-nowrap hover:text-brand-green transition-colors">{logo.name}</span>
               </a>
             ))}
           </div>
