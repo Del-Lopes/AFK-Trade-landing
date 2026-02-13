@@ -18,10 +18,10 @@ export const Ecosystem = () => {
             
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Conhecimento liberta. <br />
-              <span className="text-gray-400">Domine o mercado.</span>
+              <span className="text-white">Domine o mercado.</span>
             </h2>
             
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+            <p className="text-lg text-white mb-8 leading-relaxed">
               Entre para uma comunidade de traders de elite. Tenha acesso a conteúdos exclusivos para se manter lucrativo a longo prazo.
             </p>
             
@@ -32,7 +32,7 @@ export const Ecosystem = () => {
                  'Tutoriais detalhados', 
                  'Guias de depósito e saque'
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-gray-300">
+                  <li key={item} className="flex items-center gap-3 text-white">
                     <div className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </div>
@@ -67,13 +67,13 @@ export const Ecosystem = () => {
                   >
                      <div className="flex justify-between items-center mb-4">
                         <span className="text-xs font-bold text-brand-green uppercase tracking-wide">Novo Artigo</span>
-                        <div className="p-2 bg-white/5 rounded-lg text-gray-400 group-hover:text-white transition-colors">
+                        <div className="p-2 bg-white/5 rounded-lg text-white group-hover:text-white transition-colors">
                            <BookOpen size={18} />
                         </div>
                      </div>
                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brand-green transition-colors">A Psicologia do Trading Automatizado</h3>
-                     <p className="text-sm text-gray-400 mb-4">Por que 90% dos traders falham mesmo com sistemas vencedores, e como corrigir.</p>
-                     <div className="flex items-center gap-2 text-xs text-gray-500">
+                     <p className="text-sm text-white mb-4">Por que 90% dos traders falham mesmo com sistemas vencedores, e como corrigir.</p>
+                     <div className="flex items-center gap-2 text-xs text-white/70">
                         <span>5 min leitura</span>
                         <span>•</span>
                         <span>Por Time AFK</span>
@@ -90,13 +90,13 @@ export const Ecosystem = () => {
                   >
                      <div className="flex justify-between items-center mb-4">
                         <span className="text-xs font-bold text-brand-gold uppercase tracking-wide">Aula em Vídeo</span>
-                        <div className="p-2 bg-white/5 rounded-lg text-gray-400 group-hover:text-white transition-colors">
+                        <div className="p-2 bg-white/5 rounded-lg text-white group-hover:text-white transition-colors">
                             <PlayCircle size={18} />
                         </div>
                      </div>
                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">Criando conta e seguindo sua primeira estratégia</h3>
-                     <p className="text-sm text-gray-400 mb-4">Guia passo a passo para atingir seus primeiros lucros longe das telas (AFK).</p>
-                     <div className="flex items-center gap-2 text-xs text-gray-500">
+                     <p className="text-sm text-white mb-4">Guia passo a passo para atingir seus primeiros lucros longe das telas (AFK).</p>
+                     <div className="flex items-center gap-2 text-xs text-white/70">
                         <span>12 min</span>
                         <span>•</span>
                         <span>3 aulas</span>

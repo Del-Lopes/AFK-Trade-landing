@@ -46,7 +46,7 @@ export const FeatureGrid = () => {
          <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
            Tudo que você precisa para <span className="text-brand-green">gerar renda passiva.</span>
          </h2>
-         <p className="text-gray-400 text-lg">
+         <p className="text-white text-lg">
            Um "cardápio" simplificado, que reúne as melhores estratégias automáticas, nas melhores corretoras, para você rentabilizar sem tirar seu dinheiro da sua própria conta. Comece quando quiser, pare quando quiser. Saque a hora que quiser. Seu dinheiro suas regras.
          </p>
       </div>
@@ -66,7 +66,7 @@ export const FeatureGrid = () => {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              <p className="text-white leading-relaxed">{feature.description}</p>
            </motion.div>
          ))}
       </div>

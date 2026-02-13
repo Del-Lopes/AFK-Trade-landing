@@ -9,7 +9,7 @@ export const AlgoEngine = () => {
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Um Ecossistema de <span className="text-brand-green">Renda Passiva</span>
         </h2>
-        <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+        <p className="text-white text-lg max-w-3xl mx-auto">
           Não dependa de uma única estratégia. Nossa plataforma oferece múltiplos algoritmos para você se conectar e diversificar seu risco.
         </p>
       </div>
