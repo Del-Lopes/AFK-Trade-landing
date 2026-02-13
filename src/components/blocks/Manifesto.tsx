@@ -3,7 +3,11 @@ import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+
 export const Manifesto = () => {
+  const navigate = useNavigate();
+
   return (
     <Section className="relative overflow-hidden py-32 bg-brand-dark">
       {/* Background Ambience */}
@@ -45,7 +49,7 @@ export const Manifesto = () => {
           </div>
 
           <div className="mt-12">
-            <Button size="lg" variant="outline" className="border-brand-green/30 hover:bg-brand-green/10 text-brand-green">
+            <Button size="lg" variant="outline" className="border-brand-green/30 hover:bg-brand-green/10 text-brand-green" onClick={() => navigate('/mission')}>
               Conheça nossa Missão <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>

@@ -41,6 +41,8 @@ function LandingPage() {
 }
 
 import { HFMPage } from '@/pages/HFMPage';
+import { StartPage } from '@/pages/StartPage';
+import { MissionPage } from '@/pages/MissionPage';
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/hfm" element={<HFMPage />} />
+          <Route path="/start" element={<StartPage />} />
+          <Route path="/mission" element={<MissionPage />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

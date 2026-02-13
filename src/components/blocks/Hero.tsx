@@ -3,7 +3,11 @@ import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/layout/Section';
 
+import { useNavigate } from 'react-router-dom';
+
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <Section className="pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex items-center relative">
       {/* Background Gradients */}
@@ -35,7 +39,7 @@ export const Hero = () => {
            </p>
 
            <div className="flex flex-col sm:flex-row gap-4">
-             <Button size="lg" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
+             <Button size="lg" onClick={() => navigate('/start')}>
                Começar a Automatizar <ArrowRight className="ml-2 w-5 h-5" />
              </Button>
            </div>
