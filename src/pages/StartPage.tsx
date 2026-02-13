@@ -172,9 +172,15 @@ const Step = ({ number, title, description, icon, action, align }: { number: str
         )}
       </div>
 
-      <div className="relative z-10 hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-brand-dark border-4 border-brand-green shadow-[0_0_20px_rgba(34,197,94,0.3)] shrink-0">
+      <motion.div 
+         initial={{ scale: 1, boxShadow: "0 0 20px rgba(34,197,94,0.3)" }}
+         whileInView={{ scale: 1.3, boxShadow: "0 0 40px rgba(34,197,94,0.8)" }}
+         viewport={{ margin: "-40% 0px -40% 0px" }}
+         transition={{ duration: 0.4, ease: "easeOut" }}
+         className="relative z-10 hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-brand-dark border-4 border-brand-green shrink-0"
+      >
          {icon}
-      </div>
+      </motion.div>
 
       <div className="flex-1 hidden md:block" />
     </motion.div>
