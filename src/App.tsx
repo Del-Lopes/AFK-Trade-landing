@@ -58,6 +58,7 @@ function LandingPage() {
 import { HFMPage } from '@/pages/HFMPage';
 import { StartPage } from '@/pages/StartPage';
 import { MissionPage } from '@/pages/MissionPage';
+import { PartnersPage } from '@/pages/PartnersPage';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
           <Route path="/hfm" element={<HFMPage />} />
           <Route path="/start" element={<StartPage />} />
           <Route path="/mission" element={<MissionPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>

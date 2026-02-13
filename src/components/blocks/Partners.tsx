@@ -1,8 +1,10 @@
 import { ArrowRight, Users, DollarSign, Globe } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
+import { useNavigate } from 'react-router-dom';
 
 export const Partners = () => {
+  const navigate = useNavigate();
   return (
     <Section id="partners" className="bg-brand-dark py-24 relative overflow-hidden">
        {/* Background Decoration */}
@@ -41,7 +43,7 @@ export const Partners = () => {
              </div>
           </div>
 
-          <Button size="lg" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
+          <Button size="lg" onClick={() => navigate('/partners')}>
              Seja um Parceiro <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
        </div>
