@@ -1,15 +1,24 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
-import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const StartPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const brokers = [
+    { name: 'HFM', url: 'https://register.hfm.com/sv/en/new-live-account/?refid=30501091', logo: '/partners/HFM_Logo.webp' },
+    { name: 'Hantec', url: '#', logo: '' }, // Add Hantec URL and logo when available
+    { name: 'Vantage', url: '#', logo: '' }, // Add Vantage URL and logo when available
+    { name: 'RoboForex', url: '#', logo: '' }, // Add RoboForex URL and logo when available
+  ];
+
   return (
-    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
+    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans relative">
       <Navbar />
 
       <main>
@@ -32,11 +41,11 @@ export const StartPage = () => {
             <Step 
               number="01"
               title="Escolha uma Corretora Parceira"
-              description="Trabalhamos apenas com corretoras regulamentadas e de confiança global. A HFM é nossa parceira recomendada pela execução rápida e baixos spreads."
+              description="Trabalhamos apenas com corretoras regulamentadas e de confiança global. Escolha a que melhor se adapta às suas necessidades."
               icon={<CheckCircle2 className="w-10 h-10 text-brand-green" />}
               action={
-                <Button onClick={() => window.open('/hfm', '_blank')} variant="outline" className="mt-4">
-                  Conhecer a HFM <ArrowRight className="ml-2 w-4 h-4" />
+                <Button onClick={() => setIsModalOpen(true)} variant="outline" className="mt-4">
+                  Ver Corretoras <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               }
               align="left"
@@ -46,13 +55,8 @@ export const StartPage = () => {
             <Step 
               number="02"
               title="Cadastre-se e Abra sua Conta"
-              description="Complete o processo de registro na corretora escolhida. É rápido, seguro e 100% digital. Certifique-se de verificar sua identidade para desbloquear todas as funcionalidades."
+              description="Complete o processo de registro na corretora escolhida através dos nossos links parceiros. É rápido, seguro e 100% digital. Certifique-se de verificar sua identidade."
               icon={<UserPlus className="w-10 h-10 text-brand-green" />}
-              action={
-                <Button onClick={() => window.open('https://register.hfm.com/sv/en/new-live-account/?refid=30501091', '_blank')} className="mt-4">
-                  Abrir Conta Agora <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              }
               align="right"
             />
 
@@ -69,7 +73,7 @@ export const StartPage = () => {
             <Step 
               number="04"
               title="Escolha uma Estratégia"
-              description="Navegue pelas estratégias disponíveis na plataforma de Copy Trading da corretora. Analise o histórico de rentabilidade e escolha a que melhor se adapta ao seu perfil de investidor."
+              description="Acesse a sessão de estratégias no nosso App, analise o histórico de rentabilidade e escolha a que melhor se adapta ao seu perfil de investidor."
               icon={<BarChart3 className="w-10 h-10 text-brand-green" />}
               align="right"
             />
@@ -77,8 +81,8 @@ export const StartPage = () => {
             {/* Step 5 */}
             <Step 
               number="05"
-              title="Comece a Lucrar"
-              description="Ative a cópia e pronto! Nossos algoritmos operarão automaticamente na sua conta. Acompanhe seus lucros em tempo real pelo celular ou computador."
+              title="Defina suas Metas e Comece"
+              description="Defina suas metas de ganho (Take Profit) e limite de perda (Stop Loss) para um gerenciamento de risco saudável. Ative a cópia e acompanhe seus lucros em tempo real."
               icon={<Rocket className="w-10 h-10 text-brand-green" />}
               align="left"
             />
@@ -89,16 +93,65 @@ export const StartPage = () => {
              <div className="p-8 rounded-2xl bg-brand-green/10 border border-brand-green/20 max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4">Ainda com dúvidas?</h3>
                 <p className="text-gray-400 mb-6">
-                   Nossa equipe de suporte está pronta para te ajudar em cada etapa do processo.
+                   Cadastre-se gratuitamente no nosso App e tenha acesso ao passo a passo detalhado em vídeo para cada etapa do processo.
                 </p>
-                <Button onClick={() => window.open('https://wa.me/5548991253005', '_blank')} variant="secondary">
-                   Falar com Suporte
+                <Button onClick={() => window.open('https://app.afktrade.com.br', '_blank')} variant="secondary">
+                   Acessar App AFK
                 </Button>
              </div>
           </div>
         </Section>
       </main>
       <Footer />
+
+      {/* Broker Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-brand-dark border border-white/10 rounded-2xl p-6 w-full max-w-lg relative shadow-2xl shadow-brand-green/20"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+              
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">Escolha sua Corretora</h2>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {brokers.map((broker) => (
+                  <a
+                    key={broker.name}
+                    href={broker.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-brand-green/50 transition-all group"
+                  >
+                    {broker.logo ? (
+                        <img src={broker.logo} alt={broker.name} className="h-8 object-contain mb-3 grayscale group-hover:grayscale-0 transition-all" />
+                    ) : (
+                        <span className="text-xl font-bold text-white mb-3">{broker.name}</span>
+                    )}
+                    <span className="text-sm text-brand-green font-medium group-hover:underline">Abrir Conta</span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -110,13 +163,13 @@ const Step = ({ number, title, description, icon, action, align }: { number: str
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${align === 'right' ? 'md:flex-row-reverse' : ''}`}
+      className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${align === 'right' ? 'md:flex-row-reverse text-right' : 'text-left'}`}
     >
-      <div className={`flex-1 text-center ${align === 'left' ? 'md:text-right' : 'md:text-left'}`}>
+      <div className={`flex-1 ${align === 'left' ? 'md:text-right' : 'md:text-left'} text-center md:text-inherit`}>
         <div className={`inline-flex items-center justify-center p-4 bg-brand-green/10 rounded-2xl mb-6 md:hidden`}>
            {icon}
         </div>
-        <h3 className="text-4xl font-bold text-white mb-4">
+        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
            <span className="text-brand-green text-lg block font-mono mb-2">PASSO {number}</span>
            {title}
         </h3>
@@ -130,7 +183,7 @@ const Step = ({ number, title, description, icon, action, align }: { number: str
         )}
       </div>
 
-      <div className="relative z-10 hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-brand-dark border-4 border-brand-green shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+      <div className="relative z-10 hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-brand-dark border-4 border-brand-green shadow-[0_0_20px_rgba(34,197,94,0.3)] shrink-0">
          {icon}
       </div>
 
