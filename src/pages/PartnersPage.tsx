@@ -132,16 +132,21 @@ export const PartnersPage = () => {
                             <p className="text-sm text-white uppercase tracking-wider mb-2">Potencial de Ganhos</p>
                             <h3 className="text-4xl font-bold text-brand-green">Ilimitado</h3>
                         </div>
-                        <div className="space-y-4">
-                            <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg">
+                        <div className="space-y-4 relative">
+                           {/* Blurry Overlay with Text */}
+                           <div className="absolute inset-0 z-20 flex items-center justify-center">
+                              <span className="text-white/50 text-sm font-bold uppercase tracking-widest bg-brand-dark/50 px-3 py-1 rounded backdrop-blur-sm border border-white/5">Área de Membros</span>
+                           </div>
+
+                            <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg blur-[6px] select-none">
                                 <span className="text-white">10 Clientes</span>
                                 <span className="text-brand-green font-bold">~ R$ 2.000 / mês</span>
                             </div>
-                            <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg">
+                            <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg blur-[6px] select-none">
                                 <span className="text-white">50 Clientes</span>
                                 <span className="text-brand-green font-bold">~ R$ 10.000 / mês</span>
                             </div>
-                             <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg border border-brand-green/30">
+                             <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg border border-brand-green/30 blur-[6px] select-none">
                                 <span className="text-white">100 Clientes</span>
                                 <span className="text-brand-green font-bold">~ R$ 25.000+ / mês</span>
                             </div>
