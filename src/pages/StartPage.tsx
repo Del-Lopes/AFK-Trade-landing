@@ -175,7 +175,7 @@ const Step = ({ number, title, description, icon, action, align }: { number: str
       <motion.div 
          initial={{ scale: 1, boxShadow: "0 0 20px rgba(34,197,94,0.3)" }}
          whileInView={{ scale: 1.3, boxShadow: "0 0 40px rgba(34,197,94,0.8)" }}
-         viewport={{ margin: "0% 0px 60% 0px" }}
+         viewport={{ margin: "-10% 0px -45% 0px" }}
          transition={{ duration: 0.4, ease: "easeOut" }}
          className="relative z-10 hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-brand-dark border-4 border-brand-green shrink-0"
       >
