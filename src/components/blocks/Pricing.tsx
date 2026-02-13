@@ -74,7 +74,7 @@ export const Pricing = () => {
              </div>
           </div>
 
-          <Button className="w-full mt-auto" onClick={() => window.open('https://afktrade.com.br', '_blank')}>
+          <Button className="w-full mt-auto" onClick={() => window.open('https://app.afktrade.com.br', '_blank')}>
             Garantir Minha Vaga Grátis <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>

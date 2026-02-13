@@ -41,7 +41,7 @@ export const Ecosystem = () => {
                ))}
             </ul>
             
-            <Button size="lg" variant="outline" onClick={() => window.open('https://afktrade.com', '_blank')}>
+            <Button size="lg" variant="outline" onClick={() => window.open('https://app.afktrade.com.br', '_blank')}>
                Explorar a Biblioteca <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
