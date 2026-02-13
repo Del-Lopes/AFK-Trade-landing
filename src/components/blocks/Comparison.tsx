@@ -21,7 +21,7 @@ export const Comparison = () => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative bg-white/5 border border-white/5 rounded-2xl p-8 overflow-hidden grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+          className="relative bg-white/5 border border-white/5 rounded-2xl p-8 overflow-hidden transition-all duration-500"
         >
           <div className="absolute top-0 right-0 p-4 opacity-10">
             <Activity size={100} />

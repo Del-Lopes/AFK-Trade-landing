@@ -18,7 +18,7 @@ export const Pricing = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative z-10 px-4">
         {/* Card: Standard Info (Future Price) */}
-        <div className="border border-white/10 rounded-2xl p-8 bg-white/5 flex flex-col grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+        <div className="border border-white/10 rounded-2xl p-8 bg-white/5 flex flex-col transition-all duration-300">
           <div className="mb-8">
             <h3 className="text-xl font-bold text-white mb-2">Membro AFK</h3>
             <p className="text-sm text-white">Valor padrão após o lote promocional</p>

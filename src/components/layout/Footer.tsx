@@ -12,14 +12,14 @@ export const Footer = () => {
                   AFK Trade
                </span>
             </div>
-            <p className="text-gray-400 max-w-sm">
+            <p className="text-white max-w-sm">
               Soluções de trading automatizado para o investidor moderno. Tecnologia trabalhando ao seu favor.
             </p>
           </div>
           
           <div>
             <h4 className="font-bold text-white mb-6">Produto</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
+            <ul className="space-y-4 text-sm text-white">
               <li><a href="#" className="hover:text-brand-green transition-colors">Funcionalidades</a></li>
               <li><a href="#pricing" className="hover:text-brand-green transition-colors">Preços</a></li>
             </ul>
@@ -27,7 +27,7 @@ export const Footer = () => {
           
           <div>
             <h4 className="font-bold text-white mb-6">Legal</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
+            <ul className="space-y-4 text-sm text-white">
               <li><a href="#" className="hover:text-brand-green transition-colors">Política de Privacidade</a></li>
               <li><a href="#" className="hover:text-brand-green transition-colors">Termos de Serviço</a></li>
               <li><a href="#" className="hover:text-brand-green transition-colors">Aviso de Risco</a></li>
@@ -36,10 +36,10 @@ export const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-brand-dark">
-           <p className="text-xs text-gray-500">
+           <p className="text-xs text-white">
              © {new Date().getFullYear()} AFK Trade. Todos os direitos reservados.
            </p>
-           <p className="text-xs text-gray-600 mt-2 md:mt-0">
+           <p className="text-xs text-white mt-2 md:mt-0">
              Trading envolve riscos substanciais e não é adequado para todos os investidores.
            </p>
         </div>
