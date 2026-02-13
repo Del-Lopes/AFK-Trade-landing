@@ -5,9 +5,15 @@ import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/layout/Section';
 import { Shield, TrendingUp, Users, Globe, ArrowRight, CheckCircle } from 'lucide-react';
 
+import { Helmet } from 'react-helmet-async';
+
 export const HFMPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
+      <Helmet>
+        <title>Parceria HFM | AFK Trade</title>
+        <meta name="description" content="AFK Trade e HFM: Uma parceria oficial para oferecer a melhor experiência de copy trading com execução ultra-rápida e spreads competitivos." />
+      </Helmet>
       <Navbar />
 
       <main>

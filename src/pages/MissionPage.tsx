@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet-async';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/layout/Section';
@@ -7,11 +8,16 @@ import { ArrowRight, Globe, Clock, ShieldCheck, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
+
 export const MissionPage = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
+      <Helmet>
+        <title>Nossa Missão | AFK Trade</title>
+        <meta name="description" content="Liberdade para viver. A AFK Trade nasceu para libertar você das telas e devolver seu tempo através da tecnologia de trading automatizado." />
+      </Helmet>
       <Navbar />
 
       <main>

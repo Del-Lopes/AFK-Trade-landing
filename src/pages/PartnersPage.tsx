@@ -1,13 +1,19 @@
 import { ArrowRight, CheckCircle2, DollarSign, Globe, Users, TrendingUp, ShieldCheck } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 
+
 export const PartnersPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-green/30">
+      <Helmet>
+        <title>Programa de Parceiros | AFK Trade</title>
+        <meta name="description" content="Junte-se ao programa de parceiros da AFK Trade. Comissões recorrentes, vitálicias e em dólar por indicar a melhor tecnologia de copy trading." />
+      </Helmet>
       <Navbar />
       
       <main className="pt-24 relative z-10">

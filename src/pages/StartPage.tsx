@@ -1,11 +1,13 @@
 
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
 import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 
 export const StartPage = () => {
   const [showBrokers, setShowBrokers] = useState(false);
@@ -19,6 +21,10 @@ export const StartPage = () => {
 
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans relative">
+      <Helmet>
+        <title>Comece Agora | AFK Trade</title>
+        <meta name="description" content="Siga nosso guia passo a passo para começar a automatizar seus investimentos com a AFK Trade. Escolha sua corretora e ative o copy trading." />
+      </Helmet>
       <Navbar />
 
       <main>

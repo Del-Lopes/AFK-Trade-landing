@@ -5,9 +5,15 @@ import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/layout/Section';
 import { Shield, TrendingUp, Users, Globe, ArrowRight, CheckCircle } from 'lucide-react';
 
+import { Helmet } from 'react-helmet-async';
+
 export const HantecPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
+      <Helmet>
+        <title>Parceria Hantec | AFK Trade</title>
+        <meta name="description" content="AFK Trade e Hantec Markets: Tecnologia proprietária unida à infraestrutura de uma corretora global para o melhor copy trading." />
+      </Helmet>
       <Navbar />
 
       <main>

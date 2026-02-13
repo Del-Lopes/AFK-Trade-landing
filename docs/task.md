@@ -35,7 +35,7 @@
     - [x] Affiliate Program CTA <!-- id: 28 -->
 
 ## Phase 4: Polish & Launch
-- [ ] **Optimization** <!-- id: 29 -->
-    - [ ] SEO Meta Tags (React Helmet) <!-- id: 30 -->
-    - [ ] Performance Audit (Lighthouse) <!-- id: 31 -->
-    - [ ] Mobile Responsiveness Check <!-- id: 32 -->
+- [x] **Optimization** <!-- id: 29 -->
+    - [x] SEO Meta Tags (React Helmet) <!-- id: 30 -->
+    - [x] Performance Audit (Lighthouse) <!-- id: 31 -->
+    - [x] Mobile Responsiveness Check <!-- id: 32 -->
