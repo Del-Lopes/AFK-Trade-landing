@@ -22,8 +22,8 @@ export const StartPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans relative">
       <Helmet>
-        <title>Comece Agora | AFK Trade</title>
-        <meta name="description" content="Siga nosso guia passo a passo para começar a automatizar seus investimentos com a AFK Trade. Escolha sua corretora e ative o copy trading." />
+        <title>Como Começar | AFK Trade</title>
+        <meta name="description" content="Guia passo a passo para configurar sua conta de trading automático na AFK Trade. Do registro na corretora à ativação da estratégia." />
       </Helmet>
       <Navbar />
 
