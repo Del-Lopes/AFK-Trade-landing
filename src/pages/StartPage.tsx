@@ -4,7 +4,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
-import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight, X } from 'lucide-react';
+import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const StartPage = () => {
