@@ -12,19 +12,19 @@ export const Hero = () => {
     <Section className="pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex items-center relative">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-green/10 rounded-full blur-[120px] animate-pulse-slow" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/5 rounded-full blur-[120px] animate-pulse-slow delay-1000" />
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-brand-green/20 rounded-full blur-[100px] animate-pulse-slow mix-blend-screen opacity-60" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-brand-gold/15 rounded-full blur-[100px] animate-pulse-slow delay-1000 mix-blend-screen opacity-50" />
         
-        {/* Floating Particles */}
+        {/* Floating Particles - Enhanced Visibility */}
         <motion.div 
-          animate={{ y: [-20, 20, -20], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] right-[10%] w-32 h-32 bg-brand-emerald/10 rounded-full blur-[60px]"
+          animate={{ y: [-30, 30, -30], x: [-20, 20, -20], opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[20%] right-[10%] w-40 h-40 bg-brand-emerald/30 rounded-full blur-[60px] mix-blend-screen"
         />
         <motion.div 
-          animate={{ y: [30, -30, 30], opacity: [0.2, 0.5, 0.2] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[30%] left-[5%] w-48 h-48 bg-brand-green/5 rounded-full blur-[80px]"
+          animate={{ y: [40, -40, 40], x: [30, -30, 30], opacity: [0.2, 0.6, 0.2] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-[30%] left-[5%] w-56 h-56 bg-brand-green/15 rounded-full blur-[70px] mix-blend-screen"
         />
       </div>
 
@@ -41,9 +41,9 @@ export const Hero = () => {
               <span>Segurança e Rentabilidade</span>
            </div>
            
-           <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+           <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_0_25px_rgba(34,197,94,0.4)]">
              Liberdade para <br />
-             <span className="bg-gradient-to-r from-brand-green to-brand-emerald bg-clip-text text-transparent text-glow filter drop-shadow-lg">Viver.</span>
+             <span className="bg-gradient-to-r from-brand-green via-emerald-400 to-teal-300 bg-clip-text text-transparent text-glow filter drop-shadow-[0_0_15px_rgba(34,197,94,0.5)] animate-pulse-slow relative z-10">Viver.</span>
            </h1>
            
            <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
