@@ -12,6 +12,7 @@ import { Comparison } from '@/components/blocks/Comparison';
 import { AlgoEngine } from '@/components/blocks/AlgoEngine';
 import { Pricing } from '@/components/blocks/Pricing';
 import { PlatformTour } from '@/components/blocks/PlatformTour';
+import { SparklesCore } from '@/components/ui/SparklesCore';
 
 function LandingPage() {
   return (
@@ -23,7 +24,21 @@ function LandingPage() {
       
       <Navbar />
       
-      <main>
+      {/* Background Sparkles */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={40}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+          speed={2}
+        />
+      </div>
+      
+      <main className="relative z-10">
         <Hero />
         <SocialProof />
         <Manifesto />
@@ -43,6 +58,7 @@ function LandingPage() {
 import { HFMPage } from '@/pages/HFMPage';
 import { StartPage } from '@/pages/StartPage';
 import { MissionPage } from '@/pages/MissionPage';
+import { div } from 'framer-motion/client';
 
 function App() {
   return (
