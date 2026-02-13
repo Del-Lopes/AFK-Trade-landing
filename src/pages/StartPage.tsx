@@ -8,7 +8,7 @@ import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight, X } from
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const StartPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showBrokers, setShowBrokers] = useState(false);
 
   const brokers = [
     { name: 'HFM', url: 'https://register.hfm.com/sv/en/new-live-account/?refid=30501091', logo: '/partners/HFM_Logo.webp' },
@@ -44,9 +44,41 @@ export const StartPage = () => {
               description="Trabalhamos apenas com corretoras regulamentadas e de confiança global. Escolha a que melhor se adapta às suas necessidades."
               icon={<CheckCircle2 className="w-10 h-10 text-brand-green" />}
               action={
-                <Button onClick={() => setIsModalOpen(true)} variant="outline" className="mt-4">
-                  Ver Corretoras <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <div className="flex flex-col items-end w-full">
+                    <Button onClick={() => setShowBrokers(!showBrokers)} variant="outline" className="mt-4">
+                      {showBrokers ? 'Ocultar Corretoras' : 'Ver Corretoras'} <ArrowRight className={`ml-2 w-4 h-4 transition-transform duration-300 ${showBrokers ? '-rotate-90' : 'rotate-90'}`} />
+                    </Button>
+                    
+                    <AnimatePresence>
+                        {showBrokers && (
+                            <motion.div 
+                                initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                                animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
+                                exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                                className="w-full max-w-md overflow-hidden bg-brand-dark/50 border border-white/10 rounded-xl"
+                            >
+                                <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                     {brokers.map((broker) => (
+                                      <a
+                                        key={broker.name}
+                                        href={broker.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex flex-col items-center justify-center p-4 bg-white/5 border border-white/5 rounded-lg hover:bg-white/10 hover:border-brand-green/30 transition-all group"
+                                      >
+                                        {broker.logo ? (
+                                            <img src={broker.logo} alt={broker.name} className="h-6 object-contain mb-2 grayscale group-hover:grayscale-0 transition-all opacity-70 group-hover:opacity-100" />
+                                        ) : (
+                                            <span className="text-lg font-bold text-white mb-2">{broker.name}</span>
+                                        )}
+                                        <span className="text-xs text-brand-green font-medium group-hover:underline">Abrir Conta</span>
+                                      </a>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
               }
               align="left"
             />
@@ -103,55 +135,6 @@ export const StartPage = () => {
         </Section>
       </main>
       <Footer />
-
-      {/* Broker Modal */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-            onClick={() => setIsModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-brand-dark border border-white/10 rounded-2xl p-6 w-full max-w-lg relative shadow-2xl shadow-brand-green/20"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button 
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-              >
-                <X size={24} />
-              </button>
-              
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">Escolha sua Corretora</h2>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {brokers.map((broker) => (
-                  <a
-                    key={broker.name}
-                    href={broker.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center justify-center p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-brand-green/50 transition-all group"
-                  >
-                    {broker.logo ? (
-                        <img src={broker.logo} alt={broker.name} className="h-8 object-contain mb-3 grayscale group-hover:grayscale-0 transition-all" />
-                    ) : (
-                        <span className="text-xl font-bold text-white mb-3">{broker.name}</span>
-                    )}
-                    <span className="text-sm text-brand-green font-medium group-hover:underline">Abrir Conta</span>
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
