@@ -41,7 +41,10 @@ export const Hero = () => {
            
            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_0_25px_rgba(34,197,94,0.4)]">
              Liberdade para <br />
-             <span className="text-[#22c55e] drop-shadow-[0_0_15px_rgba(34,197,94,0.8)] relative z-10">Viver.</span>
+             <span className="relative inline-block">
+                <span className="absolute inset-0 text-[#22c55e] blur-lg animate-pulse opacity-80 select-none pointer-events-none" aria-hidden="true">Viver.</span>
+                <span className="text-[#22c55e] drop-shadow-[0_0_15px_rgba(34,197,94,0.8)] relative z-10">Viver.</span>
+             </span>
            </h1>
            
            <p className="text-white text-lg max-w-lg leading-relaxed">
