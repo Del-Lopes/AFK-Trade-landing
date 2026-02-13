@@ -19,7 +19,7 @@ export const Partners = () => {
              Cresça junto com a <span className="text-brand-green">AFK Trade</span>.
           </h2>
           
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-12 max-w-2xl mx-auto">
              Ganhe comissões vitalícias e recorrentes. Ecossistema de trading automatizado com alcance global. <br /> Promova para traders em mais de 100 países.
           </p>
 
@@ -27,17 +27,17 @@ export const Partners = () => {
              <div className="bg-brand-dark/50 p-6 rounded-xl border border-white/5">
                 <DollarSign className="w-10 h-10 text-brand-green mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">Performance Fee</h3>
-                <p className="text-sm text-gray-400">Ganhe até 10% do lucro em todas as indicações.</p>
+                <p className="text-sm text-white">Ganhe até 10% do lucro em todas as indicações.</p>
              </div>
              <div className="bg-brand-dark/50 p-6 rounded-xl border border-white/5">
                 <Globe className="w-10 h-10 text-blue-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">Rebate</h3>
-                <p className="text-sm text-gray-400">Participação no lucro das corretoras.</p>
+                <p className="text-sm text-white">Participação no lucro das corretoras.</p>
              </div>
              <div className="bg-brand-dark/50 p-6 rounded-xl border border-white/5">
                 <Users className="w-10 h-10 text-brand-gold mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">Licenciatura White Label</h3>
-                <p className="text-sm text-gray-400">Participe dos lucros gerados pela venda de licenças para novos parceiros.</p>
+                <p className="text-sm text-white">Participe dos lucros gerados pela venda de licenças para novos parceiros.</p>
              </div>
           </div>
 

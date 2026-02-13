@@ -11,7 +11,7 @@ export const Pricing = () => {
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Oferta de <span className="text-brand-green">Lançamento</span>
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-white text-lg max-w-2xl mx-auto">
           Garanta seu acesso vitalício ou antecipado. Condição exclusiva para os membros fundadores.
         </p>
       </div>
@@ -21,12 +21,12 @@ export const Pricing = () => {
         <div className="border border-white/10 rounded-2xl p-8 bg-white/5 flex flex-col grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
           <div className="mb-8">
             <h3 className="text-xl font-bold text-white mb-2">Membro AFK</h3>
-            <p className="text-sm text-gray-400">Valor padrão após o lote promocional</p>
+            <p className="text-sm text-white">Valor padrão após o lote promocional</p>
           </div>
           
           <div className="mb-8">
             <span className="text-4xl font-bold text-white">R$ 97</span>
-            <span className="text-gray-500">/ano</span>
+            <span className="text-white">/ano</span>
           </div>
 
           <ul className="space-y-4 mb-8 flex-1">
@@ -54,7 +54,7 @@ export const Pricing = () => {
           
           <div className="mb-8">
             <span className="text-4xl font-bold text-white">R$ 0</span>
-            <span className="text-gray-500">/vitalício*</span>
+            <span className="text-white">/vitalício*</span>
           </div>
 
           <ul className="space-y-4 mb-8 flex-1">
@@ -85,8 +85,8 @@ export const Pricing = () => {
 
 const ListItem = ({ children, active, negative }: { children: React.ReactNode; active?: boolean; negative?: boolean }) => {
   return (
-    <li className={`flex items-start gap-3 text-sm ${active ? 'text-white' : 'text-gray-400'}`}>
-      <div className={`mt-0.5 rounded-full p-0.5 ${active ? 'bg-brand-green text-brand-dark' : negative ? 'bg-red-500/20 text-red-500' : 'bg-gray-800 text-gray-400'}`}>
+    <li className={`flex items-start gap-3 text-sm ${active ? 'text-white' : 'text-white'}`}>
+      <div className={`mt-0.5 rounded-full p-0.5 ${active ? 'bg-brand-green text-brand-dark' : negative ? 'bg-red-500/20 text-red-500' : 'bg-white/10 text-white'}`}>
         {negative ? <X size={12} /> : <Check size={12} />}
       </div>
       <span className={negative ? 'opacity-70' : ''}>{children}</span>

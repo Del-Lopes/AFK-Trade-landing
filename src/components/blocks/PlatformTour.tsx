@@ -47,9 +47,9 @@ export const PlatformTour = () => {
             Por dentro da Plataforma
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Controle total. <span className="text-gray-500">Zero complexidade.</span>
+            Controle total. <span className="text-white">Zero complexidade.</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-white text-lg max-w-2xl mx-auto">
             Uma área de membros desenhada para te dar autonomia. Tudo que você precisa em um único login.
           </p>
         </div>
@@ -68,7 +68,7 @@ export const PlatformTour = () => {
                 {module.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{module.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-white text-sm leading-relaxed">
                 {module.description}
               </p>
             </motion.div>

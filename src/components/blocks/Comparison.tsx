@@ -10,7 +10,7 @@ export const Comparison = () => {
         <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
           A Evolução do Trader
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-white text-lg max-w-2xl mx-auto">
           A diferença entre trabalhar para o mercado e fazer o mercado trabalhar para você.
         </p>
       </div>
@@ -78,13 +78,13 @@ const ListItem = ({ icon, text, good = false, bad = false }: { icon: React.React
       "p-2 rounded-lg",
       good && "bg-brand-green/10 text-brand-green",
       bad && "bg-red-500/10 text-red-400",
-      !good && !bad && "bg-white/5 text-gray-400"
+      !good && !bad && "bg-white/5 text-white"
     )}>
       {icon}
     </div>
     <span className={clsx(
       "text-lg",
-      good ? "text-white font-medium" : "text-gray-400"
+      good ? "text-white font-medium" : "text-white"
     )}>{text}</span>
   </li>
 );

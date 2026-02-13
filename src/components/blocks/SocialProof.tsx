@@ -12,7 +12,7 @@ export const SocialProof = () => {
   return (
     <Section className="py-10 border-y border-white/5 bg-white/2">
       <div className="text-center mb-8">
-        <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">PRESENTE NAS PRINCIPAIS CORRETORAS</p>
+        <p className="text-sm font-medium text-white uppercase tracking-widest">PRESENTE NAS PRINCIPAIS CORRETORAS</p>
       </div>
 
       <div className="relative flex overflow-hidden mask-gradient">
@@ -39,7 +39,7 @@ export const SocialProof = () => {
                 key={`${logo.name}-2-${idx}`} 
                 className={`flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                <span className="text-2xl font-bold text-gray-400 whitespace-nowrap hover:text-white transition-colors">{logo.name}</span>
+                <span className="text-2xl font-bold text-white whitespace-nowrap hover:text-white transition-colors">{logo.name}</span>
               </a>
             ))}
           </div>

@@ -30,10 +30,10 @@ export const Manifesto = () => {
           
           <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
             Você não nasceu para viver <br />
-            <span className="text-gray-500">na frente de uma tela.</span>
+            <span className="text-white">na frente de uma tela.</span>
           </h2>
 
-          <div className="space-y-6 text-xl text-gray-400 leading-relaxed font-light">
+          <div className="space-y-6 text-xl text-white leading-relaxed font-light">
             <p>
               O mercado financeiro foi desenhado para consumir duas coisas: seu dinheiro ou seu tempo.
               Se você opera manualmente, você está pagando com sua vida.
