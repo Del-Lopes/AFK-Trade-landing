@@ -58,7 +58,7 @@ function LandingPage() {
 import { HFMPage } from '@/pages/HFMPage';
 import { StartPage } from '@/pages/StartPage';
 import { MissionPage } from '@/pages/MissionPage';
-import { div } from 'framer-motion/client';
+
 
 function App() {
   return (
