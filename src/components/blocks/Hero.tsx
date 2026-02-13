@@ -11,10 +11,8 @@ export const Hero = () => {
   return (
     <Section className="pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex items-center relative">
       {/* Background Gradients */}
+      {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-brand-green/20 rounded-full blur-[100px] animate-pulse-slow mix-blend-screen opacity-60" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-brand-gold/15 rounded-full blur-[100px] animate-pulse-slow delay-1000 mix-blend-screen opacity-50" />
-        
         {/* Floating Particles - Enhanced Visibility */}
         <motion.div 
           animate={{ y: [-30, 30, -30], x: [-20, 20, -20], opacity: [0.3, 0.7, 0.3] }}
