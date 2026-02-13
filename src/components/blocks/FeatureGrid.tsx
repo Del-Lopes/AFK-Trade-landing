@@ -59,9 +59,10 @@ export const FeatureGrid = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: idx * 0.1 }}
-             className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-green/30 transition-all duration-300 group hover:shadow-lg hover:shadow-brand-green/5"
+             className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.15)] relative overflow-hidden"
            >
-              <div className="w-14 h-14 rounded-xl bg-brand-dark border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="w-14 h-14 rounded-xl bg-brand-dark border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-green/50 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300 relative z-10">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
