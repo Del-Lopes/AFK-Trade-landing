@@ -40,7 +40,7 @@ export const HantecPage = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="#" 
+                href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-brand-green text-brand-dark font-bold hover:bg-brand-green/90 transition-colors"
@@ -99,7 +99,7 @@ export const HantecPage = () => {
             </p>
             <div className="flex justify-center mb-12">
                <a href="https://www.hfm.com/sv/pt/copy-trading?refid=30501091" target="_blank" rel="noopener noreferrer">
-                 <img src="/partners/HFM_Copy_Trading.webp" alt="HF Copy Trading" className="rounded-xl border border-white/10 shadow-2xl max-w-full md:max-w-3xl hover:opacity-95 transition-opacity" />
+                 <img src="/partners/hantec_copy.webp" alt="Hantec Copy Trading" className="rounded-xl border border-white/10 shadow-2xl max-w-full md:max-w-3xl hover:opacity-95 transition-opacity" />
                </a>
             </div>
           </div>
