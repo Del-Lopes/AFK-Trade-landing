@@ -138,11 +138,10 @@ export const HantecPage = () => {
                 </a>
              </div>
           </div>
-
-          
-<div className="flex justify-center mb-12">
+        
+          <div className="flex justify-center mt-12">
                <a href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" target="_blank" rel="noopener noreferrer">
-                 <img src="/partners/hantec_banner.webp" alt="Hantec Banner" className="rounded-xl border border-white/10 shadow-2xl max-w-full md:max-w-3xl hover:opacity-95 transition-opacity" />
+                 <img src="/partners/hantec_banner.webp" alt="Hantec Banner" className="max-w-full h-auto" />
                </a>
             </div>
         </Section>
