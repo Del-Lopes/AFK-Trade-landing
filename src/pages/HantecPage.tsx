@@ -26,8 +26,8 @@ export const HantecPage = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
-              AFK Trade <span className="text-gray-500 mx-2">×</span> 
-              <span className="text-white">Hantec Markets</span>
+              <img src="/images/logo-icon.png" alt="AFK Trade" className="h-12 md:h-20 w-auto object-contain" /> <span className="text-gray-500 mx-2">×</span> 
+              <img src="/partners/logohantec.webp" alt="Hantec Markets" className="h-12 md:h-16 w-auto object-contain bg-white/10 rounded-lg p-2" />
             </h1>
             
             <p className="text-xl text-gray-400 max-w-2xl mb-10">
@@ -71,8 +71,8 @@ export const HantecPage = () => {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-brand-dark/50 p-8">
                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -z-10" />
                <div className="flex flex-col items-center justify-center text-center space-y-6">
-                  <div className="w-32 h-32 mb-4 flex items-center justify-center bg-white/5 rounded-full">
-                     <span className="text-3xl font-bold text-white">H</span>
+                  <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-white/10">
+                     <img src="/partners/logohantecredondo.webp" alt="Hantec" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
                   <p className="text-gray-400">
@@ -87,6 +87,13 @@ export const HantecPage = () => {
         <Section>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Copy Trading Simplificado</h2>
+            
+            <div className="flex justify-center mb-10">
+                <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_blank" rel="noopener noreferrer">
+                    <img src="https://banners.hmarkets.com/banners/244/hmarkets244.jpg" width="1080" height="1080" className="max-w-full h-auto rounded-xl shadow-lg w-[400px]" alt="Hantec Copy Trading Banner" />
+                </a>
+            </div>
+
             <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
               Copie automaticamente as operações dos nossos algoritmos diretamente na sua conta Hantec.
             </p>
@@ -117,7 +124,7 @@ export const HantecPage = () => {
                    <p className="text-gray-400">Abra sua conta na Hantec e conecte-se às estratégias da AFK Trade hoje mesmo.</p>
                 </div>
                 <a 
-                  href="#" 
+                  href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-8 py-3 rounded-lg bg-white text-brand-dark font-bold hover:bg-gray-100 transition-colors whitespace-nowrap"
@@ -125,6 +132,12 @@ export const HantecPage = () => {
                   Abrir Conta Hantec
                 </a>
              </div>
+          </div>
+
+          <div className="flex justify-center mt-12">
+             <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_blank" rel="noopener noreferrer">
+                <img src="https://banners.hmarkets.com/banners/252/hmarkets252.jpg" width="728" height="90" className="max-w-full h-auto" alt="Hantec Banner" />
+             </a>
           </div>
         </Section>
 
