@@ -96,7 +96,7 @@ export const HantecPage = () => {
             
             <div className="flex justify-center mb-10 w-full">
                 <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_blank" rel="noopener noreferrer" className="block max-w-full">
-                    <img src="https://banners.hmarkets.com/banners/244/hmarkets244.jpg" width="1080" height="1080" className="max-w-[400px] w-full h-auto rounded-xl shadow-lg mx-auto" alt="Hantec Copy Trading Banner" />
+                    <img src="https://banners.hmarkets.com/banners/244/hmarkets244.jpg" width="1080" height="1080" referrerPolicy="no-referrer" className="max-w-[400px] w-full h-auto rounded-xl shadow-lg mx-auto" alt="Hantec Copy Trading Banner" />
                 </a>
             </div>
 
@@ -142,7 +142,7 @@ export const HantecPage = () => {
 
           <div className="flex justify-center mt-12 w-full">
              <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_blank" rel="noopener noreferrer" className="block max-w-full">
-                <img src="https://banners.hmarkets.com/banners/252/hmarkets252.jpg" width="728" height="90" className="max-w-full h-auto mx-auto" alt="Hantec Banner" />
+                <img src="https://banners.hmarkets.com/banners/252/hmarkets252.jpg" width="728" height="90" referrerPolicy="no-referrer" className="max-w-full h-auto mx-auto" alt="Hantec Banner" />
              </a>
           </div>
         </Section>
