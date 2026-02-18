@@ -31,7 +31,7 @@ export const HantecPage = () => {
                 <span>AFK Trade</span>
               </div>
               <span className="text-gray-500 mx-2">×</span> 
-              <img src="/partners/logohantec.webp" alt="Hantec Logo" className="h-12 md:h-20 object-contain" />
+              <img src="/partners/hantec_logo.webp" alt="Hantec Logo" className="h-12 md:h-20 object-contain" />
             </h1>
             
             <p className="text-xl text-gray-400 max-w-2xl mb-10">
@@ -139,9 +139,10 @@ export const HantecPage = () => {
              </div>
           </div>
 
-          <div className="flex justify-center mt-12 w-full">
-             <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_blank" rel="noopener noreferrer" className="block max-w-full">
-                <img src="https://banners.hmarkets.com/banners/252/hmarkets252.jpg" width="728" height="90" referrerPolicy="no-referrer" className="max-w-full h-auto mx-auto" alt="Hantec Banner" />
+          
+          <div className="flex justify-center mt-12">
+             <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_top">
+                <img src="https://banners.hmarkets.com/banners/252/hmarkets252.jpg" width="728" height="90" alt="Hantec Banner" className="max-w-full h-auto" />
              </a>
           </div>
         </Section>
