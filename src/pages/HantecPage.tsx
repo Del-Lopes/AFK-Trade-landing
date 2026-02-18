@@ -98,7 +98,7 @@ export const HantecPage = () => {
               Copie automaticamente as operações dos nossos algoritmos diretamente na sua conta Hantec.
             </p>
             <div className="flex justify-center mb-12">
-               <a href="https://www.hfm.com/sv/pt/copy-trading?refid=30501091" target="_blank" rel="noopener noreferrer">
+               <a href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" target="_blank" rel="noopener noreferrer">
                  <img src="/partners/hantec_copy.webp" alt="Hantec Copy Trading" className="rounded-xl border border-white/10 shadow-2xl max-w-full md:max-w-3xl hover:opacity-95 transition-opacity" />
                </a>
             </div>
@@ -140,11 +140,11 @@ export const HantecPage = () => {
           </div>
 
           
-          <div className="flex justify-center mt-12">
-             <a href="https://hmarkets.com/live-account-pre-registration/?cmp=0h1j9a8a&refid=15990" target="_top">
-                <img src="https://banners.hmarkets.com/banners/252/hmarkets252.jpg" width="728" height="90" alt="Hantec Banner" className="max-w-full h-auto" />
-             </a>
-          </div>
+<div className="flex justify-center mb-12">
+               <a href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" target="_blank" rel="noopener noreferrer">
+                 <img src="/partners/hantec_banner.webp" alt="Hantec Banner" className="rounded-xl border border-white/10 shadow-2xl max-w-full md:max-w-3xl hover:opacity-95 transition-opacity" />
+               </a>
+            </div>
         </Section>
 
       </main>
