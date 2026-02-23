@@ -53,7 +53,7 @@ export const Hero = () => {
 
            <div className="flex flex-col sm:flex-row gap-4">
              <Button size="lg" onClick={() => navigate('/start')}>
-               Começar a Automatizar <ArrowRight className="ml-2 w-5 h-5" />
+               Ver como é simples <ArrowRight className="ml-2 w-5 h-5" />
              </Button>
            </div>
            
