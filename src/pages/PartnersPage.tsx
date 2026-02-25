@@ -5,9 +5,13 @@ import { Button } from '@/components/ui/Button';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { PartnerFormModal } from '@/components/partners/PartnerFormModal';
 
 
 export const PartnersPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-green/30">
       <Helmet>
@@ -43,7 +47,7 @@ export const PartnersPage = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" onClick={() => window.open('https://wa.me/5541998593409?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20um%20parceiro%20AFK%20Trade', '_blank')}>
+                <Button size="lg" onClick={() => setIsModalOpen(true)}>
                   Torne-se um Parceiro <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
@@ -76,7 +80,7 @@ export const PartnersPage = () => {
               title="Retenção Máxima"
               description="Como nossos clientes lucram sem esforço, eles permanecem na plataforma por muito mais tempo (LTV alto)."
             />
-             <BenefitCard 
+            <BenefitCard 
               icon={<TrendingUp className="w-10 h-10 text-purple-400" />}
               title="Rebate de Corretagem"
               description="Além da performance, ganhe parte das taxas de corretagem (spread/comissões) geradas pelo volume de negociação."
@@ -181,12 +185,17 @@ export const PartnersPage = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Button size="lg" onClick={() => window.open('https://wa.me/5541998593409?text=Ol%C3%A1%2C%20quero%20me%20cadastrar%20como%20parceiro%20AFK', '_blank')}>
+            <Button size="lg" onClick={() => setIsModalOpen(true)}>
                 Quero ser Parceiro <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
         </Section>
       </main>
+
+      <PartnerFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
 
       <Footer />
     </div>
