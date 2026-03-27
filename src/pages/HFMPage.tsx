@@ -11,8 +11,8 @@ export const HFMPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Parceria HFM | AFK Trade</title>
-        <meta name="description" content="AFK Trade e HFM: Uma parceria oficial para oferecer a melhor experiência de copy trading com execução ultra-rápida e spreads competitivos." />
+        <title>Parceria HFM | Trader AFK</title>
+        <meta name="description" content="Trader AFK e HFM: Uma parceria oficial para oferecer a melhor experiência de copy trading com execução ultra-rápida e spreads competitivos." />
       </Helmet>
       <Navbar />
 
@@ -26,7 +26,7 @@ export const HFMPage = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
-              AFK Trade <span className="text-gray-500 mx-2">×</span> 
+              Trader AFK <span className="text-gray-500 mx-2">×</span> 
               <img src="/partners/HFM_Logo.webp" alt="HFM" className="h-12 md:h-20 object-contain" />
             </h1>
             
@@ -76,7 +76,7 @@ export const HFMPage = () => {
                   </div>
                   <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
                   <p className="text-gray-400">
-                    A AFK Trade utiliza a infraestrutura HFcopy para distribuir suas estratégias de forma transparente e segura.
+                    A Trader AFK utiliza a infraestrutura HFcopy para distribuir suas estratégias de forma transparente e segura.
                   </p>
                </div>
             </div>
@@ -102,7 +102,7 @@ export const HFMPage = () => {
             <Card 
               icon={<Users className="w-8 h-8 text-brand-green" />}
               title="Para Seguidores"
-              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a AFK Trade e replique nossos resultados."
+              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a Trader AFK e replique nossos resultados."
             />
             <Card 
               icon={<TrendingUp className="w-8 h-8 text-brand-green" />}
@@ -120,7 +120,7 @@ export const HFMPage = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                    <h3 className="text-2xl font-bold mb-2">Pronto para começar?</h3>
-                   <p className="text-gray-400">Abra sua conta na HFM e conecte-se às estratégias da AFK Trade hoje mesmo.</p>
+                   <p className="text-gray-400">Abra sua conta na HFM e conecte-se às estratégias da Trader AFK hoje mesmo.</p>
                 </div>
                 <a 
                   href="https://register.hfm.com/sv/en/new-live-account/?refid=30501091" 

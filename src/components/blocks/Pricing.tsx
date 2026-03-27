@@ -20,7 +20,7 @@ export const Pricing = () => {
         {/* Card: Standard Info (Future Price) */}
         <div className="border border-white/10 rounded-2xl p-8 bg-white/5 flex flex-col transition-all duration-300">
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Membro AFK</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Membro Trader AFK</h3>
             <p className="text-sm text-white">Valor padrão após o lote promocional</p>
           </div>
           
@@ -74,7 +74,7 @@ export const Pricing = () => {
              </div>
           </div>
 
-          <Button className="w-full mt-auto" onClick={() => window.open('https://app.afktrade.com.br', '_blank')}>
+          <Button className="w-full mt-auto" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
             Garantir Minha Vaga Grátis <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>

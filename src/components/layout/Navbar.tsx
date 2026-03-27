@@ -33,8 +33,8 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-             <img src="/images/logo-icon.png" alt="AFK Trade Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
-             <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-green transition-colors">AFK Trade</span>
+             <img src="/images/logo-icon.png" alt="Trader AFK Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
+             <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-green transition-colors">Trader AFK</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -52,7 +52,7 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" onClick={() => window.open('https://app.afktrade.com.br', '_blank')}>
+            <Button size="sm" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
               Acessar <ExternalLink size={14} className="ml-2" />
             </Button>
           </div>
@@ -78,8 +78,8 @@ export const Navbar = () => {
           >
             <div className="flex flex-col space-y-6 pt-20 px-6">
               <div className="flex items-center gap-2 mb-4">
-                  <img src="/images/logo-icon.png" alt="AFK Trade" className="h-8 w-auto" /> 
-                  <span className="text-xl font-bold text-white">AFK Trade</span>
+                  <img src="/images/logo-icon.png" alt="Trader AFK" className="h-8 w-auto" /> 
+                  <span className="text-xl font-bold text-white">Trader AFK</span>
               </div>
               {navLinks.map((link) => (
                 <a
@@ -92,10 +92,10 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="h-px bg-white/10 w-full my-4" />
-              <Button size="lg" className="w-full" onClick={() => window.open('https://app.afktrade.com/register', '_blank')}>
+              <Button size="lg" className="w-full" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
                 Criar Conta
               </Button>
-               <a href="https://app.afktrade.com/login" className="text-lg text-gray-400 hover:text-white py-2">
+               <a href="https://app.traderafk.com/login" className="text-lg text-gray-400 hover:text-white py-2">
                   Acessar Área de Membros
               </a>
             </div>

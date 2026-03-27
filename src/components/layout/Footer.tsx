@@ -7,9 +7,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-               <img src="/images/logo-icon.png" alt="AFK Trade Logo" className="h-8 w-auto" />
+               <img src="/images/logo-icon.png" alt="Trader AFK Logo" className="h-8 w-auto" />
                <span className="text-2xl font-bold text-white tracking-tight">
-                  AFK Trade
+                  Trader AFK
                </span>
             </div>
             <p className="text-white max-w-sm">
@@ -37,7 +37,7 @@ export const Footer = () => {
         
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-brand-dark">
            <p className="text-xs text-white">
-             © {new Date().getFullYear()} AFK Trade. Todos os direitos reservados.
+             © {new Date().getFullYear()} Trader AFK. Todos os direitos reservados.
            </p>
            <p className="text-xs text-white mt-2 md:mt-0">
              Trading envolve riscos substanciais e não é adequado para todos os investidores.

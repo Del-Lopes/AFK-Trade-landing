@@ -11,8 +11,8 @@ export const HantecPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Parceria Hantec | AFK Trade</title>
-        <meta name="description" content="AFK Trade e Hantec Markets: Tecnologia proprietária unida à infraestrutura de uma corretora global para o melhor copy trading." />
+        <title>Parceria Hantec | Trader AFK</title>
+        <meta name="description" content="Trader AFK e Hantec Markets: Tecnologia proprietária unida à infraestrutura de uma corretora global para o melhor copy trading." />
       </Helmet>
       <Navbar />
 
@@ -27,8 +27,8 @@ export const HantecPage = () => {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
               <div className="flex items-center gap-3">
-                <img src="/images/logo-icon.png" alt="AFK Trade" className="h-12 md:h-20 w-auto object-contain" />
-                <span>AFK Trade</span>
+                <img src="/images/logo-icon.png" alt="Trader AFK" className="h-12 md:h-20 w-auto object-contain" />
+                <span>Trader AFK</span>
               </div>
               <span className="text-gray-500 mx-2">×</span> 
               <img src="/partners/hantec_logo.webp" alt="Hantec Logo" className="h-12 md:h-20 object-contain" />
@@ -80,7 +80,7 @@ export const HantecPage = () => {
                   </div>
                   <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
                   <p className="text-gray-400">
-                    A AFK Trade utiliza a tecnologia da Hantec para conectar nossos sistemas ao mercado global.
+                    A Trader AFK utiliza a tecnologia da Hantec para conectar nossos sistemas ao mercado global.
                   </p>
                </div>
             </div>
@@ -108,7 +108,7 @@ export const HantecPage = () => {
             <Card 
               icon={<Users className="w-8 h-8 text-brand-green" />}
               title="Para Seguidores"
-              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a AFK Trade e replique nossos resultados."
+              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a Trader AFK e replique nossos resultados."
             />
             <Card 
               icon={<TrendingUp className="w-8 h-8 text-brand-green" />}
@@ -126,7 +126,7 @@ export const HantecPage = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                    <h3 className="text-2xl font-bold mb-2">Pronto para começar?</h3>
-                   <p className="text-gray-400">Abra sua conta na Hantec e conecte-se às estratégias da AFK Trade hoje mesmo.</p>
+                   <p className="text-gray-400">Abra sua conta na Hantec e conecte-se às estratégias da Trader AFK hoje mesmo.</p>
                 </div>
                 <a 
                   href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" 

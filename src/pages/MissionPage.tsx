@@ -15,8 +15,8 @@ export const MissionPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Nossa Missão | AFK Trade</title>
-        <meta name="description" content="Liberdade para viver. A AFK Trade nasceu para libertar você das telas e devolver seu tempo através da tecnologia de trading automatizado." />
+        <title>Nossa Missão | Trader AFK</title>
+        <meta name="description" content="Liberdade para viver. A Trader AFK nasceu para libertar você das telas e devolver seu tempo através da tecnologia de trading automatizado." />
       </Helmet>
       <Navbar />
 

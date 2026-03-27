@@ -18,13 +18,13 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>AFK Trade | Inteligência Artificial no Trading</title>
-        <meta name="description" content="Automatize seus investimentos com a AFK Trade. Copie estratégias vencedoras de forma 100% automática e segura nas melhores corretoras do mundo." />
-        <meta property="og:title" content="AFK Trade | Inteligência Artificial no Trading" />
+        <title>Trader AFK | Inteligência Artificial no Trading</title>
+        <meta name="description" content="Automatize seus investimentos com a Trader AFK. Copie estratégias vencedoras de forma 100% automática e segura nas melhores corretoras do mundo." />
+        <meta property="og:title" content="Trader AFK | Inteligência Artificial no Trading" />
         <meta property="og:description" content="Automatize seus lucros com tecnologia de ponta. Copie os melhores traders globalmente de forma automática." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://afktrade.com.br" />
-        <meta property="og:image" content="https://afktrade.com.br/images/og-image.png" />
+        <meta property="og:url" content="https://traderafk.com" />
+        <meta property="og:image" content="https://traderafk.com/images/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       

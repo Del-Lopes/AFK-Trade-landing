@@ -18,7 +18,7 @@ export const Partners = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-             Cresça junto com a <span className="text-brand-green">AFK Trade</span>.
+             Cresça junto com a <span className="text-brand-green">Trader AFK</span>.
           </h2>
           
           <p className="text-lg text-white mb-12 max-w-2xl mx-auto">

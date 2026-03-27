@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://afktrade.com.br/sitemap.xml
+Sitemap: https://traderafk.com/sitemap.xml

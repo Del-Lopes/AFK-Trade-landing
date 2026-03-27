@@ -11,8 +11,8 @@ export const VantagePage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Parceria Vantage | AFK Trade</title>
-        <meta name="description" content="AFK Trade e Vantage Markets: Infraestrutura ECN ultra-rápida e transparente para maximizar o desempenho das suas estratégias automatizadas." />
+        <title>Parceria Vantage | Trader AFK</title>
+        <meta name="description" content="Trader AFK e Vantage Markets: Infraestrutura ECN ultra-rápida e transparente para maximizar o desempenho das suas estratégias automatizadas." />
       </Helmet>
       <Navbar />
 
@@ -26,7 +26,7 @@ export const VantagePage = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
-              AFK Trade <span className="text-gray-500 mx-2">×</span> 
+              Trader AFK <span className="text-gray-500 mx-2">×</span> 
               <span className="text-white">Vantage Markets</span>
             </h1>
             
@@ -76,7 +76,7 @@ export const VantagePage = () => {
                   </div>
                   <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
                   <p className="text-gray-400">
-                    A AFK Trade utiliza a infraestrutura de ponta da Vantage para executar estratégias de alta performance.
+                    A Trader AFK utiliza a infraestrutura de ponta da Vantage para executar estratégias de alta performance.
                   </p>
                </div>
             </div>
@@ -96,7 +96,7 @@ export const VantagePage = () => {
             <Card 
               icon={<Users className="w-8 h-8 text-brand-green" />}
               title="Para Seguidores"
-              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a AFK Trade e replique nossos resultados."
+              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a Trader AFK e replique nossos resultados."
             />
             <Card 
               icon={<TrendingUp className="w-8 h-8 text-brand-green" />}
@@ -114,7 +114,7 @@ export const VantagePage = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                    <h3 className="text-2xl font-bold mb-2">Pronto para começar?</h3>
-                   <p className="text-gray-400">Abra sua conta na Vantage e conecte-se às estratégias da AFK Trade hoje mesmo.</p>
+                   <p className="text-gray-400">Abra sua conta na Vantage e conecte-se às estratégias da Trader AFK hoje mesmo.</p>
                 </div>
                 <a 
                   href="#" 

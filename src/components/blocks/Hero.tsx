@@ -86,7 +86,7 @@ export const Hero = () => {
               <div className="h-full w-full bg-slate-900 rounded-xl overflow-hidden relative border border-white/5 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700">
                  <img 
                     src="/images/hero-dashboard.png" 
-                    alt="AFK Dashboard Interface" 
+                    alt="Trader AFK Dashboard Interface" 
                     className="w-full h-full object-cover opacity-90"
                  />
                  

@@ -39,8 +39,8 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
 
     try {
       // Usando Formspree (endpoint deve ser configurado pelo usuário ou usar o e-mail diretamente como fallback)
-      // Para este projeto, o envio será para contato@afktrade.com.br
-      const response = await fetch('https://formspree.io/f/contact@afktrade.com.br', {
+      // Para este projeto, o envio será para contato@traderafk.com
+      const response = await fetch('https://formspree.io/f/contact@traderafk.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

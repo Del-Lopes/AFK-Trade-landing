@@ -15,8 +15,8 @@ export const PartnersPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-green/30">
       <Helmet>
-        <title>Programa de Parceiros | AFK Trade</title>
-        <meta name="description" content="Junte-se ao programa de parceiros da AFK Trade. Comissões recorrentes, vitálicias e em dólar por indicar a melhor tecnologia de copy trading." />
+        <title>Programa de Parceiros | Trader AFK</title>
+        <meta name="description" content="Junte-se ao programa de parceiros da Trader AFK. Comissões recorrentes, vitálicias e em dólar por indicar a melhor tecnologia de copy trading." />
       </Helmet>
       <Navbar />
       

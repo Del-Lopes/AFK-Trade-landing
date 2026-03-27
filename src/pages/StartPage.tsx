@@ -22,8 +22,8 @@ export const StartPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans relative">
       <Helmet>
-        <title>Como Começar | AFK Trade</title>
-        <meta name="description" content="Guia passo a passo para configurar sua conta de trading automático na AFK Trade. Do registro na corretora à ativação da estratégia." />
+        <title>Como Começar | Trader AFK</title>
+        <meta name="description" content="Guia passo a passo para configurar sua conta de trading automático na Trader AFK. Do registro na corretora à ativação da estratégia." />
       </Helmet>
       <Navbar />
 
@@ -133,8 +133,8 @@ export const StartPage = () => {
                 <p className="text-gray-400 mb-6">
                    Cadastre-se gratuitamente no nosso App e tenha acesso ao passo a passo detalhado em vídeo para cada etapa do processo.
                 </p>
-                <Button onClick={() => window.open('https://app.afktrade.com.br', '_blank')} variant="secondary">
-                   Acessar App AFK
+                <Button onClick={() => window.open('https://app.traderafk.com', '_blank')} variant="secondary">
+                   Acessar App Trader AFK
                 </Button>
              </div>
           </div>

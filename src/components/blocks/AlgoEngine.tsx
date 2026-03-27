@@ -25,7 +25,7 @@ export const AlgoEngine = () => {
             <div className="flex justify-center mb-2">
               <img src="/images/logo-icon.png" alt="Core" className="w-10 h-10 opacity-80" />
             </div>
-            <span className="text-brand-green font-bold text-lg tracking-wider">AFK DASHBOARD</span>
+            <span className="text-brand-green font-bold text-lg tracking-wider">TRADER AFK</span>
             <div className="text-[10px] text-white mt-1 font-mono uppercase font-medium">RENDA PASSIVA</div>
           </div>
           

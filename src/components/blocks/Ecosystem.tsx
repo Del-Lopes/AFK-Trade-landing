@@ -13,7 +13,7 @@ export const Ecosystem = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-brand-gold text-sm font-medium mb-6">
                <BookOpen size={16} />
-               <span>Biblioteca AFK</span>
+               <span>Biblioteca Trader AFK</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -41,7 +41,7 @@ export const Ecosystem = () => {
                ))}
             </ul>
             
-            <Button size="lg" variant="outline" onClick={() => window.open('https://app.afktrade.com.br', '_blank')}>
+            <Button size="lg" variant="outline" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
                Explorar a Biblioteca <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -76,7 +76,7 @@ export const Ecosystem = () => {
                      <div className="flex items-center gap-2 text-xs text-white/70">
                         <span>5 min leitura</span>
                         <span>•</span>
-                        <span>Por Time AFK</span>
+                        <span>Por Time Trader AFK</span>
                      </div>
                   </motion.div>
 
