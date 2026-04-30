@@ -4,32 +4,43 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/blocks/Hero';
 import { SocialProof } from '@/components/blocks/SocialProof';
-import { FeatureGrid } from '@/components/blocks/FeatureGrid';
-import { Ecosystem } from '@/components/blocks/Ecosystem';
-import { Partners } from '@/components/blocks/Partners';
 import { Manifesto } from '@/components/blocks/Manifesto';
-import { Comparison } from '@/components/blocks/Comparison';
+import { Robots } from '@/components/blocks/Robots';
 import { AlgoEngine } from '@/components/blocks/AlgoEngine';
+import { Licensing } from '@/components/blocks/Licensing';
+import { Onboarding } from '@/components/blocks/Onboarding';
+import { Ecosystem } from '@/components/blocks/Ecosystem';
+import { Downloads } from '@/components/blocks/Downloads';
+import { Partners } from '@/components/blocks/Partners';
+import { Profiles } from '@/components/blocks/Profiles';
 import { Pricing } from '@/components/blocks/Pricing';
-import { PlatformTour } from '@/components/blocks/PlatformTour';
+import { FAQ } from '@/components/blocks/FAQ';
+import { FinalCTA } from '@/components/blocks/FinalCTA';
+import { Comparison } from '@/components/blocks/Comparison';
+import { FeatureGrid } from '@/components/blocks/FeatureGrid';
 import { SparklesCore } from '@/components/ui/SparklesCore';
 
 function LandingPage() {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Trader AFK | Inteligência Artificial no Trading</title>
-        <meta name="description" content="Automatize seus investimentos com a Trader AFK. Copie estratégias vencedoras de forma 100% automática e segura nas melhores corretoras do mundo." />
-        <meta property="og:title" content="Trader AFK | Inteligência Artificial no Trading" />
-        <meta property="og:description" content="Automatize seus lucros com tecnologia de ponta. Copie os melhores traders globalmente de forma automática." />
+        <title>Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex e MT5</title>
+        <meta name="description" content="Plataforma SaaS completa para trading automatizado. Robôs forex (Expert Advisors), licenças MT5, cursos, análises de mercado e programa de parceiros. Opere 24/7 no piloto automático." />
+        <meta name="keywords" content="robô forex, trading automatizado brasil, MetaTrader 5 robô, expert advisor MT5, robô de trading, trading algorítmico, renda passiva forex, AFK Trader, Trader AFK" />
+        <meta property="og:title" content="Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex" />
+        <meta property="og:description" content="Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma. Opere 24/7 no piloto automático." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://traderafk.com" />
         <meta property="og:image" content="https://traderafk.com/images/og-image.png" />
+        <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trader AFK | Trading Algorítmico com Robôs Forex" />
+        <meta name="twitter:description" content="Opere no piloto automático com os melhores Expert Advisors para MetaTrader 5." />
+        <link rel="canonical" href="https://traderafk.com" />
       </Helmet>
-      
+
       <Navbar />
-      
+
       {/* Background Sparkles */}
       <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
         <SparklesCore
@@ -43,19 +54,57 @@ function LandingPage() {
           speed={2}
         />
       </div>
-      
+
       <main className="relative z-10">
+        {/* 1. Hero */}
         <Hero />
+
+        {/* 2. Social Proof (logos + stats + depoimentos) */}
         <SocialProof />
+
+        {/* 3. Manifesto / Filosofia */}
         <Manifesto />
-        <AlgoEngine />
+
+        {/* 4. Comparativo Manual vs Automatizado */}
         <Comparison />
-        <FeatureGrid />
-        <PlatformTour />
+
+        {/* 5. Robôs / Expert Advisors */}
+        <Robots />
+
+        {/* 6. Ecossistema visual / AlgoEngine */}
+        <AlgoEngine />
+
+        {/* 7. Gestão de Licenças MT5 */}
+        <Licensing />
+
+        {/* 8. Onboarding guiado (7 passos) */}
+        <Onboarding />
+
+        {/* 9. Biblioteca de Conteúdo (cursos + artigos) */}
         <Ecosystem />
-        <Pricing />
+
+        {/* 10. Centro de Downloads */}
+        <Downloads />
+
+        {/* 11. Programa de Parceiros */}
         <Partners />
+
+        {/* 12. Para Quem É (4 perfis) */}
+        <Profiles />
+
+        {/* 13. Features gerais */}
+        <FeatureGrid />
+
+        {/* 14. Preços */}
+        <Pricing />
+
+        {/* 15. FAQ */}
+        <FAQ />
+
+        {/* 16. CTA Final */}
+        <FinalCTA />
       </main>
+
       <Footer />
     </div>
   );
@@ -68,7 +117,6 @@ import { PartnersPage } from '@/pages/PartnersPage';
 import { HantecPage } from '@/pages/HantecPage';
 import { VantagePage } from '@/pages/VantagePage';
 import { RoboForexPage } from '@/pages/RoboForexPage';
-
 
 function App() {
   return (

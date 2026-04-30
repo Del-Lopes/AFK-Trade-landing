@@ -15,10 +15,12 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Funcionalidades', href: '#features' },
-    { name: 'Preços', href: '#pricing' },
+    { name: 'Robôs', href: '#robots' },
+    { name: 'Licenças', href: '#licensing' },
     { name: 'Biblioteca', href: '#academy' },
     { name: 'Parceiros', href: '#partners' },
+    { name: 'Preços', href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
   ];
 
   return (
@@ -33,17 +35,17 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-             <img src="/images/logo-icon.png" alt="Trader AFK Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
-             <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-green transition-colors">Trader AFK</span>
+            <img src="/images/logo-icon.png" alt="Trader AFK Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
+            <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-green transition-colors">Trader AFK</span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                className="text-sm font-medium text-white/50 hover:text-white transition-colors"
               >
                 {link.name}
               </a>
@@ -52,8 +54,14 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-              Acessar <ExternalLink size={14} className="ml-2" />
+            <a
+              href="https://app.traderafk.com/login"
+              className="text-sm text-white/50 hover:text-white transition-colors"
+            >
+              Entrar
+            </a>
+            <Button size="sm" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
+              Começar Grátis <ExternalLink size={14} className="ml-2" />
             </Button>
           </div>
 
@@ -74,29 +82,29 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-brand-dark pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-brand-dark pt-24 px-6 md:hidden overflow-y-auto"
           >
-            <div className="flex flex-col space-y-6 pt-20 px-6">
+            <div className="flex flex-col space-y-5 pt-20 px-6">
               <div className="flex items-center gap-2 mb-4">
-                  <img src="/images/logo-icon.png" alt="Trader AFK" className="h-8 w-auto" /> 
-                  <span className="text-xl font-bold text-white">Trader AFK</span>
+                <img src="/images/logo-icon.png" alt="Trader AFK" className="h-8 w-auto" />
+                <span className="text-xl font-bold text-white">Trader AFK</span>
               </div>
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-bold text-white hover:text-brand-green"
+                  className="text-2xl font-bold text-white hover:text-brand-green transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="h-px bg-white/10 w-full my-4" />
+              <div className="h-px bg-white/10 w-full my-2" />
               <Button size="lg" className="w-full" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
-                Criar Conta
+                Criar Conta Grátis
               </Button>
-               <a href="https://app.traderafk.com/login" className="text-lg text-gray-400 hover:text-white py-2">
-                  Acessar Área de Membros
+              <a href="https://app.traderafk.com/login" className="text-lg text-white/40 hover:text-white py-2 text-center transition-colors">
+                Acessar Área de Membros
               </a>
             </div>
           </motion.div>
