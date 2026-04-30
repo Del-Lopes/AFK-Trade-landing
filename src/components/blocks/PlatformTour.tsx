@@ -11,7 +11,7 @@ const MODULES = [
   {
     icon: <PlayCircle size={24} />,
     title: "Tutoriais Passo a Passo",
-    description: "Guias detalhados do zero ao avançado. Aprenda tudo para iniciar a rentabilizar seu capital com poucos cliques."
+    description: "Guias detalhados do zero ao avançado. Aprenda a configurar e operar com Expert Advisors com poucos cliques."
   },
   {
     icon: <ShoppingBag size={24} />,
@@ -21,12 +21,12 @@ const MODULES = [
   {
     icon: <Wallet size={24} />,
     title: "Acessibilidade Real",
-    description: "Não exige grandes capitais. Inicie sua jornada de rentabilização automatizada com bancas a partir de R$ 250."
+    description: "Não exige grandes capitais. Comece a operar de forma automatizada com bancas a partir de R$ 250, conforme as condições de cada corretora."
   },
   {
     icon: <Users size={24} />,
     title: "Hub de Parceiros",
-    description: "Materiais de apoio, apresentações, links exclusivos com comissões recorrentes e vídeo aulas para parceiros."
+    description: "Materiais de apoio, apresentações, links exclusivos de indicação e vídeo aulas para parceiros da plataforma."
   },
   {
     icon: <MessageCircle size={24} />,

@@ -44,7 +44,7 @@ export const Manifesto = () => {
               Enquanto você viaja, dorme ou passa tempo com quem ama, nossos algoritmos continuam caçando oportunidades.
             </p>
             <p className="text-2xl text-white font-medium pt-4">
-              O lucro é o meio. A liberdade é o fim.
+              A tecnologia é o meio. A liberdade é o fim.
             </p>
           </div>
 

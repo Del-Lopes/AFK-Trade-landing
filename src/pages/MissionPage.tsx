@@ -69,12 +69,12 @@ export const MissionPage = () => {
            </div>
         </Section>
 
-        {/* The Solution: Automation & Passive Income */}
+        {/* The Solution: Automation */}
         <Section>
            <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Liberdade Física e Financeira</h2>
               <p className="text-xl text-gray-400">
-                 A verdadeira riqueza é ter controle sobre o seu tempo. Nossos algoritmos operam 24 horas por dia, permitindo que você gere renda passiva enquanto vive sua vida.
+                 A verdadeira liberdade é ter controle sobre o seu tempo. Nossos algoritmos operam 24 horas por dia, automatizando a execução enquanto você vive sua vida.
               </p>
            </div>
 
@@ -82,7 +82,7 @@ export const MissionPage = () => {
               <PhilosophyCard 
                  icon={<Globe className="w-8 h-8 text-brand-green" />}
                  title="Liberdade Geográfica"
-                 description="Opere de qualquer lugar do mundo. Tudo o que você precisa é de uma conexão com a internet para monitorar seus resultados."
+                 description="Opere de qualquer lugar do mundo. Tudo o que você precisa é de uma conexão com a internet para monitorar as operações automatizadas."
               />
               <PhilosophyCard 
                  icon={<Zap className="w-8 h-8 text-brand-green" />}
@@ -102,7 +102,7 @@ export const MissionPage = () => {
            <div className="text-center max-w-3xl mx-auto space-y-8">
               <h2 className="text-4xl font-bold">Pronto para viver o estilo de vida AFK?</h2>
               <p className="text-xl text-gray-400">
-                 Junte-se a centenas de pessoas que já automatizaram seus lucros e recuperaram seu tempo.
+                 Junte-se a centenas de pessoas que já automatizaram suas operações e recuperaram o controle do seu tempo.
               </p>
               <Button size="lg" onClick={() => navigate('/start')}>
                  Começar Agora <ArrowRight className="ml-2 w-5 h-5" />

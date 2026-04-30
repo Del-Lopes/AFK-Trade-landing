@@ -68,7 +68,7 @@ export const HantecPage = () => {
                 />
                 <FeatureItem 
                   title="Condições Competitivas" 
-                  description="Spreads e comissões otimizados para maximizar o desempenho das estratégias automatizadas."
+                  description="Spreads competitivos que favorecem a execução eficiente das estratégias automatizadas."
                 />
               </div>
             </div>
@@ -108,7 +108,7 @@ export const HantecPage = () => {
             <Card 
               icon={<Users className="w-8 h-8 text-brand-green" />}
               title="Para Seguidores"
-              description="Ideal para quem quer investir mas não tem tempo ou experiência para operar. Siga a Trader AFK e replique nossos resultados."
+              description="Ideal para quem quer operar de forma automatizada. Configure o EA na sua conta e acompanhe as operações em tempo real."
             />
             <Card 
               icon={<TrendingUp className="w-8 h-8 text-brand-green" />}

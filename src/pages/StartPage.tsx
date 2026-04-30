@@ -111,7 +111,7 @@ export const StartPage = () => {
             <Step 
               number="04"
               title="Escolha uma Estratégia"
-              description="Acesse a sessão de estratégias no nosso App, analise o histórico de rentabilidade e escolha a que melhor se adapta ao seu perfil de investidor."
+              description="Acesse a seção de estratégias no nosso App, analise o histórico de operações verificado e escolha a que melhor se adapta ao seu perfil de risco."
               icon={<BarChart3 className="w-10 h-10 text-brand-green" />}
               align="right"
             />
@@ -120,7 +120,7 @@ export const StartPage = () => {
             <Step 
               number="05"
               title="Defina suas Metas e Comece"
-              description="Defina suas metas de ganho (Take Profit) e limite de perda (Stop Loss) para um gerenciamento de risco saudável. Ative a cópia e acompanhe seus lucros em tempo real."
+              description="Defina seu Take Profit e Stop Loss para gestão de risco. Ative o Expert Advisor e acompanhe as operações em tempo real — sem precisar monitorar o mercado manualmente."
               icon={<Rocket className="w-10 h-10 text-brand-green" />}
               align="left"
             />

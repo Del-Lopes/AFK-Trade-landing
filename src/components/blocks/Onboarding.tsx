@@ -57,7 +57,7 @@ const STEPS = [
     number: 7,
     icon: <Users size={22} />,
     title: 'Torne-se Parceiro (opcional)',
-    description: 'Indique outros traders, gerencie seus leads e ganhe comissões recorrentes pelo painel de parceiros.',
+    description: 'Indique outros traders, gerencie seus leads e receba participações recorrentes baseadas em volume pelo painel de parceiros.',
     detail: 'Programa de parceria disponível para todos os membros ativos.',
     color: '#f472b6',
   },

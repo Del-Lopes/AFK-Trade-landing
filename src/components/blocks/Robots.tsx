@@ -6,9 +6,8 @@ import { Button } from '@/components/ui/Button';
 const ROBOTS = [
   {
     name: 'AFK Trader',
-    description: 'O robô principal da plataforma. Estratégia multi-ativo com gestão de risco avançada, ideal para quem quer começar a operar no piloto automático.',
+    description: 'O robô principal da plataforma. Estratégia multi-ativo com gestão de risco avançada, ideal para quem quer começar a operar de forma automatizada.',
     pair: 'EURUSD / XAUUSD',
-    profitability: '+12.4%',
     status: 'Ativo',
     version: 'v3.1',
     color: 'brand-green',
@@ -18,9 +17,8 @@ const ROBOTS = [
   },
   {
     name: 'Snow Ball',
-    description: 'Estratégia de acumulação progressiva. Aumenta posições de forma inteligente conforme o mercado confirma a tendência, maximizando ganhos em movimentos fortes.',
+    description: 'Estratégia de acumulação progressiva. Aumenta posições de forma inteligente conforme o mercado confirma a tendência, buscando aproveitar movimentos fortes.',
     pair: 'EURUSD',
-    profitability: '+8.1%',
     status: 'Ativo',
     version: 'v2.3',
     color: 'blue-400',
@@ -32,19 +30,17 @@ const ROBOTS = [
     name: 'Boleta Pro',
     description: 'Execução profissional de alta precisão. Replica o comportamento de traders profissionais com entradas milimetradas e saídas disciplinadas.',
     pair: 'XAUUSD',
-    profitability: '+15.3%',
     status: 'Ativo',
     version: 'v1.8',
     color: 'brand-gold',
     colorHex: '#f59e0b',
-    badge: 'Alto Desempenho',
+    badge: 'Alta Precisão',
     highlights: ['Entradas de alta precisão', 'Stop & Target dinâmico', 'Análise de volatilidade'],
   },
   {
     name: 'FX Squad',
-    description: 'Operação em conjunto com múltiplos pares de moedas simultaneamente. Diversificação máxima para reduzir risco e aumentar consistência dos resultados.',
+    description: 'Operação em conjunto com múltiplos pares de moedas simultaneamente. Diversificação automática para distribuir exposição entre diferentes ativos.',
     pair: 'Multi-par (EURUSD, GBPUSD, USDJPY)',
-    profitability: '+9.2%',
     status: 'Ativo',
     version: 'v2.0',
     color: 'purple-400',
@@ -69,7 +65,7 @@ export const Robots = () => {
           Nossos <span className="text-brand-green">Expert Advisors</span>
         </h2>
         <p className="text-white text-lg max-w-2xl mx-auto">
-          Quatro robôs de trading validados, cada um com estratégia própria e histórico auditado. Escolha um ou combine todos para diversificar seu risco.
+          Quatro robôs de trading com estratégias distintas e histórico verificado. Escolha um ou combine para diversificar sua exposição a risco.
         </p>
       </div>
 
@@ -118,15 +114,26 @@ export const Robots = () => {
 
             <p className="text-white/70 text-sm leading-relaxed mb-6">{robot.description}</p>
 
-            {/* Stats row */}
+            {/* Stats row — par de moedas apenas */}
             <div className="flex items-center gap-6 mb-6 py-4 border-t border-b border-white/5">
               <div>
                 <span className="text-xs text-white/40 block mb-0.5">Par</span>
                 <span className="text-sm font-mono text-white">{robot.pair}</span>
               </div>
+              {/* Histórico velado — evitar promessa de rentabilidade */}
               <div className="ml-auto text-right">
-                <span className="text-xs text-white/40 block mb-0.5">Rentabilidade</span>
-                <span className="text-xl font-bold text-brand-green">{robot.profitability}</span>
+                <span className="text-xs text-white/40 block mb-0.5">Histórico (MyFxBook)</span>
+                <span
+                  className="text-xl font-bold select-none"
+                  style={{
+                    color: robot.colorHex,
+                    filter: 'blur(6px)',
+                    userSelect: 'none',
+                  }}
+                  title="Acesse a plataforma para visualizar o histórico completo"
+                >
+                  ██.█%
+                </span>
               </div>
             </div>
 
@@ -146,14 +153,16 @@ export const Robots = () => {
               className="w-full group-hover:border-brand-green/50 group-hover:text-brand-green transition-colors"
               onClick={() => window.open('https://app.traderafk.com', '_blank')}
             >
-              Solicitar Licença <ArrowRight className="ml-2 w-4 h-4" />
+              Ver Estratégia <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </motion.div>
         ))}
       </div>
 
       <div className="mt-12 text-center relative z-10">
-        <p className="text-white/50 text-sm mb-4">Resultados auditados via MyFxBook. Performance passada não garante resultados futuros.</p>
+        <p className="text-white/40 text-sm mb-4">
+          Histórico verificado via MyFxBook. Trading envolve risco — resultados passados não garantem resultados futuros.
+        </p>
         <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
           Ver Todas as Estratégias <ArrowRight className="ml-2 w-5 h-5" />
         </Button>

@@ -108,8 +108,8 @@ export const Hero = () => {
                 className="absolute bottom-6 right-6 bg-slate-900/90 backdrop-blur-md border border-brand-green/20 p-4 rounded-xl shadow-xl w-48 z-20"
               >
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs text-white">Lucro (24h)</span>
-                  <span className="text-xs text-brand-green font-bold">+2.4%</span>
+                  <span className="text-xs text-white">P&amp;L (24h)</span>
+                  <span className="text-xs text-brand-green font-bold" style={{ filter: 'blur(4px)', userSelect: 'none' }}>+2.4%</span>
                 </div>
                 <div className="h-1 bg-slate-700 rounded-full overflow-hidden">
                   <div className="h-full w-[70%] bg-brand-green rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]" />

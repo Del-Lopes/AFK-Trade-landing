@@ -7,7 +7,7 @@ export const AlgoEngine = () => {
     <Section className="py-12 overflow-hidden">
       <div className="text-center mb-10 relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Um Ecossistema de <span className="text-brand-green">Renda Passiva</span>
+          Um Ecossistema de <span className="text-brand-green">Trading Automatizado</span>
         </h2>
         <p className="text-white text-lg max-w-3xl mx-auto">
           Não dependa de uma única estratégia. Nossa plataforma oferece múltiplos algoritmos para você se conectar e diversificar seu risco.
@@ -26,7 +26,7 @@ export const AlgoEngine = () => {
               <img src="/images/logo-icon.png" alt="Core" className="w-10 h-10 opacity-80" />
             </div>
             <span className="text-brand-green font-bold text-lg tracking-wider">TRADER AFK</span>
-            <div className="text-[10px] text-white mt-1 font-mono uppercase font-medium">RENDA PASSIVA</div>
+            <div className="text-[10px] text-white mt-1 font-mono uppercase font-medium">ALGO TRADING</div>
           </div>
           
           {/* Inner Rings */}
@@ -43,11 +43,11 @@ export const AlgoEngine = () => {
         <Satellite angle={300} icon={<Layers size={20} />} label="Expert Advisors" delay={5} distance={150} duration={60} />
 
         {/* Orbiting Satellite Nodes - Outer Ring (Strategies) */}
-        <Satellite angle={0} icon={<TrendingUp size={16} />} label="Black Soldier" subLabel="Hantec" performance="+12.4%" delay={0} distance={260} duration={90} />
-        <Satellite angle={72} icon={<TrendingUp size={16} />} label="Snow Ball" subLabel="HFM" performance="+8.1%" delay={1} distance={260} duration={90} />
-        <Satellite angle={144} icon={<TrendingUp size={16} />} label="Golden Soldier" subLabel="Vantage" performance="+15.3%" delay={2} distance={260} duration={90} />
-        <Satellite angle={216} icon={<TrendingUp size={16} />} label="Osher EA" subLabel="Hantec" performance="+6.7%" delay={3} distance={260} duration={90} />
-        <Satellite angle={288} icon={<TrendingUp size={16} />} label="Domus" subLabel="RoboForex" performance="+9.2%" delay={4} distance={260} duration={90} />
+        <Satellite angle={0} icon={<TrendingUp size={16} />} label="Black Soldier" subLabel="Hantec" delay={0} distance={260} duration={90} />
+        <Satellite angle={72} icon={<TrendingUp size={16} />} label="Snow Ball" subLabel="HFM" delay={1} distance={260} duration={90} />
+        <Satellite angle={144} icon={<TrendingUp size={16} />} label="Golden Soldier" subLabel="Vantage" delay={2} distance={260} duration={90} />
+        <Satellite angle={216} icon={<TrendingUp size={16} />} label="Osher EA" subLabel="Hantec" delay={3} distance={260} duration={90} />
+        <Satellite angle={288} icon={<TrendingUp size={16} />} label="Domus" subLabel="RoboForex" delay={4} distance={260} duration={90} />
         
         {/* Connecting Lines (Decorative SVG) */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20 z-0">
@@ -67,13 +67,12 @@ interface SatelliteProps {
     icon: React.ReactNode;
     label: string;
     subLabel?: string;
-    performance?: string;
     delay: number;
     distance: number;
     duration: number;
 }
 
-const Satellite = ({ angle, icon, label, subLabel, performance, delay, distance, duration }: SatelliteProps) => {
+const Satellite = ({ angle, icon, label, subLabel, delay, distance, duration }: SatelliteProps) => {
   return (
     <motion.div
       className="absolute"
@@ -105,7 +104,6 @@ const Satellite = ({ angle, icon, label, subLabel, performance, delay, distance,
          >
             <div className="flex items-center gap-1 text-brand-green mb-0.5">
                {icon}
-               {performance && <span className="text-[10px] font-bold text-emerald-400">{performance}</span>}
             </div>
             
             <span className="text-[10px] font-bold text-gray-200 uppercase px-1 line-clamp-2">{label}</span>

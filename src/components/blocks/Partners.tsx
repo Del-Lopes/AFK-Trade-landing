@@ -22,17 +22,17 @@ const BENEFITS = [
   {
     icon: <DollarSign className="w-10 h-10 text-brand-green" />,
     title: 'Performance Fee',
-    desc: 'Ganhe até 10% do lucro gerado em todas as suas indicações convertidas.',
+    desc: 'Receba uma participação baseada no volume de operações gerado pelas suas indicações convertidas.',
   },
   {
     icon: <Globe className="w-10 h-10 text-blue-400" />,
     title: 'Rebate de Corretora',
-    desc: 'Participação nos spreads e comissões das corretoras parceiras.',
+    desc: 'Participação no volume de spreads gerado pelos indicados nas corretoras parceiras.',
   },
   {
     icon: <Users className="w-10 h-10 text-brand-gold" />,
     title: 'White Label',
-    desc: 'Participe dos lucros gerados pela venda de licenças para novos parceiros da sua rede.',
+    desc: 'Participe da receita gerada pela expansão da sua rede de parceiros e licenças indicadas.',
   },
 ];
 
@@ -55,7 +55,7 @@ export const Partners = () => {
           Cresça junto com a <span className="text-brand-green">Trader AFK.</span>
         </h2>
         <p className="text-white/60 text-lg max-w-2xl mx-auto">
-          Torne-se parceiro, indique traders, gerencie seus leads com um painel profissional e ganhe comissões recorrentes. Renda passiva de verdade.
+          Torne-se parceiro, indique traders e gerencie seus leads com um painel profissional. Construa uma rede e receba participações recorrentes baseadas em volume.
         </p>
       </div>
 

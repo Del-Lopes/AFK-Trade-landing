@@ -16,7 +16,7 @@ export const PartnersPage = () => {
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-green/30">
       <Helmet>
         <title>Programa de Parceiros | Trader AFK</title>
-        <meta name="description" content="Junte-se ao programa de parceiros da Trader AFK. Comissões recorrentes, vitálicias e em dólar por indicar a melhor tecnologia de copy trading." />
+        <meta name="description" content="Junte-se ao programa de parceiros da Trader AFK. Participações recorrentes baseadas em volume por indicar a plataforma de trading algorítmico." />
       </Helmet>
       <Navbar />
       
@@ -43,7 +43,7 @@ export const PartnersPage = () => {
               </h1>
               
               <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Junte-se ao ecossistema de trading que mais cresce. Receba comissões recorrentes, vitalícias e em dólar por cada cliente indicado.
+                Junte-se ao ecossistema de trading algorítmico que mais cresce. Receba participações recorrentes baseadas em volume por cada cliente indicado que operar na plataforma.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -67,8 +67,8 @@ export const PartnersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <BenefitCard 
               icon={<DollarSign className="w-10 h-10 text-brand-green" />}
-              title="Comissões Recorrentes"
-              description="Ganhe uma porcentagem sobre a performance de todos os seus indicados. Enquanto eles lucram, você lucra."
+              title="Participações Recorrentes"
+              description="Receba uma participação baseada no volume de operações gerado pelos seus indicados enquanto estiverem ativos na plataforma."
             />
             <BenefitCard 
               icon={<Globe className="w-10 h-10 text-blue-400" />}
@@ -83,12 +83,12 @@ export const PartnersPage = () => {
             <BenefitCard 
               icon={<TrendingUp className="w-10 h-10 text-purple-400" />}
               title="Rebate de Corretagem"
-              description="Além da performance, ganhe parte das taxas de corretagem (spread/comissões) geradas pelo volume de negociação."
+              description="Receba parte das taxas de corretagem (spread) geradas pelo volume de negociação dos seus indicados nas corretoras parceiras."
             />
             <BenefitCard 
               icon={<Users className="w-10 h-10 text-pink-400" />}
               title="Suporte Dedicado"
-              description="Tenha um gerente de conta exclusivo para ajudar você a maximizar seus resultados e conversões."
+              description="Tenha um gerente de conta exclusivo para apoiar sua estratégia de indicação e maximizar conversões."
             />
             <BenefitCard 
               icon={<CheckCircle2 className="w-10 h-10 text-cyan-400" />}
@@ -112,7 +112,7 @@ export const PartnersPage = () => {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Influenciadores Financeiros</h3>
-                                <p className="text-white">Monetize sua audiência oferecendo uma solução real e validada de rentabilidade.</p>
+                                <p className="text-white">Monetize sua audiência apresentando uma solução real e validada de automação de trading.</p>
                             </div>
                         </li>
                         <li className="flex gap-4">
@@ -139,8 +139,8 @@ export const PartnersPage = () => {
                     <div className="absolute inset-0 bg-brand-green/20 blur-[100px] rounded-full opacity-30"></div>
                      <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl">
                         <div className="text-center mb-8">
-                            <p className="text-sm text-white uppercase tracking-wider mb-2">Potencial de Ganhos</p>
-                            <h3 className="text-4xl font-bold text-brand-green">Ilimitado</h3>
+                            <p className="text-sm text-white uppercase tracking-wider mb-2">Volume de Indicações</p>
+                            <h3 className="text-4xl font-bold text-brand-green">Escalável</h3>
                         </div>
                         <div className="space-y-4 relative">
                            {/* Blurry Overlay with Text */}
@@ -162,7 +162,7 @@ export const PartnersPage = () => {
                             </div>
                         </div>
                         <p className="text-xs text-center text-white mt-6 opacity-60">
-                            *Estimativas baseadas em média de mercado e performance histórica. Resultados podem variar.
+                            *Valores ilustrativos. Participações variam conforme volume e condições das corretoras parceiras.
                         </p>
                      </div>
                 </div>
@@ -178,7 +178,7 @@ export const PartnersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
              <StepCard number="1" title="Cadastre-se" description="Preencha o formulário de aplicação para nossa equipe analisar seu perfil." />
              <StepCard number="2" title="Receba seu Link" description="Aprovado, você recebe um link exclusivo de parceiro e acesso ao painel." />
-             <StepCard number="3" title="Comece a Lucrar" description="Divulgue para sua rede e acompanhe suas comissões caindo em tempo real." />
+             <StepCard number="3" title="Comece a Indicar" description="Divulgue para sua rede e acompanhe suas participações por volume em tempo real." />
              
              {/* Connecting Line (Desktop) */}
              <div className="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-transparent via-brand-green/30 to-transparent -z-10"></div>

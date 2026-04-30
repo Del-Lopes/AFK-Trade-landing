@@ -26,7 +26,7 @@ function LandingPage() {
       <Helmet>
         <title>Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex e MT5</title>
         <meta name="description" content="Plataforma SaaS completa para trading automatizado. Robôs forex (Expert Advisors), licenças MT5, cursos, análises de mercado e programa de parceiros. Opere 24/7 no piloto automático." />
-        <meta name="keywords" content="robô forex, trading automatizado brasil, MetaTrader 5 robô, expert advisor MT5, robô de trading, trading algorítmico, renda passiva forex, AFK Trader, Trader AFK" />
+        <meta name="keywords" content="robô forex, trading automatizado brasil, MetaTrader 5 robô, expert advisor MT5, robô de trading, trading algorítmico, AFK Trader, Trader AFK" />
         <meta property="og:title" content="Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex" />
         <meta property="og:description" content="Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma. Opere 24/7 no piloto automático." />
         <meta property="og:type" content="website" />

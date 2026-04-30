@@ -25,8 +25,8 @@ const FEATURES = [
   },
   {
     icon: <BarChart3 className="w-8 h-8 text-orange-500" />,
-    title: "Resultados Auditados",
-    description: "Transparência é nossa prioridade. Acompanhe o histórico verificado de cada estratégia via MyFxBook."
+    title: "Histórico Verificado",
+    description: "Transparência é nossa prioridade. Acompanhe o histórico de operações de cada estratégia via MyFxBook, com acesso direto ao registro completo."
   },
   {
     icon: <Layers className="w-8 h-8 text-pink-500" />,
@@ -44,10 +44,10 @@ export const FeatureGrid = () => {
        
       <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
          <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
-           Tudo que você precisa para <span className="text-brand-green">gerar renda passiva.</span>
+           Tudo que você precisa para <span className="text-brand-green">operar de forma automatizada.</span>
          </h2>
          <p className="text-white text-lg">
-           Um "cardápio" simplificado, que reúne as melhores estratégias automáticas, nas melhores corretoras, para você rentabilizar sem tirar seu dinheiro da sua própria conta. Comece quando quiser, pare quando quiser. Saque a hora que quiser. Seu dinheiro suas regras.
+           Um conjunto de ferramentas que reúne estratégias algorítmicas, gestão de licenças e educação — tudo sem que o seu capital saia da sua própria conta de corretora. Comece quando quiser, pare quando quiser. Seu dinheiro, suas regras.
          </p>
       </div>
 
