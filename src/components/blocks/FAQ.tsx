@@ -6,19 +6,19 @@ import { Section } from '@/components/layout/Section';
 const FAQS = [
   {
     question: 'Como funciona o licenciamento dos robôs?',
-    answer: 'Cada robô é licenciado diretamente para o número da sua conta MetaTrader 5. Você solicita a licença dentro da plataforma, nossa equipe valida e emite em até 24h. Após isso, basta instalar o EA na sua conta MT5 e ativar com a licença recebida. Seu dinheiro permanece 100% na sua corretora.',
+    answer: 'Cada robô é licenciado diretamente para o número da sua conta MetaTrader 5. Você cadastra o numero da sua conta dentro da nossa plataforma, na sessão de licenças e nossa equipe valida em até 24h. Após isso, basta instalar o EA no seu MetaTrader e liberar o webrequest nas opções para a url: tradexperience.com.br.',
   },
   {
     question: 'Preciso ter experiência em programação para usar os robôs?',
-    answer: 'Não. Os robôs são plug-and-play — você só precisa instalar o arquivo no MetaTrader 5 e inserir a licença. A plataforma oferece guias passo a passo em vídeo e PDF, e nosso suporte auxilia em toda a configuração inicial.',
+    answer: 'Não. Os robôs são plug-and-play — você só precisa instalar o arquivo no MetaTrader 5 e cadastrar a conta na plataforma e permitir webrequest para a url: tradexperience.com.br. A plataforma oferece tutoriais passo a passo em vídeo e PDF, e nosso suporte auxilia em toda a configuração inicial.',
   },
   {
-    question: 'Os robôs funcionam no MetaTrader 5?',
-    answer: 'Sim. Todos os Expert Advisors (EAs) da plataforma são desenvolvidos exclusivamente para o MetaTrader 5, a principal plataforma de trading profissional do mundo. O MT5 está disponível para Windows, Mac (via Wine ou web) e dispositivos móveis.',
+    question: 'Os robôs funcionam só no MetaTrader 5?',
+    answer: 'Todos os Expert Advisors (EAs) da plataforma são desenvolvidos para o MetaTrader 5, estamos em transcrição para mt4 também, já temos os principais disponíveis.',
   },
   {
     question: 'Como me torno parceiro?',
-    answer: 'Basta se cadastrar na plataforma, acessar a seção "Parceiros" e preencher o formulário de adesão. Após aprovação, você recebe acesso ao painel completo com gestão de prospects, materiais de marketing, links personalizados e acompanhamento de comissões.',
+    answer: 'Basta se cadastrar na plataforma, acessar a seção "Parceiros" e preencher o formulário de adesão. Após aprovação, você recebe acesso ao painel completo com gestão de prospectos, materiais de marketing, links personalizados e acompanhamento de comissões.',
   },
   {
     question: 'O que está incluído nos cursos da biblioteca?',
