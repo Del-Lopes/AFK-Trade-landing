@@ -54,14 +54,8 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://app.traderafk.com/login"
-              className="text-sm text-white/50 hover:text-white transition-colors"
-            >
-              Entrar
-            </a>
-            <Button size="sm" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
-              Começar Grátis <ExternalLink size={14} className="ml-2" />
+            <Button size="sm" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+              Acessar Plataforma <ExternalLink size={14} className="ml-2" />
             </Button>
           </div>
 
