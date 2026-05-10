@@ -18,6 +18,8 @@ import { FAQ } from '@/components/blocks/FAQ';
 import { FinalCTA } from '@/components/blocks/FinalCTA';
 import { Comparison } from '@/components/blocks/Comparison';
 import { FeatureGrid } from '@/components/blocks/FeatureGrid';
+import { TradingJournal } from '@/components/blocks/TradingJournal';
+import { AIAssistant } from '@/components/blocks/AIAssistant';
 import { SparklesCore } from '@/components/ui/SparklesCore';
 
 function LandingPage() {
@@ -80,13 +82,19 @@ function LandingPage() {
         {/* 8. Onboarding guiado (7 passos) */}
         <Onboarding />
 
-        {/* 9. Biblioteca de Conteúdo (cursos + artigos) */}
+        {/* 9. Diário de Operações */}
+        <TradingJournal />
+
+        {/* 10. Biblioteca de Conteúdo (cursos + artigos) */}
         <Ecosystem />
 
-        {/* 10. Centro de Downloads */}
+        {/* 11. Centro de Downloads */}
         <Downloads />
 
-        {/* 11. Programa de Parceiros */}
+        {/* 12. Assistente de IA */}
+        <AIAssistant />
+
+        {/* 13. Programa de Parceiros */}
         <Partners />
 
         {/* 12. Para Quem É (4 perfis) */}
