@@ -186,7 +186,7 @@ export const Onboarding = () => {
           </AnimatePresence>
 
           <div className="mt-6 text-center">
-            <Button size="lg" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
+            <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
               Começar Agora — É Grátis
             </Button>
           </div>

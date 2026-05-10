@@ -46,7 +46,7 @@ export const FinalCTA = () => {
             <Button
               size="lg"
               className="shadow-[0_0_40px_rgba(34,197,94,0.25)] hover:shadow-[0_0_60px_rgba(34,197,94,0.35)] transition-shadow"
-              onClick={() => window.open('https://app.traderafk.com/register', '_blank')}
+              onClick={() => window.open('https://app.traderafk.com', '_blank')}
             >
               Criar Minha Conta Grátis <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

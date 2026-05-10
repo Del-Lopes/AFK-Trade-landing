@@ -94,7 +94,7 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="h-px bg-white/10 w-full my-2" />
-              <Button size="lg" className="w-full" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
+              <Button size="lg" className="w-full" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
                 Criar Conta Grátis
               </Button>
               <a href="https://app.traderafk.com/login" className="text-lg text-white/40 hover:text-white py-2 text-center transition-colors">

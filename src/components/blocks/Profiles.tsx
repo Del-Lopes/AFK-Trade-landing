@@ -140,7 +140,7 @@ export const Profiles = () => {
               variant={profile.highlight ? 'primary' : 'outline'}
               size="sm"
               className="w-full mt-auto"
-              onClick={() => window.open('https://app.traderafk.com/register', '_blank')}
+              onClick={() => window.open('https://app.traderafk.com', '_blank')}
             >
               {profile.cta} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

@@ -46,7 +46,7 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" onClick={() => window.open('https://app.traderafk.com/register', '_blank')}>
+            <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
               Comece Agora — É Grátis <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
