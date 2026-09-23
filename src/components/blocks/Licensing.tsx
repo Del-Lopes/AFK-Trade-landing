@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion';
 import { Key, CheckCircle2, ArrowRight, RefreshCw, ShieldCheck, Cpu } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
+import { Backdrop } from '@/components/ui/Backdrop';
 import { Button } from '@/components/ui/Button';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { Reveal } from '@/components/ui/Reveal';
 
 const STEPS = [
   {
@@ -35,86 +37,83 @@ const BENEFITS = [
 
 export const Licensing = () => {
   return (
-    <Section id="licensing" className="py-32 bg-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-green/20 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(34,197,94,0.05),transparent_60%)] pointer-events-none" />
+    <Section id="licensing" divider>
+      <Backdrop variant="lines" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
         {/* Left: Text */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/10 border border-brand-green/20 rounded-full text-brand-green text-sm font-medium mb-6">
-            <Key size={14} />
-            <span>Gestão de Licenças</span>
-          </div>
+        <div>
+          <Reveal>
+            <Eyebrow>Gestão de Licenças</Eyebrow>
+          </Reveal>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Segurança e controle <br />
-            <span className="text-brand-green">total sobre seus robôs.</span>
-          </h2>
+          <Reveal delay={80}>
+            <h2 className="mt-5 mb-6 text-3xl font-bold leading-[1.08] text-white sm:text-4xl md:text-5xl">
+              Segurança e controle <br />
+              <span className="text-gradient-brand">total sobre seus robôs.</span>
+            </h2>
+          </Reveal>
 
-          <p className="text-white/70 text-lg leading-relaxed mb-8">
-            Nosso sistema de licenciamento vincula cada robô diretamente ao número da sua conta MetaTrader 5. Seu dinheiro nunca sai da sua corretora — você mantém controle absoluto.
-          </p>
+          <Reveal delay={160}>
+            <p className="mb-8 text-base leading-relaxed text-brand-muted md:text-lg">
+              Nosso sistema de licenciamento vincula cada robô diretamente ao número da sua conta MetaTrader 5. Seu dinheiro nunca sai da sua corretora — você mantém controle absoluto.
+            </p>
+          </Reveal>
 
-          <ul className="space-y-3 mb-10">
-            {BENEFITS.map((b) => (
-              <li key={b} className="flex items-start gap-3 text-white/80 text-sm">
-                <CheckCircle2 size={16} className="text-brand-green mt-0.5 shrink-0" />
-                {b}
-              </li>
-            ))}
-          </ul>
+          <Reveal delay={220}>
+            <ul className="mb-10 grid gap-3 border-t border-white/[0.06] pt-6">
+              {BENEFITS.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-sm text-brand-muted">
+                  <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-green" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
 
-          <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-            Solicitar Minha Licença <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </motion.div>
+          <Reveal delay={280}>
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+              Solicitar Minha Licença
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Reveal>
+        </div>
 
         {/* Right: Steps */}
-        <div className="space-y-5 relative">
+        <div className="relative space-y-4">
           {/* Connecting line */}
-          <div className="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-brand-green/40 via-brand-green/10 to-transparent hidden md:block" />
+          <div aria-hidden className="absolute left-[2.875rem] top-10 bottom-24 hidden w-px bg-gradient-to-b from-brand-green/40 via-brand-green/10 to-transparent md:block" />
 
           {STEPS.map((s, idx) => (
-            <motion.div
-              key={s.step}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.15 }}
-              className="relative flex gap-5 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-green/30 hover:bg-white/8 transition-all duration-300 group"
-            >
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-brand-dark border border-brand-green/30 flex items-center justify-center text-brand-green group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-all duration-300">
-                {s.icon}
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-mono text-brand-green/60">{s.step}</span>
-                  <h3 className="text-lg font-bold text-white">{s.title}</h3>
+            <Reveal key={s.step} delay={idx * 100}>
+              <div className="glass-card glass-card-hover group relative flex gap-5 p-6">
+                <div
+                  aria-hidden
+                  className="hairline absolute inset-x-6 -top-px opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                />
+                <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-brand-dark text-brand-green transition-colors duration-500 group-hover:border-brand-green/40">
+                  {s.icon}
                 </div>
-                <p className="text-white/60 text-sm leading-relaxed">{s.description}</p>
+                <div>
+                  <div className="mb-1.5 flex items-baseline gap-2.5">
+                    <span className="font-mono text-xs text-brand-green/70">{s.step}</span>
+                    <h3 className="text-lg font-bold text-white">{s.title}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-brand-muted">{s.description}</p>
+                </div>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
 
           {/* Renewal hint */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="flex items-center gap-3 p-4 rounded-xl bg-brand-green/5 border border-brand-green/20 mt-4"
-          >
-            <RefreshCw size={18} className="text-brand-green shrink-0" />
-            <p className="text-sm text-white/70">
-              <span className="text-white font-medium">Renovação simples:</span> acompanhe a validade de cada licença direto no painel e renove com um clique.
-            </p>
-          </motion.div>
+          <Reveal delay={360}>
+            <div className="mt-2 flex items-center gap-3 rounded-xl border border-brand-green/20 bg-brand-green/[0.04] p-4">
+              <RefreshCw size={18} className="shrink-0 text-brand-green" />
+              <p className="text-sm text-brand-muted">
+                <span className="font-medium text-white">Renovação simples:</span> acompanhe a validade de cada licença direto no painel e renove com um clique.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </Section>

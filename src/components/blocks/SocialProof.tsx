@@ -1,6 +1,9 @@
-import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
+import { Backdrop } from '@/components/ui/Backdrop';
+import { Reveal } from '@/components/ui/Reveal';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { cn } from '@/lib/cn';
 
 const LOGOS = [
   { name: 'Hantec', url: '/hantec' },
@@ -11,10 +14,10 @@ const LOGOS = [
 ];
 
 const STATS = [
-  { value: '100+', label: 'Traders Ativos', color: '#22c55e' },
-  { value: '4', label: 'Expert Advisors', color: '#60a5fa' },
-  { value: '24/7', label: 'Operação Contínua', color: '#a78bfa' },
-  { value: '5+', label: 'Corretoras Parceiras', color: '#f59e0b' },
+  { value: '100+', label: 'Traders Ativos' },
+  { value: '4', label: 'Expert Advisors' },
+  { value: '24/7', label: 'Operação Contínua' },
+  { value: '5+', label: 'Corretoras Parceiras' },
 ];
 
 const TESTIMONIALS = [
@@ -24,7 +27,6 @@ const TESTIMONIALS = [
     avatar: 'CM',
     text: 'Depois que comecei a usar o AFK Trader na Hantec, minha rentabilidade ficou muito mais consistente. Antes eu ficava horas na frente do gráfico e nem assim conseguia resultados assim.',
     stars: 5,
-    color: '#22c55e',
   },
   {
     name: 'Fernanda L.',
@@ -32,7 +34,6 @@ const TESTIMONIALS = [
     avatar: 'FL',
     text: 'O onboarding da plataforma me guiou desde o zero. Em menos de uma semana já estava com o Snow Ball operando. A biblioteca de cursos fez toda a diferença.',
     stars: 5,
-    color: '#60a5fa',
   },
   {
     name: 'Rafael T.',
@@ -40,121 +41,114 @@ const TESTIMONIALS = [
     avatar: 'RT',
     text: 'Como parceiro, o painel de gestão de prospects é incrível. Consigo acompanhar cada lead pelo pipeline e os materiais de marketing pouparam horas de trabalho.',
     stars: 5,
-    color: '#f59e0b',
   },
 ];
+
+const LogoRow = ({ copy }: { copy: number }) => (
+  <div
+    className="flex min-w-full shrink-0 animate-infinite-scroll items-center justify-around gap-16 pr-16 sm:gap-20 sm:pr-20"
+    aria-hidden={copy > 1 ? 'true' : undefined}
+  >
+    {LOGOS.map((logo, idx) => (
+      <a
+        href={logo.url}
+        key={`${logo.name}-${copy}-${idx}`}
+        className={cn(
+          'flex items-center justify-center text-neutral-500 transition-colors duration-500 hover:text-white',
+          logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'
+        )}
+      >
+        <span className="whitespace-nowrap font-display text-xl font-semibold tracking-tight sm:text-2xl">{logo.name}</span>
+      </a>
+    ))}
+  </div>
+);
 
 export const SocialProof = () => {
   return (
     <>
       {/* Logo carousel */}
-      <Section className="py-10 border-y border-white/5 bg-white/2">
-        <div className="text-center mb-8">
-          <p className="text-sm font-medium text-white/50 uppercase tracking-widest">Presente nas principais corretoras</p>
-        </div>
+      <Section divider className="py-12 sm:py-14">
+        <p className="eyebrow mb-8 text-center text-brand-subtle!">Presente nas principais corretoras</p>
 
         <div className="relative flex overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-brand-dark to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-brand-dark to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-brand-dark to-transparent sm:w-28" />
+          <div className="absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-brand-dark to-transparent sm:w-28" />
 
-          <div className="flex w-full overflow-hidden select-none">
-            <div className="flex min-w-full shrink-0 animate-infinite-scroll items-center justify-around gap-20 pr-20">
-              {LOGOS.map((logo, idx) => (
-                <a
-                  href={logo.url}
-                  key={`${logo.name}-1-${idx}`}
-                  className={`flex items-center justify-center opacity-50 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
-                >
-                  <span className="text-2xl font-bold text-white whitespace-nowrap hover:text-brand-green transition-colors">{logo.name}</span>
-                </a>
-              ))}
-            </div>
-            <div className="flex min-w-full shrink-0 animate-infinite-scroll items-center justify-around gap-20 pr-20" aria-hidden="true">
-              {LOGOS.map((logo, idx) => (
-                <a
-                  href={logo.url}
-                  key={`${logo.name}-2-${idx}`}
-                  className={`flex items-center justify-center opacity-50 hover:opacity-100 transition-all duration-300 ${logo.url !== '#' ? 'cursor-pointer' : 'cursor-default'}`}
-                >
-                  <span className="text-2xl font-bold text-white whitespace-nowrap hover:text-brand-green transition-colors">{logo.name}</span>
-                </a>
-              ))}
-            </div>
+          <div className="flex w-full select-none overflow-hidden">
+            <LogoRow copy={1} />
+            <LogoRow copy={2} />
           </div>
         </div>
       </Section>
 
       {/* Stats */}
-      <Section className="py-16 bg-brand-dark border-b border-white/5">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
-          {STATS.map((stat, idx) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-white/5 border border-white/5"
-            >
-              <strong className="block text-4xl font-bold mb-1" style={{ color: stat.color }}>{stat.value}</strong>
-              <span className="text-sm text-white/60">{stat.label}</span>
-            </motion.div>
-          ))}
-        </div>
+      <Section divider className="py-12 sm:py-16">
+        <Reveal>
+          <dl className="grid grid-cols-2 border-y border-white/[0.06] md:grid-cols-4">
+            {STATS.map((stat, idx) => (
+              <div
+                key={stat.label}
+                className={cn(
+                  'flex flex-col-reverse px-4 py-8 text-center',
+                  idx % 2 === 1 && 'border-l border-white/[0.06]',
+                  idx >= 2 && 'border-t border-white/[0.06] md:border-t-0',
+                  idx === 2 && 'md:border-l'
+                )}
+              >
+                <dt className="mt-2 text-[11px] uppercase tracking-[0.2em] text-brand-subtle">{stat.label}</dt>
+                <dd className="font-display text-3xl font-semibold text-white sm:text-4xl">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </Section>
 
       {/* Testimonials */}
-      <Section id="testimonials" className="py-24 bg-brand-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px] pointer-events-none" />
+      <Section id="testimonials" divider>
+        <Backdrop variant="grid" />
 
-        <div className="text-center mb-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            O que os traders <span className="text-brand-green">estão dizendo</span>
-          </h2>
-          <p className="text-white/50 text-base max-w-xl mx-auto">
-            Depoimentos reais de membros da plataforma Trader AFK.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="Depoimentos"
+          title={
+            <>
+              O que os traders <span className="text-gradient-brand">estão dizendo</span>
+            </>
+          }
+          description="Depoimentos reais de membros da plataforma Trader AFK."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {TESTIMONIALS.map((t, idx) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.12 }}
-              className="relative p-7 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group overflow-hidden"
-            >
-              <div
-                className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: `radial-gradient(ellipse at top left, ${t.color}08, transparent 60%)` }}
-              />
+            <Reveal key={t.name} delay={idx * 80} className="h-full">
+              <figure className="glass-card glass-card-hover group flex h-full flex-col p-7 hover:-translate-y-1">
+                <div
+                  aria-hidden
+                  className="hairline absolute inset-x-6 -top-px opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                />
 
-              <Quote size={28} className="mb-4 opacity-20" style={{ color: t.color }} />
+                <Quote size={24} className="mb-5 text-brand-green/40" />
 
-              <p className="text-white/75 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
+                <blockquote className="mb-8 flex-1 text-sm leading-relaxed text-brand-muted">"{t.text}"</blockquote>
 
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold"
-                    style={{ background: `${t.color}20`, color: t.color }}
-                  >
-                    {t.avatar}
+                <figcaption className="flex items-center justify-between border-t border-white/[0.06] pt-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-xs font-semibold text-brand-green transition-colors duration-500 group-hover:border-brand-green/40">
+                      {t.avatar}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">{t.name}</p>
+                      <p className="text-xs text-brand-subtle">{t.role}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-white/40">{t.role}</p>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: t.stars }).map((_, i) => (
+                      <Star key={i} size={12} className="fill-current text-brand-gold" />
+                    ))}
                   </div>
-                </div>
-                <div className="flex gap-0.5">
-                  {Array.from({ length: t.stars }).map((_, i) => (
-                    <Star key={i} size={12} className="fill-current text-brand-gold" />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+                </figcaption>
+              </figure>
+            </Reveal>
           ))}
         </div>
       </Section>

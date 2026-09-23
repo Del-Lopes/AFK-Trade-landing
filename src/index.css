@@ -1,17 +1,55 @@
 @import "tailwindcss";
 
+/*
+ * Design system Trader AFK
+ * Estética inspirada em osher.work: fundo quase preto neutro, destaque único
+ * (o verde da marca), títulos em Space Grotesk, eyebrows com tracking largo,
+ * cards de vidro e linhas finas em gradiente.
+ */
 @theme {
-  --color-brand-dark: #0f172a;
+  /* Superfícies */
+  --color-brand-dark: #0a0a0a;
+  --color-brand-surface: #111111;
+  --color-brand-elevated: #171717;
+  --color-brand-line: #262626;
+
+  /* Destaque: verde do candle do logo */
   --color-brand-green: #22c55e;
+  --color-brand-green-bright: #5eea96;
+  --color-brand-green-deep: #15803d;
   --color-brand-emerald: #16a34a;
-  --color-brand-gold: #f59e0b;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  
+  --color-brand-red: #ef4444;
+
+  /* Ouro discreto, usado só em detalhes secundários */
+  --color-brand-gold: #c9a86a;
+
+  /* Texto */
+  --color-brand-muted: #a3a3a3;
+  --color-brand-subtle: #737373;
+
+  /* Neutraliza os tons azulados do slate para combinar com o fundo preto */
+  --color-slate-300: #d4d4d4;
+  --color-slate-400: #a3a3a3;
+  --color-slate-500: #737373;
+  --color-slate-600: #525252;
+  --color-slate-700: #333333;
+  --color-slate-800: #1f1f1f;
+  --color-slate-900: #141414;
+  --color-slate-950: #0c0c0c;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
   --animate-infinite-scroll: infinite-scroll 30s linear infinite;
   --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-twinkle: twinkle 3s ease-in-out infinite;
-  
+  --animate-line-flow: line-flow 6s ease-in-out infinite;
+  --animate-bg-pan: bg-pan 40s ease-in-out infinite alternate;
+  --animate-sweep: sweep 7s ease-in-out infinite;
+  --animate-halo: halo 8s ease-in-out infinite;
+
   @keyframes infinite-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-100%); }
@@ -24,23 +62,129 @@
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-12px); }
   }
 
   @keyframes twinkle {
     0%, 100% { opacity: 0.2; transform: scale(0.8); }
     50% { opacity: 1; transform: scale(1.2); }
   }
+
+  @keyframes line-flow {
+    0% { stroke-dashoffset: 1200; opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+
+  @keyframes bg-pan {
+    from { transform: scale(1.02) translate3d(0, 0, 0); }
+    to { transform: scale(1.08) translate3d(-2%, -1%, 0); }
+  }
+
+  @keyframes sweep {
+    0% { transform: translateX(-100%); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  @keyframes halo {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.06); }
+  }
 }
 
-body {
-  @apply bg-brand-dark text-white font-sans antialiased selection:bg-brand-green/30 selection:text-brand-green;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-brand-dark text-neutral-100 font-sans antialiased selection:bg-brand-green/30 selection:text-white;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--color-brand-green) 70%, transparent);
+    outline-offset: 2px;
+  }
 }
 
+/* Rótulo acima dos títulos: caixa alta, tracking largo, verde contido */
+@utility eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--color-brand-green) 85%, white);
+}
+
+@utility text-gradient-brand {
+  background: linear-gradient(135deg, var(--color-brand-green-bright) 0%, var(--color-brand-green) 50%, var(--color-brand-green-deep) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-silver {
+  background: linear-gradient(180deg, #ffffff 0%, #d4d4d4 60%, #8a8a8a 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card de vidro com borda que acende no hover (combinar com a classe group) */
+@utility glass-card {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background-image: linear-gradient(135deg, rgb(23 23 23 / 0.7), rgb(17 17 17 / 0.3));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+@utility glass-card-hover {
+  &:hover {
+    border-color: color-mix(in oklab, var(--color-brand-green) 45%, transparent);
+    box-shadow: 0 20px 60px -30px color-mix(in oklab, var(--color-brand-green) 55%, transparent);
+  }
+}
+
+/* Linha fina horizontal em gradiente */
+@utility hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--color-brand-green) 35%, transparent), transparent);
+}
+
+@utility hairline-neutral {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.12), transparent);
+}
+
+/* Grid de fundo que some nas bordas */
+@utility bg-grid-fade {
+  background-size: 56px 56px;
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 75%);
+}
+
+/* Mantido por compatibilidade com as páginas internas */
 @utility bg-grid-white {
   background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 @utility bg-grid-small {
@@ -50,15 +194,15 @@ body {
 }
 
 @utility text-glow {
-  text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  text-shadow: 0 0 24px rgba(34, 197, 94, 0.35);
 }
 
 @utility glow-green {
-  box-shadow: 0 0 20px -5px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(34, 197, 94, 0.45);
 }
 
 @utility glow-gold {
-  box-shadow: 0 0 20px -5px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(201, 168, 106, 0.35);
 }
 
 @utility border-glow {
@@ -67,4 +211,13 @@ body {
 
 @utility mix-blend-screen {
   mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

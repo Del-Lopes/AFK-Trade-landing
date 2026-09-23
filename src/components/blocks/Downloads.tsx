@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion';
 import { Download, Monitor, Apple, Smartphone, FileText, BarChart2, Settings, ArrowRight } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
+import { Backdrop } from '@/components/ui/Backdrop';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { Reveal } from '@/components/ui/Reveal';
+import { cn } from '@/lib/cn';
 
 const DOWNLOAD_CATEGORIES = [
   {
@@ -62,74 +65,64 @@ const DOWNLOAD_CATEGORIES = [
 
 export const Downloads = () => {
   return (
-    <Section id="downloads" className="py-32 bg-brand-dark relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <Section id="downloads" divider>
+      <Backdrop variant="grid" />
 
-      <div className="text-center mb-16 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/60 text-sm font-medium mb-6">
-          <Download size={14} />
-          <span>Centro de Downloads</span>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Tudo que você precisa, <br />
-          <span className="text-brand-green">em um só lugar.</span>
-        </h2>
-        <p className="text-white/60 text-lg max-w-2xl mx-auto">
-          Plataformas, indicadores, manuais e utilitários — centralizados para você não perder tempo procurando.
-        </p>
-      </div>
+      <SectionHeader
+        eyebrow="Centro de Downloads"
+        title={
+          <>
+            Tudo que você precisa, <br className="hidden sm:block" />
+            <span className="text-gradient-brand">em um só lugar.</span>
+          </>
+        }
+        description="Plataformas, indicadores, manuais e utilitários — centralizados para você não perder tempo procurando."
+      />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative z-10">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
         {DOWNLOAD_CATEGORIES.map((item, idx) => (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.08 }}
-            className="group relative p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] overflow-hidden"
-          >
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{ background: `radial-gradient(ellipse at top left, ${item.color}08, transparent 60%)` }}
-            />
+          <Reveal key={item.title} delay={idx * 70} className="h-full">
+            <div className="glass-card glass-card-hover group flex h-full cursor-pointer flex-col p-6 hover:-translate-y-1">
+              <div aria-hidden className="hairline absolute inset-x-6 -top-px opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
-            <div className="flex items-start justify-between mb-4">
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: `${item.color}15`, border: `1px solid ${item.color}25` }}
-              >
-                <span style={{ color: item.color }}>{item.icon}</span>
+              <div className="mb-5 flex items-start justify-between gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-brand-green transition-colors duration-300 group-hover:border-brand-green/40">
+                  {item.icon}
+                </div>
+                <span
+                  className={cn(
+                    'rounded-full border px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em]',
+                    item.tagColor === 'brand-green'
+                      ? 'border-brand-green/30 bg-brand-green/[0.08] text-brand-green'
+                      : 'border-white/10 bg-white/[0.03] text-brand-muted'
+                  )}
+                >
+                  {item.tag}
+                </span>
               </div>
-              <span
-                className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                style={{ background: `${item.color}20`, color: item.color }}
-              >
-                {item.tag}
-              </span>
-            </div>
 
-            <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-white transition-colors">{item.title}</h3>
-            <p className="text-sm text-white/50 leading-relaxed mb-4">{item.description}</p>
+              <h3 className="mb-1.5 text-base font-semibold text-white">{item.title}</h3>
+              <p className="mb-5 text-sm leading-relaxed text-brand-muted">{item.description}</p>
 
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-white/30 font-mono">{item.size}</span>
-              <span className="flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: item.color }}>
-                <Download size={12} />
-                Baixar
-              </span>
+              <div className="mt-auto flex items-center justify-between gap-3 border-t border-white/[0.06] pt-4">
+                <span className="truncate font-mono text-xs text-brand-subtle">{item.size}</span>
+                <span className="flex shrink-0 items-center gap-1 text-xs font-medium text-brand-green opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <Download size={12} />
+                  Baixar
+                </span>
+              </div>
             </div>
-          </motion.div>
+          </Reveal>
         ))}
       </div>
 
-      <div className="mt-12 text-center relative z-10">
-        <Button size="lg" variant="outline" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-          Acessar Centro de Downloads <ArrowRight className="ml-2 w-5 h-5" />
+      <Reveal className="mt-12 text-center">
+        <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+          Acessar Centro de Downloads
+          <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
-        <p className="text-xs text-white/30 mt-3">Downloads completos disponíveis para membros da plataforma</p>
-      </div>
+        <p className="mt-3 text-xs text-brand-subtle">Downloads completos disponíveis para membros da plataforma</p>
+      </Reveal>
     </Section>
   );
 };

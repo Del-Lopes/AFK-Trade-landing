@@ -1,15 +1,33 @@
+import { useState } from "react";
 
-import { useEffect, useState } from "react";
+type Particle = {
+  top: number;
+  left: number;
+  size: number;
+  duration: number;
+  delay: number;
+  opacity: number;
+};
+
+const createParticles = (count: number, minSize: number, maxSize: number, speed: number): Particle[] =>
+  Array.from({ length: count }, () => ({
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    size: Math.random() * maxSize + minSize,
+    duration: Math.random() * speed + 2,
+    delay: Math.random() * 2,
+    opacity: Math.random() * 0.5 + 0.2,
+  }));
 
 export const SparklesCore = ({
   id,
   className,
   background,
-  minSize,
-  maxSize,
-  particleDensity,
+  minSize = 0.5,
+  maxSize = 2,
+  particleDensity = 50,
   speed = 4,
-  particleColor,
+  particleColor = "#FFFFFF",
 }: {
   id?: string;
   className?: string;
@@ -20,37 +38,29 @@ export const SparklesCore = ({
   speed?: number;
   particleColor?: string;
 }) => {
-  const [init, setInit] = useState(false);
-  
-  useEffect(() => {
-    setInit(true);
-  }, []);
+  // Gerado uma única vez para as partículas não mudarem de lugar a cada render.
+  const [particles] = useState(() => createParticles(particleDensity, minSize, maxSize, speed));
 
   return (
     <div className={className} id={id} style={{ background }}>
-      {init && (
-        <div className="w-full h-full relative">
-          {/* Using a simple CSS-based implementation instead of tsparticles for lightweight sparkles */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(particleDensity || 50)].map((_, i) => (
-              <span
-                key={i}
-                className="absolute rounded-full animate-twinkle"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  width: `${Math.random() * (maxSize || 2) + (minSize || 0.5)}px`,
-                  height: `${Math.random() * (maxSize || 2) + (minSize || 0.5)}px`,
-                  backgroundColor: particleColor || "#FFFFFF",
-                  animationDuration: `${Math.random() * speed + 2}s`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  opacity: Math.random() * 0.5 + 0.2,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      <div className="absolute inset-0 overflow-hidden">
+        {particles.map((p, i) => (
+          <span
+            key={i}
+            className="absolute rounded-full animate-twinkle"
+            style={{
+              top: `${p.top}%`,
+              left: `${p.left}%`,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              backgroundColor: particleColor,
+              animationDuration: `${p.duration}s`,
+              animationDelay: `${p.delay}s`,
+              opacity: p.opacity,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };

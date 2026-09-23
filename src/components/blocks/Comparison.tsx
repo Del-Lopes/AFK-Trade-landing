@@ -1,72 +1,73 @@
-import { motion } from 'framer-motion';
+import type React from 'react';
 import { Section } from '@/components/layout/Section';
+import { Backdrop } from '@/components/ui/Backdrop';
+import { Reveal } from '@/components/ui/Reveal';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CheckCircle2, XCircle, Clock, Coffee, Activity, Zap } from 'lucide-react';
-import { clsx } from 'clsx';
+import { cn } from '@/lib/cn';
 
 export const Comparison = () => {
   return (
-    <Section className="bg-gradient-to-b from-brand-dark to-slate-900 py-24">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold bg-white bg-clip-text text-transparent mb-6">
-          A Evolução do Trader
-        </h2>
-        <p className="text-white text-lg max-w-2xl mx-auto">
-          A diferença entre trabalhar para o mercado e fazer o mercado trabalhar para você.
-        </p>
-      </div>
+    <Section divider>
+      <Backdrop variant="glow" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <SectionHeader
+        eyebrow="Comparativo"
+        title={
+          <>
+            A Evolução do <span className="text-gradient-brand">Trader</span>
+          </>
+        }
+        description="A diferença entre trabalhar para o mercado e fazer o mercado trabalhar para você."
+      />
+
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
         {/* The Old Way */}
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative bg-white/5 border border-white/5 rounded-2xl p-8 overflow-hidden transition-all duration-500"
-        >
-          <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Activity size={100} />
-          </div>
-          
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-500">
-              <XCircle size={24} />
+        <Reveal className="h-full">
+          <div className="relative h-full overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.015] p-7 sm:p-8">
+            <div aria-hidden className="absolute right-0 top-0 p-4 text-white opacity-[0.04]">
+              <Activity size={100} />
             </div>
-            <h3 className="text-2xl font-bold text-white">O Trader "Tela"</h3>
-          </div>
 
-          <ul className="space-y-6">
-            <ListItem icon={<Clock size={20} />} text="12 horas/dia analisando gráficos" bad />
-            <ListItem icon={<Activity size={20} />} text="Estresse emocional constante" bad />
-            <ListItem icon={<XCircle size={20} />} text="Perde oportunidades enquanto dorme" bad />
-            <ListItem icon={<XCircle size={20} />} text="Decisões baseadas em medo/ganância" bad />
-          </ul>
-        </motion.div>
+            <div className="mb-8 flex items-center gap-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-red-500/20 bg-red-500/[0.06] text-red-400">
+                <XCircle size={22} />
+              </div>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">O Trader "Tela"</h3>
+            </div>
+
+            <ul className="space-y-5">
+              <ListItem icon={<Clock size={18} />} text="12 horas/dia analisando gráficos" bad />
+              <ListItem icon={<Activity size={18} />} text="Estresse emocional constante" bad />
+              <ListItem icon={<XCircle size={18} />} text="Perde oportunidades enquanto dorme" bad />
+              <ListItem icon={<XCircle size={18} />} text="Decisões baseadas em medo/ganância" bad />
+            </ul>
+          </div>
+        </Reveal>
 
         {/* The AFK Way */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative bg-brand-green/5 border border-brand-green/20 rounded-2xl p-8 overflow-hidden shadow-2xl shadow-brand-green/10"
-        >
-          <div className="absolute top-0 right-0 p-4 opacity-10 text-brand-green">
-            <Zap size={100} />
-          </div>
-
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green">
-              <CheckCircle2 size={24} />
+        <Reveal delay={120} className="h-full">
+          <div className="glass-card glass-card-hover group h-full overflow-hidden border-brand-green/25 p-7 sm:p-8">
+            <div aria-hidden className="hairline absolute inset-x-6 -top-px" />
+            <div aria-hidden className="absolute right-0 top-0 p-4 text-brand-green opacity-[0.07]">
+              <Zap size={100} />
             </div>
-            <h3 className="text-2xl font-bold text-white">O Trader AFK</h3>
-          </div>
 
-          <ul className="space-y-6">
-            <ListItem icon={<Coffee size={20} />} text="5 min/dia para checar resultados" good />
-            <ListItem icon={<CheckCircle2 size={20} />} text="100% Racional e Sistemático" good />
-            <ListItem icon={<Zap size={20} />} text="Opera 24/7 em alta frequência" good />
-            <ListItem icon={<CheckCircle2 size={20} />} text="Liberdade geográfica e temporal" good />
-          </ul>
-        </motion.div>
+            <div className="mb-8 flex items-center gap-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-brand-green/30 bg-brand-green/[0.06] text-brand-green">
+                <CheckCircle2 size={22} />
+              </div>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">O Trader AFK</h3>
+            </div>
+
+            <ul className="space-y-5">
+              <ListItem icon={<Coffee size={18} />} text="5 min/dia para checar resultados" good />
+              <ListItem icon={<CheckCircle2 size={18} />} text="100% Racional e Sistemático" good />
+              <ListItem icon={<Zap size={18} />} text="Opera 24/7 em alta frequência" good />
+              <ListItem icon={<CheckCircle2 size={18} />} text="Liberdade geográfica e temporal" good />
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </Section>
   );
@@ -74,17 +75,17 @@ export const Comparison = () => {
 
 const ListItem = ({ icon, text, good = false, bad = false }: { icon: React.ReactNode, text: string, good?: boolean, bad?: boolean }) => (
   <li className="flex items-center gap-4">
-    <div className={clsx(
-      "p-2 rounded-lg",
-      good && "bg-brand-green/10 text-brand-green",
-      bad && "bg-red-500/10 text-red-400",
-      !good && !bad && "bg-white/5 text-white"
+    <div className={cn(
+      'shrink-0 rounded-lg border p-2',
+      good && 'border-brand-green/20 bg-brand-green/[0.06] text-brand-green',
+      bad && 'border-red-500/15 bg-red-500/[0.05] text-red-400',
+      !good && !bad && 'border-white/10 bg-white/[0.03] text-white'
     )}>
       {icon}
     </div>
-    <span className={clsx(
-      "text-lg",
-      good ? "text-white font-medium" : "text-white"
+    <span className={cn(
+      'text-base sm:text-lg',
+      good ? 'font-medium text-white' : 'text-brand-muted'
     )}>{text}</span>
   </li>
 );

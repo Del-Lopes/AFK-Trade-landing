@@ -1,49 +1,62 @@
-import { Section } from '@/components/layout/Section';
+const COLUMNS = [
+  {
+    title: 'Produto',
+    links: [
+      { label: 'Robôs', href: '#robots' },
+      { label: 'Licenças', href: '#licensing' },
+      { label: 'Funcionalidades', href: '#features' },
+      { label: 'Preços', href: '#pricing' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Política de Privacidade', href: '#' },
+      { label: 'Termos de Serviço', href: '#' },
+      { label: 'Aviso de Risco', href: '#' },
+    ],
+  },
+];
 
 export const Footer = () => {
   return (
-    <footer className="bg-brand-dark border-t border-white/5 pt-16 pb-8">
-      <Section className="py-0">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="col-span-1 md:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
-               <img src="/images/logo-icon.png" alt="Trader AFK Logo" className="h-8 w-auto" />
-               <span className="text-2xl font-bold text-white tracking-tight">
-                  Trader AFK
-               </span>
+    <footer className="relative border-t border-white/[0.06] bg-brand-dark">
+      <div aria-hidden className="hairline absolute inset-x-0 -top-px opacity-60" />
+      <div className="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6">
+        <div className="mb-14 grid grid-cols-1 gap-12 md:grid-cols-4">
+          <div className="space-y-4 md:col-span-2">
+            <div className="flex items-center gap-2.5">
+              <img src="/images/logo-icon.png" alt="" className="h-8 w-auto" />
+              <span className="font-display text-xl font-semibold tracking-tight text-white">Trader AFK</span>
             </div>
-            <p className="text-white max-w-sm">
+            <p className="max-w-sm text-sm leading-relaxed text-brand-muted">
               Soluções de trading automatizado para o investidor moderno. Tecnologia trabalhando ao seu favor.
             </p>
           </div>
-          
-          <div>
-            <h4 className="font-bold text-white mb-6">Produto</h4>
-            <ul className="space-y-4 text-sm text-white">
-              <li><a href="#" className="hover:text-brand-green transition-colors">Funcionalidades</a></li>
-              <li><a href="#pricing" className="hover:text-brand-green transition-colors">Preços</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-bold text-white mb-6">Legal</h4>
-            <ul className="space-y-4 text-sm text-white">
-              <li><a href="#" className="hover:text-brand-green transition-colors">Política de Privacidade</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Termos de Serviço</a></li>
-              <li><a href="#" className="hover:text-brand-green transition-colors">Aviso de Risco</a></li>
-            </ul>
-          </div>
+
+          {COLUMNS.map((col) => (
+            <div key={col.title}>
+              <h4 className="eyebrow mb-5 !text-neutral-500">{col.title}</h4>
+              <ul className="space-y-3 text-sm">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-neutral-300 transition-colors hover:text-brand-green">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center bg-brand-dark">
-           <p className="text-xs text-white">
-             © {new Date().getFullYear()} Trader AFK. Todos os direitos reservados.
-           </p>
-           <p className="text-xs text-white mt-2 md:mt-0">
-             Trading envolve riscos substanciais e não é adequado para todos os investidores.
-           </p>
+
+        <div className="flex flex-col gap-3 border-t border-white/[0.06] pt-8 text-xs text-brand-subtle md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} Trader AFK. Todos os direitos reservados.</p>
+          <p className="max-w-xl md:text-right">
+            Trading envolve riscos substanciais e não é adequado para todos os investidores.
+          </p>
         </div>
-      </Section>
+      </div>
     </footer>
   );
 };

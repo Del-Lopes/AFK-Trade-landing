@@ -13,6 +13,10 @@ import {
 } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
+import { Backdrop } from '@/components/ui/Backdrop';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { Reveal } from '@/components/ui/Reveal';
+import { cn } from '@/lib/cn';
 
 const HIGHLIGHTS = [
   {
@@ -66,18 +70,18 @@ const TRADES: TradeRow[] = [
 
 const resultStyles: Record<TradeRow['result'], { badge: string; text: string; pill: string }> = {
   win: {
-    badge: 'bg-brand-green/15 text-brand-green border-brand-green/30',
+    badge: 'bg-brand-green/10 text-brand-green border-brand-green/25',
     text: 'text-brand-green',
     pill: 'Ganho',
   },
   loss: {
-    badge: 'bg-red-400/15 text-red-300 border-red-400/30',
-    text: 'text-red-300',
+    badge: 'bg-brand-red/10 text-red-400 border-brand-red/25',
+    text: 'text-red-400',
     pill: 'Perda',
   },
   open: {
-    badge: 'bg-amber-400/15 text-amber-300 border-amber-400/30',
-    text: 'text-amber-200',
+    badge: 'bg-white/[0.04] text-brand-muted border-white/10',
+    text: 'text-brand-muted',
     pill: 'Aberta',
   },
 };
@@ -88,7 +92,7 @@ const Rating = ({ value }: { value: number }) => (
       <Star
         key={i}
         size={10}
-        className={i < value ? 'fill-brand-gold text-brand-gold' : 'text-white/15'}
+        className={i < value ? 'fill-brand-gold/80 text-brand-gold/80' : 'text-white/15'}
       />
     ))}
   </div>
@@ -96,160 +100,163 @@ const Rating = ({ value }: { value: number }) => (
 
 export const TradingJournal = () => {
   return (
-    <Section id="journal" className="py-32 bg-gradient-to-b from-brand-dark to-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px] pointer-events-none" />
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/3 h-1/2 bg-brand-green/8 blur-[120px] rounded-full pointer-events-none" />
+    <Section id="journal" divider>
+      <Backdrop variant="grid" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
         {/* Left: copy + bullets */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/10 border border-brand-green/20 rounded-full text-brand-green text-sm font-medium mb-6">
-            <BookText size={14} />
-            <span>Diário de Operações</span>
-          </div>
+        <div>
+          <Reveal>
+            <Eyebrow className="mb-5">Diário de Operações</Eyebrow>
+          </Reveal>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Cada trade vira <span className="text-brand-green">aprendizado.</span>
-          </h2>
+          <Reveal delay={80}>
+            <h2 className="mb-6 text-3xl font-bold leading-[1.08] text-white sm:text-4xl md:text-5xl">
+              Cada trade vira <span className="text-gradient-brand">aprendizado.</span>
+            </h2>
+          </Reveal>
 
-          <p className="text-white/65 text-lg leading-relaxed mb-8">
-            Registre, reflita e evolua. O Diário de Operações transforma sua rotina no MT5 em um sistema de melhoria contínua — com métricas, emoções e screenshots no mesmo lugar.
-          </p>
+          <Reveal delay={160}>
+            <p className="mb-10 text-base leading-relaxed text-brand-muted md:text-lg">
+              Registre, reflita e evolua. O Diário de Operações transforma sua rotina no MT5 em um sistema de melhoria contínua — com métricas, emoções e screenshots no mesmo lugar.
+            </p>
+          </Reveal>
 
           {/* Highlights grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {HIGHLIGHTS.map((h) => (
-              <div key={h.title} className="flex gap-3">
-                <span className="shrink-0 w-9 h-9 rounded-lg bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green">
+          <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {HIGHLIGHTS.map((h, i) => (
+              <Reveal key={h.title} delay={i * 60} className="group flex gap-3.5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-brand-green transition-colors duration-300 group-hover:border-brand-green/40">
                   {h.icon}
                 </span>
                 <div>
-                  <h3 className="text-sm font-semibold text-white mb-0.5">{h.title}</h3>
-                  <p className="text-xs text-white/55 leading-relaxed">{h.description}</p>
+                  <h3 className="mb-1 text-sm font-semibold text-white">{h.title}</h3>
+                  <p className="text-xs leading-relaxed text-brand-muted">{h.description}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          <div className="flex items-start gap-3 p-4 rounded-xl bg-brand-green/5 border border-brand-green/20 mb-8">
-            <CheckCircle2 size={18} className="text-brand-green shrink-0 mt-0.5" />
-            <p className="text-sm text-white/70 leading-relaxed">
-              <span className="text-white font-medium">Trades isolados viram padrões.</span> Identifique gatilhos emocionais, erros recorrentes e pontos fortes — e cresça com método.
-            </p>
-          </div>
+          <Reveal>
+            <div className="mb-10 flex items-start gap-3 border-l border-brand-green/40 py-1 pl-4">
+              <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-brand-green" />
+              <p className="text-sm leading-relaxed text-brand-muted">
+                <span className="font-medium text-white">Trades isolados viram padrões.</span> Identifique gatilhos emocionais, erros recorrentes e pontos fortes — e cresça com método.
+              </p>
+            </div>
+          </Reveal>
 
-          <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-            Acessar Plataforma <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </motion.div>
+          <Reveal>
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+              Acessar Plataforma
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Reveal>
+        </div>
 
         {/* Right: mockup */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative"
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="relative min-w-0"
         >
-          {/* Background glow */}
-          <div className="absolute -inset-4 bg-gradient-to-br from-brand-green/10 via-transparent to-brand-gold/10 blur-2xl rounded-3xl pointer-events-none" />
+          {/* Halo difuso */}
+          <div aria-hidden className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-brand-green/[0.05] blur-3xl" />
 
           {/* Mockup container */}
-          <div className="relative rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur-xl shadow-2xl overflow-hidden">
-            {/* Top bar */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-white/[0.02]">
-              <div className="flex items-center gap-2">
-                <BookText size={14} className="text-brand-green" />
-                <span className="text-sm font-semibold text-white">Diário de Operações</span>
+          <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-1.5 shadow-[0_40px_120px_-50px_rgba(34,197,94,0.3)] backdrop-blur">
+            <div aria-hidden className="hairline absolute inset-x-10 -top-px" />
+            <div className="overflow-hidden rounded-xl border border-white/[0.06] bg-brand-surface/90">
+              {/* Top bar */}
+              <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-3 sm:px-5">
+                <div className="flex items-center gap-2">
+                  <BookText size={14} className="text-brand-green" />
+                  <span className="text-sm font-medium text-white">Diário de Operações</span>
+                </div>
+                <div className="hidden items-center gap-1 rounded-md border border-white/[0.08] bg-white/[0.03] px-2 py-0.5 text-[10px] text-brand-subtle sm:flex">
+                  <Filter size={10} />
+                  Últimos 30 dias
+                </div>
               </div>
-              <div className="hidden sm:flex items-center gap-1 px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] text-white/50">
-                <Filter size={10} />
-                Últimos 30 dias
-              </div>
-            </div>
 
-            {/* Metrics card */}
-            <div className="p-5 border-b border-white/5 bg-white/[0.02]">
-              <div className="grid grid-cols-4 gap-3">
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/40 mb-1">Operações</p>
-                  <p className="text-lg font-bold text-white">42</p>
+              {/* Metrics card */}
+              <div className="grid grid-cols-2 border-b border-white/[0.06] sm:grid-cols-4 sm:divide-x sm:divide-white/[0.06]">
+                <div className="px-4 py-4 sm:px-5">
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.18em] text-brand-subtle">Operações</p>
+                  <p className="font-display text-lg font-semibold text-white">42</p>
                 </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/40 mb-1">Win rate</p>
-                  <p className="text-lg font-bold text-brand-green">68%</p>
+                <div className="px-4 py-4 sm:px-5">
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.18em] text-brand-subtle">Win rate</p>
+                  <p className="font-display text-lg font-semibold text-brand-green">68%</p>
                 </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/40 mb-1">Resultado</p>
+                <div className="px-4 py-4 sm:px-5">
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.18em] text-brand-subtle">Resultado</p>
                   <p
-                    className="text-lg font-bold text-brand-green select-none"
+                    className="select-none font-display text-lg font-semibold text-brand-green"
                     style={{ filter: 'blur(5px)' }}
                     aria-hidden="true"
                   >
                     +██ pips
                   </p>
                 </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-wider text-white/40 mb-1">Avaliação</p>
+                <div className="px-4 py-4 sm:px-5">
+                  <p className="mb-1 text-[10px] uppercase tracking-[0.18em] text-brand-subtle">Avaliação</p>
                   <div className="flex items-center gap-1">
-                    <Star size={12} className="fill-brand-gold text-brand-gold" />
-                    <p className="text-lg font-bold text-white">3.8</p>
+                    <Star size={12} className="fill-brand-gold/80 text-brand-gold/80" />
+                    <p className="font-display text-lg font-semibold text-white">3.8</p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Trade rows */}
-            <div className="divide-y divide-white/5">
-              {TRADES.map((trade) => {
-                const styles = resultStyles[trade.result];
-                return (
-                  <div key={trade.symbol} className="px-5 py-3.5 flex items-center gap-3 hover:bg-white/[0.02] transition-colors">
-                    {/* Symbol + type */}
-                    <div className="flex items-center gap-2 w-28 shrink-0">
-                      <span className={`w-7 h-7 rounded-md flex items-center justify-center ${styles.badge} border`}>
-                        {trade.type === 'Compra' ? (
-                          <TrendingUp size={13} />
-                        ) : (
-                          <TrendingDown size={13} />
-                        )}
-                      </span>
-                      <div className="min-w-0">
-                        <p className="text-xs font-semibold text-white font-mono">{trade.symbol}</p>
-                        <p className="text-[10px] text-white/40">{trade.type}</p>
+              {/* Trade rows */}
+              <div className="divide-y divide-white/[0.05]">
+                {TRADES.map((trade) => {
+                  const styles = resultStyles[trade.result];
+                  return (
+                    <div key={trade.symbol} className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-white/[0.02] sm:px-5">
+                      {/* Symbol + type */}
+                      <div className="flex w-24 shrink-0 items-center gap-2 sm:w-28">
+                        <span className={cn('flex h-7 w-7 items-center justify-center rounded-md border', styles.badge)}>
+                          {trade.type === 'Compra' ? (
+                            <TrendingUp size={13} />
+                          ) : (
+                            <TrendingDown size={13} />
+                          )}
+                        </span>
+                        <div className="min-w-0">
+                          <p className="font-mono text-xs font-medium text-white">{trade.symbol}</p>
+                          <p className="text-[10px] text-brand-subtle">{trade.type}</p>
+                        </div>
                       </div>
+
+                      {/* Result pips (some blurred to avoid promises) */}
+                      <div className="min-w-0 flex-1">
+                        <p className={cn('font-mono text-xs font-medium', styles.text)}>{trade.pips}</p>
+                        <p className="truncate text-[10px] text-brand-subtle">{trade.emotion}</p>
+                      </div>
+
+                      {/* Rating */}
+                      <Rating value={trade.rating} />
+
+                      {/* Result pill */}
+                      <span className={cn('hidden items-center rounded-full border px-2 py-0.5 text-[10px] font-medium sm:inline-flex', styles.badge)}>
+                        {styles.pill}
+                      </span>
                     </div>
+                  );
+                })}
+              </div>
 
-                    {/* Result pips (some blurred to avoid promises) */}
-                    <div className="flex-1 min-w-0">
-                      <p className={`text-xs font-bold ${styles.text}`}>{trade.pips}</p>
-                      <p className="text-[10px] text-white/35 truncate">{trade.emotion}</p>
-                    </div>
-
-                    {/* Rating */}
-                    <Rating value={trade.rating} />
-
-                    {/* Result pill */}
-                    <span className={`hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold border ${styles.badge}`}>
-                      {styles.pill}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Footer hint */}
-            <div className="px-5 py-3 border-t border-white/5 flex items-center justify-between text-[11px] text-white/40">
-              <span className="flex items-center gap-1.5">
-                <Camera size={11} />
-                Screenshots anexados
-              </span>
-              <span>Tags emocionais ativas</span>
+              {/* Footer hint */}
+              <div className="flex items-center justify-between gap-3 border-t border-white/[0.06] px-4 py-3 text-[11px] text-brand-subtle sm:px-5">
+                <span className="flex items-center gap-1.5">
+                  <Camera size={11} />
+                  Screenshots anexados
+                </span>
+                <span>Tags emocionais ativas</span>
+              </div>
             </div>
           </div>
         </motion.div>

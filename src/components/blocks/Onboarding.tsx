@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { UserPlus, CreditCard, Cpu, Key, BookOpen, Users, LayoutDashboard, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { UserPlus, CreditCard, Cpu, Key, BookOpen, Users, LayoutDashboard, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
+import { Backdrop } from '@/components/ui/Backdrop';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { Reveal } from '@/components/ui/Reveal';
+import { cn } from '@/lib/cn';
 
 const STEPS = [
   {
@@ -65,132 +69,133 @@ const STEPS = [
 
 export const Onboarding = () => {
   const [active, setActive] = useState(0);
+  const current = STEPS[active];
 
   return (
-    <Section id="onboarding" className="py-32 bg-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(34,197,94,0.04),transparent_50%)] pointer-events-none" />
+    <Section id="onboarding" divider>
+      <Backdrop variant="glow" />
 
-      <div className="text-center mb-16 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/60 text-sm font-medium mb-6">
-          <CheckCircle2 size={14} />
-          <span>Onboarding Guiado</span>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Do zero ao primeiro robô <br />
-          <span className="text-brand-green">em 7 passos.</span>
-        </h2>
-        <p className="text-white/60 text-lg max-w-2xl mx-auto">
-          Curva de aprendizado mínima. Cada etapa é apresentada interativamente dentro da plataforma para que você sinta segurança desde o primeiro acesso.
-        </p>
-      </div>
+      <SectionHeader
+        eyebrow="Onboarding Guiado"
+        title={
+          <>
+            Do zero ao primeiro robô <br className="hidden sm:block" />
+            <span className="text-gradient-brand">em 7 passos.</span>
+          </>
+        }
+        description="Curva de aprendizado mínima. Cada etapa é apresentada interativamente dentro da plataforma para que você sinta segurança desde o primeiro acesso."
+      />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start relative z-10 max-w-5xl mx-auto">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-12">
         {/* Step list */}
-        <div className="space-y-2">
-          {STEPS.map((step, idx) => (
-            <button
-              key={step.number}
-              onClick={() => setActive(idx)}
-              className={`w-full text-left flex items-center gap-4 p-4 rounded-xl transition-all duration-200 group ${
-                active === idx
-                  ? 'bg-white/10 border border-white/15'
-                  : 'hover:bg-white/5 border border-transparent'
-              }`}
-            >
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-200"
-                style={{
-                  background: active === idx ? `${step.color}20` : 'rgba(255,255,255,0.05)',
-                  border: `1px solid ${active === idx ? step.color + '50' : 'transparent'}`,
-                  color: active === idx ? step.color : '#ffffff60',
-                }}
+        <Reveal className="space-y-1.5">
+          {STEPS.map((step, idx) => {
+            const isActive = active === idx;
+            return (
+              <button
+                key={step.number}
+                onClick={() => setActive(idx)}
+                className={cn(
+                  'group flex w-full items-center gap-4 rounded-xl border p-3.5 text-left transition-all duration-300 sm:p-4',
+                  isActive
+                    ? 'border-brand-green/30 bg-white/[0.04]'
+                    : 'border-transparent hover:border-white/[0.08] hover:bg-white/[0.02]'
+                )}
               >
-                {step.icon}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono" style={{ color: active === idx ? step.color : '#ffffff30' }}>
-                    {String(step.number).padStart(2, '0')}
-                  </span>
-                  <span className={`text-sm font-semibold transition-colors ${active === idx ? 'text-white' : 'text-white/60'}`}>
-                    {step.title}
-                  </span>
+                <div
+                  className={cn(
+                    'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors duration-300',
+                    isActive
+                      ? 'border-brand-green/40 bg-brand-green/10 text-brand-green'
+                      : 'border-white/10 bg-white/[0.03] text-brand-subtle group-hover:text-brand-muted'
+                  )}
+                >
+                  {step.icon}
                 </div>
-              </div>
-              <ChevronRight
-                size={14}
-                className="shrink-0 transition-colors"
-                style={{ color: active === idx ? step.color : 'transparent' }}
-              />
-            </button>
-          ))}
-        </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={cn(
+                        'font-mono text-xs transition-colors',
+                        isActive ? 'text-brand-green' : 'text-white/25'
+                      )}
+                    >
+                      {String(step.number).padStart(2, '0')}
+                    </span>
+                    <span
+                      className={cn(
+                        'text-sm font-medium transition-colors',
+                        isActive ? 'text-white' : 'text-brand-muted group-hover:text-white'
+                      )}
+                    >
+                      {step.title}
+                    </span>
+                  </div>
+                </div>
+                <ChevronRight
+                  size={14}
+                  className={cn(
+                    'shrink-0 transition-all duration-300',
+                    isActive ? 'translate-x-0 text-brand-green opacity-100' : '-translate-x-1 opacity-0'
+                  )}
+                />
+              </button>
+            );
+          })}
+        </Reveal>
 
         {/* Detail panel */}
-        <div className="lg:sticky lg:top-28">
+        <Reveal delay={120} className="lg:sticky lg:top-28">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.25 }}
-              className="p-8 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden"
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="glass-card overflow-hidden p-6 sm:p-8"
             >
-              <div
-                className="absolute inset-0 pointer-events-none opacity-40"
-                style={{ background: `radial-gradient(ellipse at top left, ${STEPS[active].color}12, transparent 60%)` }}
-              />
+              <div aria-hidden className="hairline absolute inset-x-8 -top-px" />
 
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                style={{ background: `${STEPS[active].color}15`, border: `1px solid ${STEPS[active].color}30` }}
-              >
-                <span style={{ color: STEPS[active].color }}>{STEPS[active].icon}</span>
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-brand-green/30 bg-brand-green/[0.06] text-brand-green">
+                {current.icon}
               </div>
 
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-mono" style={{ color: STEPS[active].color }}>
-                  Passo {STEPS[active].number} de {STEPS.length}
-                </span>
-              </div>
+              <p className="eyebrow mb-3">
+                Passo {current.number} de {STEPS.length}
+              </p>
 
-              <h3 className="text-2xl font-bold text-white mb-4">{STEPS[active].title}</h3>
-              <p className="text-white/70 leading-relaxed mb-4">{STEPS[active].description}</p>
+              <h3 className="mb-4 text-2xl font-semibold text-white">{current.title}</h3>
+              <p className="mb-6 leading-relaxed text-brand-muted">{current.description}</p>
 
-              <div
-                className="flex items-start gap-2 p-3 rounded-xl text-sm"
-                style={{ background: `${STEPS[active].color}08`, border: `1px solid ${STEPS[active].color}20` }}
-              >
-                <CheckCircle2 size={15} style={{ color: STEPS[active].color }} className="mt-0.5 shrink-0" />
-                <span className="text-white/60">{STEPS[active].detail}</span>
+              <div className="flex items-start gap-2.5 rounded-lg border border-white/[0.06] bg-white/[0.02] p-3.5 text-sm">
+                <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-brand-green" />
+                <span className="text-brand-muted">{current.detail}</span>
               </div>
 
               {/* Progress dots */}
-              <div className="flex items-center gap-1.5 mt-6">
+              <div className="mt-7 flex items-center gap-1.5">
                 {STEPS.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className="rounded-full transition-all duration-200"
-                    style={{
-                      width: i === active ? 20 : 6,
-                      height: 6,
-                      background: i === active ? STEPS[active].color : 'rgba(255,255,255,0.15)',
-                    }}
+                    className={cn(
+                      'h-1.5 rounded-full transition-all duration-300',
+                      i === active ? 'w-5 bg-brand-green' : 'w-1.5 bg-white/15 hover:bg-white/30'
+                    )}
                   />
                 ))}
               </div>
             </motion.div>
           </AnimatePresence>
 
-          <div className="mt-6 text-center">
-            <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+          <div className="mt-6 flex justify-center">
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
               Começar Agora — É Grátis
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

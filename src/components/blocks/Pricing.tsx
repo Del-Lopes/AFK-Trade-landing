@@ -1,83 +1,102 @@
 import { ArrowRight, Check, X } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { Backdrop } from '@/components/ui/Backdrop';
+import { Reveal } from '@/components/ui/Reveal';
+import { cn } from '@/lib/cn';
 
 export const Pricing = () => {
   return (
-    <Section id="pricing" className="py-24 bg-brand-dark relative">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px] opacity-50" />
-      
-      <div className="text-center mb-16 relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Oferta de <span className="text-brand-green">Lançamento</span>
-        </h2>
-        <p className="text-white text-lg max-w-2xl mx-auto">
-          Garanta seu acesso vitalício ou antecipado. Condição exclusiva para os membros fundadores.
-        </p>
-      </div>
+    <Section id="pricing" divider>
+      <Backdrop variant="glow" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative z-10 px-4">
+      <SectionHeader
+        eyebrow="Acesso"
+        title={<>Oferta de <span className="text-gradient-brand">Lançamento</span></>}
+        description="Garanta seu acesso vitalício ou antecipado. Condição exclusiva para os membros fundadores."
+      />
+
+      <div className="mx-auto grid max-w-4xl grid-cols-1 items-stretch gap-6 md:grid-cols-2">
         {/* Card: Standard Info (Future Price) */}
-        <div className="border border-white/10 rounded-2xl p-8 bg-white/5 flex flex-col transition-all duration-300">
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Membro Trader AFK</h3>
-            <p className="text-sm text-white">Valor padrão após o lote promocional</p>
-          </div>
-          
-          <div className="mb-8">
-            <span className="text-4xl font-bold text-white">R$ 97</span>
-            <span className="text-white">/ano</span>
-          </div>
+        <Reveal className="h-full">
+          <div className="glass-card flex h-full flex-col p-7 sm:p-8">
+            <div className="mb-8">
+              <h3 className="mb-2 text-xl font-semibold text-white">Membro Trader AFK</h3>
+              <p className="text-sm text-brand-muted">Valor padrão após o lote promocional</p>
+            </div>
 
-          <ul className="space-y-4 mb-8 flex-1">
-            <ListItem>Acesso ao catálogo de estratégias</ListItem>
-            <ListItem>Acesso à biblioteca de cursos</ListItem>
-            <ListItem>Atualizações constantes</ListItem>
-            <ListItem negative>Renovação anual grátis</ListItem>
-          </ul>
+            <div className="mb-8 flex items-baseline gap-1 border-b border-white/[0.06] pb-8">
+              <span className="font-display text-5xl font-semibold tracking-tight text-white">R$ 97</span>
+              <span className="text-brand-subtle">/ano</span>
+            </div>
 
-          <Button variant="outline" className="w-full mt-auto" disabled>
-            Aguarde o próximo lote
-          </Button>
-        </div>
+            <ul className="mb-8 flex-1 space-y-4">
+              <ListItem>Acesso ao catálogo de estratégias</ListItem>
+              <ListItem>Acesso à biblioteca de cursos</ListItem>
+              <ListItem>Atualizações constantes</ListItem>
+              <ListItem negative>Renovação anual grátis</ListItem>
+            </ul>
+
+            <Button variant="outline" className="mt-auto w-full" disabled>
+              Aguarde o próximo lote
+            </Button>
+          </div>
+        </Reveal>
 
         {/* Card: Promo Launch (Scarcity) */}
-        <div className="border-2 border-brand-green rounded-2xl p-8 bg-brand-green/5 flex flex-col relative transform md:scale-105 shadow-2xl shadow-brand-green/20">
-          <div className="absolute top-0 right-0 bg-brand-green text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg animate-pulse">
-            RESTAM POUCAS VAGAS
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-white mb-2">Condição de Lançamento</h3>
-            <p className="text-sm text-brand-green/80">Exclusivo para os 100 primeiros</p>
-          </div>
-          
-          <div className="mb-8">
-            <span className="text-4xl font-bold text-white">R$ 0</span>
-            <span className="text-white">/vitalício*</span>
-          </div>
+        <Reveal delay={100} className="relative h-full">
+          {/* Halo difuso */}
+          <div aria-hidden className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-brand-green/[0.07] blur-3xl" />
 
-          <ul className="space-y-4 mb-8 flex-1">
-            <ListItem active>Acesso Gratuito Vitalício</ListItem>
-            <ListItem active>Acesso Imediato ao Ecossistema</ListItem>
-            <ListItem active>Acesso à biblioteca de cursos</ListItem>
-            <ListItem active>Condições especiais dos primeiros parceiros</ListItem>
-          </ul>
+          {/* Borda em gradiente verde */}
+          <div className="relative h-full rounded-2xl bg-gradient-to-b from-brand-green/60 via-brand-green/20 to-white/[0.06] p-px">
+            <div className="relative flex h-full flex-col rounded-[calc(1rem-1px)] bg-gradient-to-b from-[#0f1a13] to-brand-surface p-7 sm:p-8">
+              <div aria-hidden className="hairline absolute inset-x-8 -top-px" />
 
-          <div className="mb-6 bg-brand-dark/50 rounded-lg p-3 border border-white/10">
-             <div className="flex justify-between text-xs text-gray-400 mb-1">
-                <span>Vagas Preenchidas</span>
-                <span>63%</span>
-             </div>
-             <div className="w-full bg-gray-700 rounded-full h-1.5">
-                <div className="bg-brand-green h-1.5 rounded-full" style={{ width: '63%' }}></div>
-             </div>
+              <div className="mb-8 flex flex-col-reverse items-start gap-4 sm:flex-row sm:justify-between">
+                <div>
+                  <h3 className="mb-2 text-xl font-semibold text-white">Condição de Lançamento</h3>
+                  <p className="text-sm text-brand-green/80">Exclusivo para os 100 primeiros</p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-green">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+                  RESTAM POUCAS VAGAS
+                </span>
+              </div>
+
+              <div className="mb-8 flex items-baseline gap-1 border-b border-white/[0.06] pb-8">
+                <span className="font-display text-5xl font-semibold tracking-tight text-white">R$ 0</span>
+                <span className="text-brand-muted">/vitalício*</span>
+              </div>
+
+              <ul className="mb-8 flex-1 space-y-4">
+                <ListItem active>Acesso Gratuito Vitalício</ListItem>
+                <ListItem active>Acesso Imediato ao Ecossistema</ListItem>
+                <ListItem active>Acesso à biblioteca de cursos</ListItem>
+                <ListItem active>Condições especiais dos primeiros parceiros</ListItem>
+              </ul>
+
+              <div className="mb-6 rounded-lg border border-white/[0.08] bg-white/[0.02] p-3">
+                <div className="mb-2 flex justify-between text-xs text-brand-muted">
+                  <span>Vagas Preenchidas</span>
+                  <span className="font-mono text-white">63%</span>
+                </div>
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/[0.08]">
+                  <div
+                    className="h-1.5 rounded-full bg-gradient-to-r from-brand-green-deep to-brand-green-bright"
+                    style={{ width: '63%' }}
+                  ></div>
+                </div>
+              </div>
+
+              <Button className="mt-auto w-full" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+                Garantir Minha Vaga Grátis
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
+            </div>
           </div>
-
-          <Button className="w-full mt-auto" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-            Garantir Minha Vaga Grátis <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );
@@ -85,8 +104,17 @@ export const Pricing = () => {
 
 const ListItem = ({ children, active, negative }: { children: React.ReactNode; active?: boolean; negative?: boolean }) => {
   return (
-    <li className={`flex items-start gap-3 text-sm ${active ? 'text-white' : 'text-white'}`}>
-      <div className={`mt-0.5 rounded-full p-0.5 ${active ? 'bg-brand-green text-brand-dark' : negative ? 'bg-red-500/20 text-red-500' : 'bg-white/10 text-white'}`}>
+    <li className={cn('flex items-start gap-3 text-sm', active ? 'text-neutral-200' : 'text-brand-muted')}>
+      <div
+        className={cn(
+          'mt-0.5 shrink-0 rounded-full border p-0.5',
+          active
+            ? 'border-brand-green/40 bg-brand-green/15 text-brand-green'
+            : negative
+              ? 'border-red-400/30 bg-red-500/10 text-red-400'
+              : 'border-white/10 bg-white/[0.04] text-neutral-300'
+        )}
+      >
         {negative ? <X size={12} /> : <Check size={12} />}
       </div>
       <span className={negative ? 'opacity-70' : ''}>{children}</span>

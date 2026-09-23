@@ -1,8 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ExternalLink } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
+import { cn } from '@/lib/cn';
+
+const PLATFORM_URL = 'https://app.traderafk.com';
+
+const navLinks = [
+  { name: 'Robôs', href: '#robots' },
+  { name: 'Licenças', href: '#licensing' },
+  { name: 'Biblioteca', href: '#academy' },
+  { name: 'Parceiros', href: '#partners' },
+  { name: 'Preços', href: '#pricing' },
+  { name: 'FAQ', href: '#faq' },
+];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,94 +22,98 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Robôs', href: '#robots' },
-    { name: 'Licenças', href: '#licensing' },
-    { name: 'Biblioteca', href: '#academy' },
-    { name: 'Parceiros', href: '#partners' },
-    { name: 'Preços', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-          isScrolled
-            ? 'bg-brand-dark/80 backdrop-blur-lg border-white/5 py-4'
-            : 'bg-transparent border-transparent py-6'
-        }`}
+        className={cn(
+          'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300',
+          isScrolled || isMobileMenuOpen
+            ? 'border-white/[0.06] bg-brand-dark/75 backdrop-blur-xl'
+            : 'border-transparent bg-transparent'
+        )}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src="/images/logo-icon.png" alt="Trader AFK Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
-            <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-green transition-colors">Trader AFK</span>
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+          <Link to="/" className="group flex shrink-0 items-center gap-2.5">
+            <img src="/images/logo-icon.png" alt="" className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" />
+            <span className="font-display text-lg font-semibold tracking-tight text-white">Trader AFK</span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-white/50 hover:text-white transition-colors"
+                className="rounded-md px-3 py-2 text-sm text-neutral-400 transition-colors hover:text-white"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-              Acessar Plataforma <ExternalLink size={14} className="ml-2" />
+          <div className="hidden md:flex">
+            <Button size="sm" onClick={() => window.open(PLATFORM_URL, '_blank')}>
+              Acessar Plataforma
+              <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Button>
           </div>
 
-          {/* Mobile Toggle */}
           <button
-            className="md:hidden text-white p-2"
+            className="-mr-2 p-2 text-white md:hidden"
+            aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-brand-dark pt-24 px-6 md:hidden overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 overflow-y-auto bg-brand-dark/95 px-6 pt-24 backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col space-y-5 pt-20 px-6">
-              <div className="flex items-center gap-2 mb-4">
-                <img src="/images/logo-icon.png" alt="Trader AFK" className="h-8 w-auto" />
-                <span className="text-xl font-bold text-white">Trader AFK</span>
-              </div>
-              {navLinks.map((link) => (
-                <a
+            <p className="eyebrow mb-6">Navegação</p>
+            <div className="flex flex-col">
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.04 * i }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-bold text-white hover:text-brand-green transition-colors"
+                  className="flex items-center justify-between border-b border-white/[0.06] py-4 font-display text-2xl font-medium text-white"
                 >
                   {link.name}
-                </a>
+                  <ArrowUpRight size={18} className="text-neutral-600" />
+                </motion.a>
               ))}
-              <div className="h-px bg-white/10 w-full my-2" />
-              <Button size="lg" className="w-full" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 pb-10">
+              <Button size="lg" className="w-full" onClick={() => window.open(PLATFORM_URL, '_blank')}>
                 Criar Conta Grátis
               </Button>
-              <a href="https://app.traderafk.com/login" className="text-lg text-white/40 hover:text-white py-2 text-center transition-colors">
+              <a
+                href={`${PLATFORM_URL}/login`}
+                className="py-2 text-center text-sm text-neutral-400 transition-colors hover:text-white"
+              >
                 Acessar Área de Membros
               </a>
             </div>

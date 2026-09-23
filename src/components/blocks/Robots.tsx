@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion';
-import { TrendingUp, ArrowRight, Activity, CheckCircle2 } from 'lucide-react';
+import { TrendingUp, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
+import { Backdrop } from '@/components/ui/Backdrop';
 import { Button } from '@/components/ui/Button';
+import { Reveal } from '@/components/ui/Reveal';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const ROBOTS = [
   {
@@ -52,121 +54,106 @@ const ROBOTS = [
 
 export const Robots = () => {
   return (
-    <Section id="robots" className="py-32 bg-gradient-to-b from-brand-dark to-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px] pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-green/30 to-transparent" />
+    <Section id="robots" divider>
+      <Backdrop variant="grid" />
 
-      <div className="text-center mb-16 relative z-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/10 border border-brand-green/20 rounded-full text-brand-green text-sm font-medium mb-6">
-          <Activity size={14} />
-          <span>Estratégias Algorítmicas</span>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Nossos <span className="text-brand-green">Expert Advisors</span>
-        </h2>
-        <p className="text-white text-lg max-w-2xl mx-auto">
-          Quatro robôs de trading com estratégias distintas e histórico verificado. Escolha um ou combine para diversificar sua exposição a risco.
-        </p>
-      </div>
+      <SectionHeader
+        eyebrow="Estratégias Algorítmicas"
+        title={
+          <>
+            Nossos <span className="text-gradient-brand">Expert Advisors</span>
+          </>
+        }
+        description="Quatro robôs de trading com estratégias distintas e histórico verificado. Escolha um ou combine para diversificar sua exposição a risco."
+      />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
         {ROBOTS.map((robot, idx) => (
-          <motion.div
-            key={robot.name}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.12 }}
-            className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden hover:shadow-[0_0_40px_-10px_rgba(34,197,94,0.15)]"
-          >
-            {/* Subtle glow on hover */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-              style={{ background: `radial-gradient(ellipse at top left, ${robot.colorHex}08, transparent 60%)` }}
-            />
+          <Reveal key={robot.name} delay={idx * 80} className="h-full">
+            <div className="glass-card glass-card-hover group flex h-full flex-col p-6 hover:-translate-y-1 sm:p-8">
+              <div
+                aria-hidden
+                className="hairline absolute inset-x-6 -top-px opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+              />
 
-            <div className="flex items-start justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ background: `${robot.colorHex}15`, border: `1px solid ${robot.colorHex}30` }}
-                >
-                  <TrendingUp size={22} style={{ color: robot.colorHex }} />
+              <div className="mb-6 flex items-start justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-brand-green transition-colors duration-500 group-hover:border-brand-green/40">
+                    <TrendingUp size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{robot.name}</h3>
+                    <span className="font-mono text-xs text-brand-subtle">{robot.version}</span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">{robot.name}</h3>
-                  <span className="text-xs text-white/50 font-mono">{robot.version}</span>
+                <div className="flex flex-col items-end gap-2">
+                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.15em] text-neutral-300">
+                    {robot.badge}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs font-medium text-brand-green">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-green" />
+                    {robot.status}
+                  </span>
                 </div>
               </div>
-              <div className="flex flex-col items-end gap-2">
-                <span
-                  className="text-xs font-bold px-2 py-0.5 rounded-full"
-                  style={{ background: `${robot.colorHex}20`, color: robot.colorHex }}
-                >
-                  {robot.badge}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-brand-green font-medium">
-                  <span className="w-1.5 h-1.5 bg-brand-green rounded-full animate-pulse" />
-                  {robot.status}
-                </span>
+
+              <p className="mb-6 text-sm leading-relaxed text-brand-muted">{robot.description}</p>
+
+              {/* Stats row — par de moedas apenas */}
+              <div className="mb-6 flex items-center gap-6 border-y border-white/[0.06] py-4">
+                <div className="min-w-0">
+                  <span className="mb-0.5 block text-[11px] uppercase tracking-[0.15em] text-brand-subtle">Par</span>
+                  <span className="font-mono text-sm text-white">{robot.pair}</span>
+                </div>
+                {/* Histórico velado — evitar promessa de rentabilidade */}
+                <div className="ml-auto shrink-0 text-right">
+                  <span className="mb-0.5 block text-[11px] uppercase tracking-[0.15em] text-brand-subtle">Histórico (MyFxBook)</span>
+                  <span
+                    className="select-none font-display text-xl font-bold text-brand-green"
+                    style={{
+                      filter: 'blur(6px)',
+                      userSelect: 'none',
+                    }}
+                    title="Acesse a plataforma para visualizar o histórico completo"
+                  >
+                    ██.█%
+                  </span>
+                </div>
               </div>
+
+              {/* Highlights */}
+              <ul className="mb-8 flex-1 space-y-2.5">
+                {robot.highlights.map((h) => (
+                  <li key={h} className="flex items-center gap-2.5 text-sm text-brand-muted">
+                    <CheckCircle2 size={14} className="shrink-0 text-brand-green" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full"
+                onClick={() => window.open('https://app.traderafk.com', '_blank')}
+              >
+                Ver Estratégia
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
             </div>
-
-            <p className="text-white/70 text-sm leading-relaxed mb-6">{robot.description}</p>
-
-            {/* Stats row — par de moedas apenas */}
-            <div className="flex items-center gap-6 mb-6 py-4 border-t border-b border-white/5">
-              <div>
-                <span className="text-xs text-white/40 block mb-0.5">Par</span>
-                <span className="text-sm font-mono text-white">{robot.pair}</span>
-              </div>
-              {/* Histórico velado — evitar promessa de rentabilidade */}
-              <div className="ml-auto text-right">
-                <span className="text-xs text-white/40 block mb-0.5">Histórico (MyFxBook)</span>
-                <span
-                  className="text-xl font-bold select-none"
-                  style={{
-                    color: robot.colorHex,
-                    filter: 'blur(6px)',
-                    userSelect: 'none',
-                  }}
-                  title="Acesse a plataforma para visualizar o histórico completo"
-                >
-                  ██.█%
-                </span>
-              </div>
-            </div>
-
-            {/* Highlights */}
-            <ul className="space-y-2 mb-6">
-              {robot.highlights.map((h) => (
-                <li key={h} className="flex items-center gap-2 text-sm text-white/70">
-                  <CheckCircle2 size={13} style={{ color: robot.colorHex }} className="shrink-0" />
-                  {h}
-                </li>
-              ))}
-            </ul>
-
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-full group-hover:border-brand-green/50 group-hover:text-brand-green transition-colors"
-              onClick={() => window.open('https://app.traderafk.com', '_blank')}
-            >
-              Ver Estratégia <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div>
+          </Reveal>
         ))}
       </div>
 
-      <div className="mt-12 text-center relative z-10">
-        <p className="text-white/40 text-sm mb-4">
+      <Reveal className="mt-14 text-center">
+        <p className="mx-auto mb-6 max-w-2xl text-xs leading-relaxed text-brand-subtle sm:text-sm">
           Histórico verificado via MyFxBook. Trading envolve risco — resultados passados não garantem resultados futuros.
         </p>
         <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-          Ver Todas as Estratégias <ArrowRight className="ml-2 w-5 h-5" />
+          Ver Todas as Estratégias
+          <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
-      </div>
+      </Reveal>
     </Section>
   );
 };

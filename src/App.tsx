@@ -24,7 +24,7 @@ import { SparklesCore } from '@/components/ui/SparklesCore';
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
+    <div className="min-h-screen bg-brand-dark text-white font-sans">
       <Helmet>
         <title>Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex e MT5</title>
         <meta name="description" content="Plataforma SaaS completa para trading automatizado. Robôs forex (Expert Advisors), licenças MT5, cursos, análises de mercado e programa de parceiros. Opere 24/7 no piloto automático." />
@@ -48,10 +48,10 @@ function LandingPage() {
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={40}
-          className="w-full h-full"
+          minSize={0.4}
+          maxSize={1.2}
+          particleDensity={28}
+          className="w-full h-full opacity-60"
           particleColor="#FFFFFF"
           speed={2}
         />

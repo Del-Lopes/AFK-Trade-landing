@@ -1,134 +1,137 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, Bot, BookOpen, Key } from 'lucide-react';
+import { ArrowRight, Bot, BookOpen, Key } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { Section } from '@/components/layout/Section';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+
+const PLATFORM_URL = 'https://app.traderafk.com';
+
+const PILLS = [
+  { icon: Bot, text: '4 Robôs de Trading' },
+  { icon: Key, text: 'Licenças MT5' },
+  { icon: BookOpen, text: 'Educação Completa' },
+];
+
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] as const },
+});
 
 export const Hero = () => {
   return (
-    <Section className="pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex items-center relative">
-      {/* Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <motion.div
-          animate={{ y: [-30, 30, -30], x: [-20, 20, -20], opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] right-[10%] w-40 h-40 bg-brand-emerald/30 rounded-full blur-[60px] mix-blend-screen"
-        />
-        <motion.div
-          animate={{ y: [40, -40, 40], x: [30, -30, 30], opacity: [0.2, 0.6, 0.2] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[30%] left-[5%] w-56 h-56 bg-brand-green/15 rounded-full blur-[70px] mix-blend-screen"
-        />
+    <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+      {/* Ambientação */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-grid-fade opacity-60" />
+        <div className="absolute left-1/2 top-[38%] hidden h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-green/[0.06] blur-[160px] sm:block" />
+        <div className="absolute -left-40 top-24 h-[480px] w-[480px] rounded-full bg-brand-green/[0.07] blur-[120px]" />
+        <div className="hairline absolute inset-x-0 top-[26%] opacity-50" />
+        <svg className="absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 1000 600" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#22c55e" stopOpacity="0" />
+              <stop offset="50%" stopColor="#5eea96" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="#22c55e" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M -20 360 C 220 340, 400 230, 560 260 S 880 300, 1040 240"
+            fill="none"
+            stroke="url(#hero-line)"
+            strokeWidth="1.2"
+            strokeDasharray="1200"
+            className="animate-line-flow"
+          />
+        </svg>
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-green/[0.05] to-transparent" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-        {/* Text Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-brand-green text-sm font-medium">
-            <ShieldCheck size={14} />
-            <span>Plataforma Completa de Trading Algorítmico</span>
-          </div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Texto */}
+        <div className="mx-auto flex max-w-4xl flex-col items-center space-y-6 text-center sm:space-y-7">
+          <motion.div {...fadeUp(0)}>
+            <Eyebrow pill>Plataforma completa de trading algorítmico</Eyebrow>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_0_25px_rgba(34,197,94,0.4)]">
-            Opere no<br />
-            <span className="relative inline-block">
-              <span className="absolute inset-0 text-[#22c55e] blur-lg animate-pulse opacity-80 select-none pointer-events-none" aria-hidden="true">Piloto Automático.</span>
-              <span className="text-[#22c55e] drop-shadow-[0_0_15px_rgba(34,197,94,0.8)] relative z-10">Piloto Automático.</span>
-            </span>
-          </h1>
+          <motion.h1
+            {...fadeUp(0.1)}
+            className="text-[2.6rem] font-bold leading-[1.02] text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]"
+          >
+            Opere no <br className="hidden sm:block" />
+            <span className="text-gradient-brand">piloto automático.</span>
+          </motion.h1>
 
-          <p className="text-white text-lg max-w-lg leading-relaxed">
-            Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma. Enquanto você vive sua vida, nossos algoritmos trabalham por você 24/7.
-          </p>
+          <motion.p {...fadeUp(0.2)} className="max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg">
+            Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma.
+            Enquanto você vive sua vida, nossos algoritmos trabalham por você 24/7.
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-              Comece Agora — É Grátis <ArrowRight className="ml-2 w-5 h-5" />
+          <motion.div {...fadeUp(0.3)} className="flex w-full flex-col justify-center gap-3 pt-2 sm:w-auto sm:flex-row">
+            <Button size="lg" onClick={() => window.open(PLATFORM_URL, '_blank')}>
+              Comece Agora — É Grátis
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
-            <Button size="lg" variant="outline" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
+            <Button size="lg" variant="outline" onClick={() => window.open(PLATFORM_URL, '_blank')}>
               Acessar a Plataforma
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Feature Pills */}
-          <div className="flex flex-wrap gap-3 pt-2">
-            {[
-              { icon: <Bot size={13} />, text: '4 Robôs de Trading' },
-              { icon: <Key size={13} />, text: 'Licenças MT5' },
-              { icon: <BookOpen size={13} />, text: 'Educação Completa' },
-            ].map((pill) => (
-              <span key={pill.text} className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/70">
-                <span className="text-brand-green">{pill.icon}</span>
-                {pill.text}
-              </span>
+          <motion.ul {...fadeUp(0.4)} className="flex flex-wrap justify-center gap-x-6 gap-y-2 pt-1">
+            {PILLS.map(({ icon: Icon, text }) => (
+              <li key={text} className="inline-flex items-center gap-2 text-xs text-neutral-400">
+                <Icon size={14} className="text-brand-green" />
+                {text}
+              </li>
             ))}
-          </div>
+          </motion.ul>
+        </div>
 
-          <div className="pt-8 border-t border-white/5 flex gap-8 text-white text-sm">
-            <div>
-              <strong className="block text-2xl text-white font-bold">100+</strong>
-              <span>Traders Ativos</span>
-            </div>
-            <div>
-              <strong className="block text-2xl text-white font-bold">4</strong>
-              <span>Expert Advisors</span>
-            </div>
-            <div>
-              <strong className="block text-2xl text-white font-bold">24/7</strong>
-              <span>Operando</span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Visual Mockup */}
+        {/* Visual */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative"
+          transition={{ duration: 1.1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto mt-16 max-w-5xl sm:mt-20"
         >
-          <div className="relative rounded-2xl border border-white/10 bg-brand-dark/50 backdrop-blur-xl shadow-2xl shadow-brand-green/10 p-2 overflow-hidden aspect-[4/3] group">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-10" />
+          <div aria-hidden className="absolute -inset-x-10 -top-10 bottom-0 animate-halo rounded-[3rem] bg-brand-green/[0.08] blur-3xl" />
 
-            <div className="h-full w-full bg-slate-900 rounded-xl overflow-hidden relative border border-white/5 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700">
+          <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-1.5 shadow-[0_40px_120px_-40px_rgba(34,197,94,0.35)] backdrop-blur">
+            <div className="hairline absolute inset-x-10 -top-px" />
+            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/[0.06] bg-brand-surface">
               <img
                 src="/images/hero-dashboard.png"
-                alt="Trader AFK Dashboard Interface"
-                className="w-full h-full object-cover opacity-90"
+                alt="Interface do painel Trader AFK"
+                className="h-full w-full object-cover opacity-90"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
 
-              {/* Floating Card Element */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-6 right-6 bg-slate-900/90 backdrop-blur-md border border-brand-green/20 p-4 rounded-xl shadow-xl w-48 z-20"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs text-white">P&amp;L (24h)</span>
-                  <span className="text-xs text-brand-green font-bold" style={{ filter: 'blur(4px)', userSelect: 'none' }}>+2.4%</span>
-                </div>
-                <div className="h-1 bg-slate-700 rounded-full overflow-hidden">
-                  <div className="h-full w-[70%] bg-brand-green rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-                </div>
-              </motion.div>
-
-              {/* Robot Active Badge */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-6 left-6 bg-slate-900/90 backdrop-blur-md border border-brand-green/30 px-3 py-2 rounded-lg shadow-xl z-20 flex items-center gap-2"
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                className="absolute left-4 top-4 flex items-center gap-2 rounded-lg border border-white/10 bg-brand-dark/80 px-3 py-2 backdrop-blur-md sm:left-6 sm:top-6"
               >
-                <span className="w-2 h-2 bg-brand-green rounded-full animate-pulse" />
-                <span className="text-xs text-white font-medium">AFK Trader — Ativo</span>
+                <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
+                <span className="text-xs font-medium text-white">AFK Trader — Ativo</span>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute bottom-4 right-4 hidden w-52 rounded-xl border border-white/10 bg-brand-dark/80 p-4 backdrop-blur-md sm:bottom-6 sm:right-6 sm:block"
+              >
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="text-xs text-neutral-400">P&amp;L (24h)</span>
+                  <span className="select-none text-xs font-bold text-brand-green blur-[4px]">+2.4%</span>
+                </div>
+                <div className="h-1 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-full w-[70%] rounded-full bg-gradient-to-r from-brand-green-deep to-brand-green-bright" />
+                </div>
               </motion.div>
             </div>
           </div>
         </motion.div>
+
       </div>
-    </Section>
+    </section>
   );
 };
