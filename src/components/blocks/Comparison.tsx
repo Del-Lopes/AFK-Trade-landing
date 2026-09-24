@@ -18,7 +18,7 @@ export const Comparison = () => {
             A Evolução do <span className="text-gradient-brand">Trader</span>
           </>
         }
-        description="A diferença entre trabalhar para o mercado e fazer o mercado trabalhar para você."
+        description="A diferença entre operar no impulso e operar com regras definidas e automatizadas."
       />
 
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
@@ -61,9 +61,9 @@ export const Comparison = () => {
             </div>
 
             <ul className="space-y-5">
-              <ListItem icon={<Coffee size={18} />} text="5 min/dia para checar resultados" good />
-              <ListItem icon={<CheckCircle2 size={18} />} text="100% Racional e Sistemático" good />
-              <ListItem icon={<Zap size={18} />} text="Opera 24/7 em alta frequência" good />
+              <ListItem icon={<Coffee size={18} />} text="Acompanha as operações sem ficar preso à tela" good />
+              <ListItem icon={<CheckCircle2 size={18} />} text="Regras sistemáticas e risco definido" good />
+              <ListItem icon={<Zap size={18} />} text="Execução automática nos dias de mercado" good />
               <ListItem icon={<CheckCircle2 size={18} />} text="Liberdade geográfica e temporal" good />
             </ul>
           </div>

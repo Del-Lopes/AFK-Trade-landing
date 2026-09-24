@@ -46,7 +46,7 @@ const HIGHLIGHTS = [
   {
     icon: <Library size={18} />,
     title: 'Base de conhecimento curada',
-    description: 'Respostas técnicas validadas pela equipe, garantindo precisão sobre robôs e licenças.',
+    description: 'Respostas técnicas revisadas pela equipe sobre robôs e licenças.',
   },
 ];
 

@@ -7,6 +7,7 @@ import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
 import { UserPlus, Wallet, BarChart3, Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BrokerDisclaimer } from '@/components/ui/BrokerDisclaimer';
 
 
 export const StartPage = () => {
@@ -35,7 +36,7 @@ export const StartPage = () => {
               <span className="text-brand-green">em 5 Passos Simples</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Siga o guia abaixo para configurar sua conta e começar a copiar nossas estratégias vencedoras hoje mesmo.
+              Siga o guia abaixo para instalar o software da Trader AFK na sua própria conta MT5 e configurá-lo com os parâmetros de risco que você definir.
             </p>
           </div>
 
@@ -46,8 +47,8 @@ export const StartPage = () => {
             {/* Step 1 */}
             <Step 
               number="01"
-              title="Escolha uma Corretora Parceira"
-              description="Trabalhamos apenas com corretoras regulamentadas e de confiança global. Escolha a que melhor se adapta às suas necessidades."
+              title="Escolha uma Corretora Compatível"
+              description="Abra conta na corretora de sua escolha compatível com MetaTrader 5. Listamos abaixo algumas opções compatíveis; pesquise a regulação de cada uma antes de decidir."
               icon={<CheckCircle2 className="w-10 h-10 text-brand-green" />}
               action={
                 <div className="flex flex-col items-end w-full">
@@ -81,6 +82,7 @@ export const StartPage = () => {
                                       </a>
                                     ))}
                                 </div>
+                                <BrokerDisclaimer className="m-4 mt-0" />
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -93,7 +95,7 @@ export const StartPage = () => {
             <Step 
               number="02"
               title="Cadastre-se e Abra sua Conta"
-              description="Complete o processo de registro na corretora escolhida através dos nossos links parceiros. É rápido, seguro e 100% digital. Certifique-se de verificar sua identidade."
+              description="Complete o registro na corretora escolhida e a verificação de identidade exigida por ela. Se você usar um dos links desta página, a Trader AFK pode receber remuneração (rebate) da corretora."
               icon={<UserPlus className="w-10 h-10 text-brand-green" />}
               align="right"
             />
@@ -101,8 +103,8 @@ export const StartPage = () => {
             {/* Step 3 */}
             <Step 
               number="03"
-              title="Faça seu Primeiro Depósito"
-              description="Adicione fundos à sua conta de negociação. Nossas estratégias são flexíveis e permitem começar com diferentes níveis de capital. Recomendamos um mínimo de $100 para melhor gestão de risco."
+              title="Financie sua Conta"
+              description="O valor depositado é decisão exclusivamente sua. Use apenas recursos que você pode perder: operar forex e CFDs envolve alto risco e pode resultar em perdas superiores ao capital."
               icon={<Wallet className="w-10 h-10 text-brand-green" />}
               align="left"
             />
@@ -111,7 +113,7 @@ export const StartPage = () => {
             <Step 
               number="04"
               title="Escolha uma Estratégia"
-              description="Acesse a seção de estratégias no nosso App, analise o histórico de operações verificado e escolha a que melhor se adapta ao seu perfil de risco."
+              description="Acesse a seção de estratégias no nosso App, conheça a lógica e os parâmetros de cada uma e escolha a que melhor se adapta ao seu perfil de risco. Resultados passados não garantem resultados futuros."
               icon={<BarChart3 className="w-10 h-10 text-brand-green" />}
               align="right"
             />
@@ -119,8 +121,8 @@ export const StartPage = () => {
             {/* Step 5 */}
             <Step 
               number="05"
-              title="Defina suas Metas e Comece"
-              description="Defina seu Take Profit e Stop Loss para gestão de risco. Ative o Expert Advisor e acompanhe as operações em tempo real — sem precisar monitorar o mercado manualmente."
+              title="Configure o Risco e Ative"
+              description="Defina Stop Loss, Take Profit e o risco por operação. Ative o Expert Advisor e acompanhe as operações em tempo real. Você mantém o controle e pode pausar ou desligar o EA a qualquer momento."
               icon={<Rocket className="w-10 h-10 text-brand-green" />}
               align="left"
             />

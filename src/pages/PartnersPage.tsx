@@ -38,12 +38,12 @@ export const PartnersPage = () => {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
-                Construa seu império <br />
-                <span className="text-brand-green">ao nosso lado.</span>
+                Indique a Trader AFK <br />
+                <span className="text-brand-green">com transparência.</span>
               </h1>
               
               <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Junte-se ao ecossistema de trading algorítmico que mais cresce. Receba participações recorrentes baseadas em volume por cada cliente indicado que operar na plataforma.
+                Apresente nossa plataforma de trading algorítmico à sua audiência. A remuneração é calculada sobre o volume operado pelos clientes que você indicar diretamente, conforme o regulamento do programa.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -60,7 +60,7 @@ export const PartnersPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Porque ser um parceiro?</h2>
             <p className="text-white text-lg max-w-2xl mx-auto">
-              Oferecemos as melhores condições do mercado para quem deseja crescer conosco.
+              Regras claras, ferramentas profissionais e suporte para quem deseja apresentar a Trader AFK.
             </p>
           </div>
 
@@ -77,13 +77,13 @@ export const PartnersPage = () => {
             />
             <BenefitCard 
               icon={<ShieldCheck className="w-10 h-10 text-brand-gold" />}
-              title="Retenção Máxima"
-              description="Como nossos clientes lucram sem esforço, eles permanecem na plataforma por muito mais tempo (LTV alto)."
+              title="Ferramentas que Retêm"
+              description="Seus indicados contam com gestão de risco configurável, conteúdo educacional e suporte, o que favorece a permanência na plataforma."
             />
             <BenefitCard 
               icon={<TrendingUp className="w-10 h-10 text-purple-400" />}
               title="Rebate de Corretagem"
-              description="Receba parte das taxas de corretagem (spread) geradas pelo volume de negociação dos seus indicados nas corretoras parceiras."
+              description="Parte da remuneração pode vir do rebate que a corretora paga sobre o volume negociado pelos seus indicados diretos. Esse conflito de interesse é informado aos clientes."
             />
             <BenefitCard 
               icon={<Users className="w-10 h-10 text-pink-400" />}
@@ -112,7 +112,7 @@ export const PartnersPage = () => {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Influenciadores Financeiros</h3>
-                                <p className="text-white">Monetize sua audiência apresentando uma solução real e validada de automação de trading.</p>
+                                <p className="text-white">Apresente à sua audiência uma ferramenta de automação de trading com gestão de risco, sem promessa de resultado.</p>
                             </div>
                         </li>
                         <li className="flex gap-4">
@@ -130,7 +130,7 @@ export const PartnersPage = () => {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-2">Empreendedores Digitais</h3>
-                                <p className="text-white">Crie uma nova fonte de receita recorrente escalável sem precisar criar um produto do zero.</p>
+                                <p className="text-white">Inclua no seu portfólio uma ferramenta de trading automatizado sem precisar desenvolver um produto do zero.</p>
                             </div>
                         </li>
                     </ul>
@@ -139,30 +139,22 @@ export const PartnersPage = () => {
                     <div className="absolute inset-0 bg-brand-green/20 blur-[100px] rounded-full opacity-30"></div>
                      <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl">
                         <div className="text-center mb-8">
-                            <p className="text-sm text-white uppercase tracking-wider mb-2">Volume de Indicações</p>
-                            <h3 className="text-4xl font-bold text-brand-green">Escalável</h3>
+                            <p className="text-sm text-white uppercase tracking-wider mb-2">Como a remuneração é calculada</p>
+                            <h3 className="text-4xl font-bold text-brand-green">Critério claro</h3>
                         </div>
-                        <div className="space-y-4 relative">
-                           {/* Blurry Overlay with Text */}
-                           <div className="absolute inset-0 z-20 flex items-center justify-center">
-                              <span className="text-white/50 text-sm font-bold uppercase tracking-widest bg-brand-dark/50 px-3 py-1 rounded backdrop-blur-sm border border-white/5">Área de Membros</span>
-                           </div>
-
-                            <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg blur-[6px] select-none">
-                                <span className="text-white">10 Clientes</span>
-                                <span className="text-brand-green font-bold">~ R$ 2.000 / mês</span>
+                        <div className="space-y-4">
+                            <div className="bg-white/5 p-4 rounded-lg text-sm text-white leading-relaxed">
+                                Comissão calculada sobre [PREENCHER: critério], conforme regulamento do programa.
                             </div>
-                            <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg blur-[6px] select-none">
-                                <span className="text-white">50 Clientes</span>
-                                <span className="text-brand-green font-bold">~ R$ 10.000 / mês</span>
+                            <div className="bg-white/5 p-4 rounded-lg text-sm text-white leading-relaxed">
+                                Remuneração apenas sobre clientes indicados diretamente. Não há remuneração por recrutar outros parceiros.
                             </div>
-                             <div className="flex justify-between items-center bg-white/5 p-4 rounded-lg border border-brand-green/30 blur-[6px] select-none">
-                                <span className="text-white">100 Clientes</span>
-                                <span className="text-brand-green font-bold">~ R$ 25.000+ / mês</span>
+                            <div className="bg-white/5 p-4 rounded-lg border border-brand-green/30 text-sm text-white leading-relaxed">
+                                Parte do valor pode vir de rebate pago pela corretora sobre o volume operado, o que é informado ao cliente.
                             </div>
                         </div>
                         <p className="text-xs text-center text-white mt-6 opacity-60">
-                            *Valores ilustrativos. Participações variam conforme volume e condições das corretoras parceiras.
+                            Não há valor mínimo nem ganho garantido. A remuneração depende do volume efetivamente operado pelos clientes e das condições das corretoras, e pode ser zero.
                         </p>
                      </div>
                 </div>
@@ -178,7 +170,7 @@ export const PartnersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
              <StepCard number="1" title="Cadastre-se" description="Preencha o formulário de aplicação para nossa equipe analisar seu perfil." />
              <StepCard number="2" title="Receba seu Link" description="Aprovado, você recebe um link exclusivo de parceiro e acesso ao painel." />
-             <StepCard number="3" title="Comece a Indicar" description="Divulgue para sua rede e acompanhe suas participações por volume em tempo real." />
+             <StepCard number="3" title="Comece a Indicar" description="Apresente a plataforma à sua audiência e acompanhe suas indicações no painel." />
              
              {/* Connecting Line (Desktop) */}
              <div className="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-transparent via-brand-green/30 to-transparent -z-10"></div>

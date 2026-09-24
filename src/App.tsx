@@ -27,17 +27,17 @@ function LandingPage() {
     <div className="min-h-screen bg-brand-dark text-white font-sans">
       <Helmet>
         <title>Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex e MT5</title>
-        <meta name="description" content="Plataforma SaaS completa para trading automatizado. Robôs forex (Expert Advisors), licenças MT5, cursos, análises de mercado e programa de parceiros. Opere 24/7 no piloto automático." />
+        <meta name="description" content="Plataforma SaaS completa para trading automatizado. Robôs forex (Expert Advisors), licenças MT5, cursos, análises de mercado e programa de parceiros. Software que você instala e controla na sua conta MT5." />
         <meta name="keywords" content="robô forex, trading automatizado brasil, MetaTrader 5 robô, expert advisor MT5, robô de trading, trading algorítmico, AFK Trader, Trader AFK" />
         <meta property="og:title" content="Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex" />
-        <meta property="og:description" content="Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma. Opere 24/7 no piloto automático." />
+        <meta property="og:description" content="Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma. Software que você instala e controla na sua conta MT5." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://traderafk.com" />
         <meta property="og:image" content="https://traderafk.com/images/og-image.png" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Trader AFK | Trading Algorítmico com Robôs Forex" />
-        <meta name="twitter:description" content="Opere no piloto automático com os melhores Expert Advisors para MetaTrader 5." />
+        <meta name="twitter:description" content="Expert Advisors para MetaTrader 5 com gestão de risco configurável, licenças e educação." />
         <link rel="canonical" href="https://traderafk.com" />
       </Helmet>
 

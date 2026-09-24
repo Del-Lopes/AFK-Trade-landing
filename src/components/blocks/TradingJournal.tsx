@@ -177,7 +177,7 @@ export const TradingJournal = () => {
                 </div>
                 <div className="hidden items-center gap-1 rounded-md border border-white/[0.08] bg-white/[0.03] px-2 py-0.5 text-[10px] text-brand-subtle sm:flex">
                   <Filter size={10} />
-                  Últimos 30 dias
+                  Últimos 30 dias · dados ilustrativos
                 </div>
               </div>
 

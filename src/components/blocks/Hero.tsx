@@ -57,13 +57,13 @@ export const Hero = () => {
             {...fadeUp(0.1)}
             className="text-[2.6rem] font-bold leading-[1.02] text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]"
           >
-            Opere no <br className="hidden sm:block" />
-            <span className="text-gradient-brand">piloto automático.</span>
+            Automatize seu trading <br className="hidden sm:block" />
+            <span className="text-gradient-brand">com controle.</span>
           </motion.h1>
 
           <motion.p {...fadeUp(0.2)} className="max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg">
             Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma.
-            Enquanto você vive sua vida, nossos algoritmos trabalham por você 24/7.
+            Software que você instala e controla na sua própria conta, seguindo as regras de risco que você definir.
           </motion.p>
 
           <motion.div {...fadeUp(0.3)} className="flex w-full flex-col justify-center gap-3 pt-2 sm:w-auto sm:flex-row">
@@ -104,6 +104,9 @@ export const Hero = () => {
                 className="h-full w-full object-cover opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-4 text-[10px] uppercase tracking-[0.2em] text-neutral-400 sm:bottom-4 sm:left-6">
+                Imagem ilustrativa
+              </span>
 
               <motion.div
                 animate={{ y: [0, -8, 0] }}
@@ -111,7 +114,7 @@ export const Hero = () => {
                 className="absolute left-4 top-4 flex items-center gap-2 rounded-lg border border-white/10 bg-brand-dark/80 px-3 py-2 backdrop-blur-md sm:left-6 sm:top-6"
               >
                 <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
-                <span className="text-xs font-medium text-white">AFK Trader — Ativo</span>
+                <span className="text-xs font-medium text-white">AFK Trader — EA conectado</span>
               </motion.div>
 
               <motion.div
@@ -120,11 +123,11 @@ export const Hero = () => {
                 className="absolute bottom-4 right-4 hidden w-52 rounded-xl border border-white/10 bg-brand-dark/80 p-4 backdrop-blur-md sm:bottom-6 sm:right-6 sm:block"
               >
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="text-xs text-neutral-400">P&amp;L (24h)</span>
-                  <span className="select-none text-xs font-bold text-brand-green blur-[4px]">+2.4%</span>
+                  <span className="text-xs text-neutral-400">Risco por trade</span>
+                  <span className="text-xs font-bold text-white">1%</span>
                 </div>
                 <div className="h-1 overflow-hidden rounded-full bg-white/10">
-                  <div className="h-full w-[70%] rounded-full bg-gradient-to-r from-brand-green-deep to-brand-green-bright" />
+                  <div className="h-full w-[20%] rounded-full bg-gradient-to-r from-brand-green-deep to-brand-green-bright" />
                 </div>
               </motion.div>
             </div>

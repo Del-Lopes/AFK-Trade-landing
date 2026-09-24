@@ -6,13 +6,14 @@ import { Section } from '@/components/layout/Section';
 import { Shield, TrendingUp, Users, Globe, ArrowRight, CheckCircle } from 'lucide-react';
 
 import { Helmet } from 'react-helmet-async';
+import { BrokerDisclaimer } from '@/components/ui/BrokerDisclaimer';
 
 export const VantagePage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Parceria Vantage | Trader AFK</title>
-        <meta name="description" content="Trader AFK e Vantage Markets: Infraestrutura ECN ultra-rápida e transparente para maximizar o desempenho das suas estratégias automatizadas." />
+        <title>Vantage: corretora compatível | Trader AFK</title>
+        <meta name="description" content="Trader AFK e Vantage Markets: corretora compatível com o software de automação da Trader AFK para MetaTrader 5. Entenda os riscos e as condições antes de abrir conta." />
       </Helmet>
       <Navbar />
 
@@ -22,7 +23,7 @@ export const VantagePage = () => {
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green text-sm font-medium mb-6">
               <Shield size={14} />
-              <span>Parceria Oficial</span>
+              <span>Corretora compatível</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
@@ -31,7 +32,7 @@ export const VantagePage = () => {
             </h1>
             
             <p className="text-xl text-gray-400 max-w-2xl mb-10">
-              Unimos nossa tecnologia proprietária à infraestrutura de uma corretora global para oferecer a melhor experiência de copy trading.
+              O software da Trader AFK roda no MetaTrader 5 da sua conta na Vantage. Você instala, configura o risco e mantém o controle da conta o tempo todo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -52,15 +53,15 @@ export const VantagePage = () => {
         <Section className="bg-white/5 border-y border-white/5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Por que escolhemos a Vantage?</h2>
+              <h2 className="text-3xl font-bold mb-6">Sobre a Vantage</h2>
               <div className="space-y-6">
                 <FeatureItem 
-                  title="Execução Rápida" 
-                  description="Tecnologia ECN para execução de ordens ultra-rápida e transparente."
+                  title="Execução"
+                  description="Execução no modelo ECN da própria corretora, sujeita às condições de mercado, como slippage e variação de spread."
                 />
                 <FeatureItem 
-                  title="Segurança dos Fundos" 
-                  description="Contas segregadas e regulação rigorosa para garantir a segurança do seu capital."
+                  title="Custódia dos Fundos"
+                  description="A Trader AFK não custodia recursos. Os fundos ficam na corretora escolhida, sujeita à regulação do país dela, sem proteção da CVM ou do BCB."
                 />
                 <FeatureItem 
                   title="Baixo Custo" 
@@ -74,9 +75,9 @@ export const VantagePage = () => {
                   <div className="w-32 h-32 mb-4 flex items-center justify-center bg-white/5 rounded-full">
                      <span className="text-3xl font-bold text-white">V</span>
                   </div>
-                  <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
+                  <h3 className="text-2xl font-bold">Como funciona</h3>
                   <p className="text-gray-400">
-                    A Trader AFK utiliza a infraestrutura de ponta da Vantage para executar estratégias de alta performance.
+                    Você abre a conta diretamente com a Vantage. O software da Trader AFK é uma licença que você instala e controla no seu MetaTrader 5.
                   </p>
                </div>
             </div>
@@ -86,9 +87,9 @@ export const VantagePage = () => {
         {/* Copy Trading Section */}
         <Section>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Social Trading Avançado</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Automação na sua conta Vantage</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
-              Copie automaticamente as operações dos nossos algoritmos diretamente na sua conta Vantage.
+              Instale o software da Trader AFK no MetaTrader 5 da sua conta Vantage e configure os parâmetros de risco. Recursos de social trading da corretora, quando existirem, são serviços da própria Vantage.
             </p>
           </div>
 
@@ -114,7 +115,7 @@ export const VantagePage = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                    <h3 className="text-2xl font-bold mb-2">Pronto para começar?</h3>
-                   <p className="text-gray-400">Abra sua conta na Vantage e conecte-se às estratégias da Trader AFK hoje mesmo.</p>
+                   <p className="text-gray-400">Abra sua conta na Vantage e instale o software da Trader AFK no seu MetaTrader 5, com os parâmetros de risco que você definir.</p>
                 </div>
                 <a 
                   href="#" 
@@ -126,6 +127,8 @@ export const VantagePage = () => {
                 </a>
              </div>
           </div>
+
+          <BrokerDisclaimer className="mt-8" />
         </Section>
 
       </main>

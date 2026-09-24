@@ -15,29 +15,29 @@ const ROBOTS = [
     color: 'brand-green',
     colorHex: '#22c55e',
     badge: 'Principal',
-    highlights: ['Gestão de risco automática', 'Operações 24/7', 'Relatórios em tempo real'],
+    highlights: ['Gestão de risco automática', 'Opera nos dias de mercado', 'Relatórios em tempo real'],
   },
   {
     name: 'Snow Ball',
-    description: 'Estratégia de acumulação progressiva. Aumenta posições de forma inteligente conforme o mercado confirma a tendência, buscando aproveitar movimentos fortes.',
+    description: 'Estratégia de acumulação progressiva: adiciona posições conforme o mercado confirma a tendência. Atenção: por adicionar posições, pode ampliar perdas em movimentos contrários.',
     pair: 'EURUSD',
     status: 'Ativo',
     version: 'v2.3',
     color: 'blue-400',
     colorHex: '#60a5fa',
     badge: 'Acumulação',
-    highlights: ['Acumulação progressiva', 'Ideal para tendências', 'Baixo drawdown'],
+    highlights: ['Acumulação progressiva', 'Pensada para mercados em tendência', 'Indicada para perfis que toleram mais risco'],
   },
   {
     name: 'Boleta Pro',
-    description: 'Execução profissional de alta precisão. Replica o comportamento de traders profissionais com entradas milimetradas e saídas disciplinadas.',
+    description: 'Execução baseada em regras objetivas, com entradas definidas e saídas disciplinadas por stop e alvo.',
     pair: 'XAUUSD',
     status: 'Ativo',
     version: 'v1.8',
     color: 'brand-gold',
     colorHex: '#f59e0b',
-    badge: 'Alta Precisão',
-    highlights: ['Entradas de alta precisão', 'Stop & Target dinâmico', 'Análise de volatilidade'],
+    badge: 'Execução',
+    highlights: ['Entradas por regras definidas', 'Stop & Target dinâmico', 'Análise de volatilidade'],
   },
   {
     name: 'FX Squad',
@@ -64,7 +64,7 @@ export const Robots = () => {
             Nossos <span className="text-gradient-brand">Expert Advisors</span>
           </>
         }
-        description="Quatro robôs de trading com estratégias distintas e histórico verificado. Escolha um ou combine para diversificar sua exposição a risco."
+        description="Quatro robôs de trading com estratégias distintas. Escolha um ou combine estratégias, lembrando que combinar não elimina o risco."
       />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
@@ -105,19 +105,10 @@ export const Robots = () => {
                   <span className="mb-0.5 block text-[11px] uppercase tracking-[0.15em] text-brand-subtle">Par</span>
                   <span className="font-mono text-sm text-white">{robot.pair}</span>
                 </div>
-                {/* Histórico velado — evitar promessa de rentabilidade */}
+                {/* Sem número de rentabilidade na landing: histórico só mediante solicitação */}
                 <div className="ml-auto shrink-0 text-right">
-                  <span className="mb-0.5 block text-[11px] uppercase tracking-[0.15em] text-brand-subtle">Histórico (MyFxBook)</span>
-                  <span
-                    className="select-none font-display text-xl font-bold text-brand-green"
-                    style={{
-                      filter: 'blur(6px)',
-                      userSelect: 'none',
-                    }}
-                    title="Acesse a plataforma para visualizar o histórico completo"
-                  >
-                    ██.█%
-                  </span>
+                  <span className="mb-0.5 block text-[11px] uppercase tracking-[0.15em] text-brand-subtle">Histórico</span>
+                  <span className="text-sm text-white">Mediante solicitação</span>
                 </div>
               </div>
 
@@ -147,7 +138,7 @@ export const Robots = () => {
 
       <Reveal className="mt-14 text-center">
         <p className="mx-auto mb-6 max-w-2xl text-xs leading-relaxed text-brand-subtle sm:text-sm">
-          Histórico verificado via MyFxBook. Trading envolve risco — resultados passados não garantem resultados futuros.
+          Histórico disponível mediante solicitação. Trading envolve risco — resultados passados não garantem resultados futuros.
         </p>
         <Button size="lg" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
           Ver Todas as Estratégias

@@ -28,14 +28,14 @@ const PROFILES = [
     icon: <Users size={20} />,
     role: 'Parceiro',
     tagline: 'Para quem quer crescer',
-    description: 'Tudo do Cliente mais o painel completo de afiliados. Indique traders e receba participações recorrentes baseadas em volume.',
+    description: 'Tudo do Cliente mais o painel completo de afiliados. Indique traders e receba participação sobre o volume operado pelos seus indicados diretos.',
     features: [
       'Tudo do Cliente',
       'Painel de gestão de prospects',
       'Materiais de marketing prontos',
       'Links personalizados rastreáveis',
       'Pipeline de vendas visual',
-      'Participação por volume (fee + rebate)',
+      'Participação por volume (fee + rebate da corretora), divulgada ao cliente',
     ],
     color: '#60a5fa',
     cta: 'Ser Parceiro',
@@ -140,6 +140,14 @@ export const Profiles = () => {
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-10">
+        <p className="mx-auto max-w-3xl text-center text-xs leading-relaxed text-brand-subtle">
+          Transparência: a Trader AFK e seus parceiros podem receber remuneração das corretoras (rebate) sobre o volume operado pelos
+          clientes indicados. Isso representa um conflito de interesse, que divulgamos para que você decida com informação. Não há
+          remuneração por recrutamento de parceiros.
+        </p>
+      </Reveal>
     </Section>
   );
 };

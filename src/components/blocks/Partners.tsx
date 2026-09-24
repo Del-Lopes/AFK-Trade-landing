@@ -25,18 +25,18 @@ const MATERIALS = [
 const BENEFITS = [
   {
     icon: DollarSign,
-    title: 'Performance Fee',
-    desc: 'Receba uma participação baseada no volume de operações gerado pelas suas indicações convertidas.',
+    title: 'Participação por Volume',
+    desc: 'Calculada sobre o volume operado pelos clientes que você indicar diretamente, conforme o regulamento do programa.',
   },
   {
     icon: Globe,
     title: 'Rebate de Corretora',
-    desc: 'Participação no volume de spreads gerado pelos indicados nas corretoras parceiras.',
+    desc: 'Parte do rebate pago pela corretora sobre o volume dos seus indicados diretos. Esse conflito de interesse é informado ao cliente.',
   },
   {
     icon: Users,
     title: 'White Label',
-    desc: 'Participe da receita gerada pela expansão da sua rede de parceiros e licenças indicadas.',
+    desc: 'Licencie a plataforma com a sua marca para atender os seus próprios clientes, em condições definidas em contrato.',
   },
 ];
 
@@ -50,7 +50,7 @@ export const Partners = () => {
       <SectionHeader
         eyebrow="Programa de Parceiros"
         title={<>Cresça junto com a <span className="text-gradient-brand">Trader AFK.</span></>}
-        description="Torne-se parceiro, indique traders e gerencie seus leads com um painel profissional. Construa uma rede e receba participações recorrentes baseadas em volume."
+        description="Torne-se parceiro, indique traders e gerencie seus leads com um painel profissional. A participação é calculada sobre o volume operado pelos clientes que você indicar diretamente."
       />
 
       {/* Benefits row */}
@@ -146,6 +146,9 @@ export const Partners = () => {
           <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
         <p className="mt-3 text-sm text-brand-subtle">Acesso ao painel completo após aprovação do cadastro</p>
+        <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-brand-subtle">
+          Não há remuneração por recrutar outros parceiros nem valor mínimo garantido. A remuneração depende do volume efetivamente operado pelos clientes indicados.
+        </p>
       </Reveal>
     </Section>
   );

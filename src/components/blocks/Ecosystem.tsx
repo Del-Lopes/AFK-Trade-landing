@@ -114,7 +114,7 @@ export const Ecosystem = () => {
               </div>
             </div>
             <h3 className="mb-2 text-lg font-semibold text-white">A Psicologia do Trading Automatizado</h3>
-            <p className="mb-4 text-sm leading-relaxed text-brand-muted">Por que 90% dos traders falham mesmo com sistemas vencedores, e como corrigir isso com automação.</p>
+            <p className="mb-4 text-sm leading-relaxed text-brand-muted">Por que tantos traders abandonam o próprio plano, e como regras automatizadas ajudam a manter a disciplina.</p>
             <div className="flex items-center gap-3 text-xs text-brand-subtle">
               <span>5 min leitura</span>
               <span>·</span>

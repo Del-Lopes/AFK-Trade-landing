@@ -7,7 +7,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 const GUARANTEES = [
   { icon: <ShieldCheck size={16} />, text: 'Cadastro 100% gratuito' },
-  { icon: <Bot size={16} />, text: 'Robôs prontos para operar' },
+  { icon: <Bot size={16} />, text: 'Robôs com risco configurável' },
   { icon: <Zap size={16} />, text: 'Suporte incluso' },
 ];
 
@@ -28,16 +28,16 @@ export const FinalCTA = () => {
 
           <div className="relative">
             <div className="mb-8">
-              <Eyebrow pill>Vagas de lançamento disponíveis</Eyebrow>
+              <Eyebrow pill>Condição de lançamento</Eyebrow>
             </div>
 
             <h2 className="mb-6 text-[2.2rem] font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Comece a operar no <br className="hidden sm:block" />
-              <span className="text-gradient-brand">piloto automático hoje.</span>
+              Automatize sua operação <br className="hidden sm:block" />
+              <span className="text-gradient-brand">com regras claras.</span>
             </h2>
 
             <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg">
-              Crie sua conta, escolha seu robô e ative a licença MT5. Em menos de uma hora você pode ter seu primeiro Expert Advisor operando por você.
+              Crie sua conta, escolha seu robô e ative a licença MT5. Você define os parâmetros de risco antes de ativar e pode pausar o EA quando quiser.
             </p>
 
             {/* CTA Buttons */}
@@ -64,7 +64,7 @@ export const FinalCTA = () => {
             {/* Disclaimer */}
             <div className="mt-12 border-t border-white/[0.06] pt-8">
               <p className="mx-auto max-w-2xl text-xs leading-relaxed text-brand-subtle">
-                Trading em forex e ativos financeiros envolve risco substancial e não é adequado para todos os investidores. Performance passada não garante resultados futuros. Invista apenas o que você pode perder.
+                Operar forex, CFDs e criptoativos envolve alto risco e pode resultar em perdas superiores ao capital. Rentabilidade passada não garante resultados futuros. Opere apenas com recursos que você pode perder.
               </p>
             </div>
           </div>

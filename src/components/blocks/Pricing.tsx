@@ -14,7 +14,7 @@ export const Pricing = () => {
       <SectionHeader
         eyebrow="Acesso"
         title={<>Oferta de <span className="text-gradient-brand">Lançamento</span></>}
-        description="Garanta seu acesso vitalício ou antecipado. Condição exclusiva para os membros fundadores."
+        description="Acesso gratuito vitalício* para quem se cadastrar durante o lançamento. Condições completas nos Termos de Uso."
       />
 
       <div className="mx-auto grid max-w-4xl grid-cols-1 items-stretch gap-6 md:grid-cols-2">
@@ -23,7 +23,7 @@ export const Pricing = () => {
           <div className="glass-card flex h-full flex-col p-7 sm:p-8">
             <div className="mb-8">
               <h3 className="mb-2 text-xl font-semibold text-white">Membro Trader AFK</h3>
-              <p className="text-sm text-brand-muted">Valor padrão após o lote promocional</p>
+              <p className="text-sm text-brand-muted">Valor padrão após o período de lançamento</p>
             </div>
 
             <div className="mb-8 flex items-baseline gap-1 border-b border-white/[0.06] pb-8">
@@ -39,12 +39,13 @@ export const Pricing = () => {
             </ul>
 
             <Button variant="outline" className="mt-auto w-full" disabled>
-              Aguarde o próximo lote
+              Disponível após o lançamento
             </Button>
           </div>
         </Reveal>
 
-        {/* Card: Promo Launch (Scarcity) */}
+        {/* Card: Condição de lançamento */}
+        {/* TODO: só reintroduzir escassez com contador real */}
         <Reveal delay={100} className="relative h-full">
           {/* Halo difuso */}
           <div aria-hidden className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-brand-green/[0.07] blur-3xl" />
@@ -57,11 +58,11 @@ export const Pricing = () => {
               <div className="mb-8 flex flex-col-reverse items-start gap-4 sm:flex-row sm:justify-between">
                 <div>
                   <h3 className="mb-2 text-xl font-semibold text-white">Condição de Lançamento</h3>
-                  <p className="text-sm text-brand-green/80">Exclusivo para os 100 primeiros</p>
+                  <p className="text-sm text-brand-green/80">Para quem se cadastrar durante o lançamento</p>
                 </div>
                 <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand-green">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
-                  RESTAM POUCAS VAGAS
+                  LANÇAMENTO
                 </span>
               </div>
 
@@ -71,27 +72,18 @@ export const Pricing = () => {
               </div>
 
               <ul className="mb-8 flex-1 space-y-4">
-                <ListItem active>Acesso Gratuito Vitalício</ListItem>
+                <ListItem active>Acesso gratuito vitalício*</ListItem>
                 <ListItem active>Acesso Imediato ao Ecossistema</ListItem>
                 <ListItem active>Acesso à biblioteca de cursos</ListItem>
                 <ListItem active>Condições especiais dos primeiros parceiros</ListItem>
               </ul>
 
-              <div className="mb-6 rounded-lg border border-white/[0.08] bg-white/[0.02] p-3">
-                <div className="mb-2 flex justify-between text-xs text-brand-muted">
-                  <span>Vagas Preenchidas</span>
-                  <span className="font-mono text-white">63%</span>
-                </div>
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/[0.08]">
-                  <div
-                    className="h-1.5 rounded-full bg-gradient-to-r from-brand-green-deep to-brand-green-bright"
-                    style={{ width: '63%' }}
-                  ></div>
-                </div>
-              </div>
+              <p className="mb-6 rounded-lg border border-white/[0.08] bg-white/[0.02] p-3 text-xs leading-relaxed text-brand-muted">
+                *Enquanto o produto estiver disponível; condições nos Termos de Uso.
+              </p>
 
               <Button className="mt-auto w-full" onClick={() => window.open('https://app.traderafk.com', '_blank')}>
-                Garantir Minha Vaga Grátis
+                Criar Minha Conta Grátis
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </div>

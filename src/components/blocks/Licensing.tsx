@@ -56,7 +56,7 @@ export const Licensing = () => {
 
           <Reveal delay={160}>
             <p className="mb-8 text-base leading-relaxed text-brand-muted md:text-lg">
-              Nosso sistema de licenciamento vincula cada robô diretamente ao número da sua conta MetaTrader 5. Seu dinheiro nunca sai da sua corretora — você mantém controle absoluto.
+              Nosso sistema de licenciamento vincula cada robô diretamente ao número da sua conta MetaTrader 5. A Trader AFK não custodia recursos: o dinheiro fica na sua conta na corretora, sob o seu controle.
             </p>
           </Reveal>
 

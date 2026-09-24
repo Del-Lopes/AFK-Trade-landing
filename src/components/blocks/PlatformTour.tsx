@@ -16,12 +16,12 @@ const MODULES = [
   {
     icon: <ShoppingBag size={24} />,
     title: "Catálogo de Estratégias",
-    description: "Nosso 'Cardápio' de oportunidades. Acesse robôs validados e diversifique seu capital entre diferentes perfis de risco."
+    description: "Nosso catálogo de estratégias. Conheça robôs com diferentes perfis de risco e escolha o que faz sentido para você."
   },
   {
     icon: <Wallet size={24} />,
     title: "Acessibilidade Real",
-    description: "Não exige grandes capitais. Comece a operar de forma automatizada com bancas a partir de R$ 250, conforme as condições de cada corretora."
+    description: "O valor operado é decisão sua, conforme as condições de cada corretora. Use apenas recursos que você pode perder."
   },
   {
     icon: <Users size={24} />,
@@ -31,7 +31,7 @@ const MODULES = [
   {
     icon: <MessageCircle size={24} />,
     title: "Linguagem Simplificada",
-    description: "Feito para todos. Eliminamos o 'economês' e a complexidade técnica para que qualquer pessoa possa lucrar."
+    description: "Feito para todos. Eliminamos o 'economês' e a complexidade técnica para que qualquer pessoa entenda o que está operando."
   }
 ];
 

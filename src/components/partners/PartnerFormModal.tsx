@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, Send, Phone, Mail, User, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { CONTACT_EMAIL, LEGAL_URLS } from '@/lib/legal';
+
+// TODO: preencher com o endpoint real do formulário no Formspree (formato https://formspree.io/f/XXXXXXXX).
+// O valor anterior ('https://formspree.io/f/contact@traderafk.com') não é um ID de formulário válido.
+const FORMSPREE_ENDPOINT = '';
 
 interface PartnerFormModalProps {
   isOpen: boolean;
@@ -17,6 +22,7 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Máscara para telefone brasileiro (99) 99999-9999
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,33 +42,30 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     try {
-      // Usando Formspree (endpoint deve ser configurado pelo usuário ou usar o e-mail diretamente como fallback)
-      // Para este projeto, o envio será para contato@traderafk.com
-      const response = await fetch('https://formspree.io/f/contact@traderafk.com', {
+      if (!FORMSPREE_ENDPOINT) {
+        throw new Error('FORMSPREE_ENDPOINT não configurado');
+      }
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(formData)
       });
 
-      // Nota: Formspree normalmente requer um ID de formulário real, 
-      // mas como instruído, estamos direcionando logicamente para esse e-mail.
-      // Vou simular um delay e sucesso para demonstração se o fetch falhar por falta de ID real.
-      if (response.ok) {
-        setIsSuccess(true);
-      } else {
-        // Fallback para fins de demonstração (ou se for e-mail direto)
-        console.log('Dados do formulário:', formData);
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setIsSuccess(true);
+      if (!response.ok) {
+        throw new Error(`Falha no envio (HTTP ${response.status})`);
       }
-    } catch (error) {
-      console.error('Erro ao enviar formalário:', error);
-      // Fallback amigável
+
       setIsSuccess(true);
+    } catch (err) {
+      console.error('Erro ao enviar formulário:', err);
+      setError(`Não foi possível enviar sua solicitação agora. Tente novamente em instantes ou escreva para ${CONTACT_EMAIL}.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -194,7 +197,13 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
                     </div>
                   </div>
 
-                  <Button 
+                  {error && (
+                    <p role="alert" className="rounded-xl border border-brand-red/30 bg-brand-red/10 px-4 py-3 text-sm text-red-300">
+                      {error}
+                    </p>
+                  )}
+
+                  <Button
                     type="submit" 
                     size="lg" 
                     className="w-full mt-4" 
@@ -204,8 +213,17 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
                   </Button>
                 </form>
 
-                <p className="text-[10px] text-center text-gray-500 mt-6 uppercase tracking-widest font-medium">
-                  Seus dados estão protegidos por criptografia de ponta a ponta.
+                <p className="text-xs text-center text-gray-500 mt-6 leading-relaxed">
+                  Usaremos seus dados apenas para contato sobre o programa de parceiros. Saiba mais na{' '}
+                  <a
+                    href={LEGAL_URLS.privacy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-green underline-offset-4 hover:underline"
+                  >
+                    Política de Privacidade
+                  </a>
+                  .
                 </p>
               </>
             )}

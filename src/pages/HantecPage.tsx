@@ -6,13 +6,14 @@ import { Section } from '@/components/layout/Section';
 import { Shield, TrendingUp, Users, Globe, ArrowRight, CheckCircle } from 'lucide-react';
 
 import { Helmet } from 'react-helmet-async';
+import { BrokerDisclaimer } from '@/components/ui/BrokerDisclaimer';
 
 export const HantecPage = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-green/30 font-sans">
       <Helmet>
-        <title>Parceria Hantec | Trader AFK</title>
-        <meta name="description" content="Trader AFK e Hantec Markets: Tecnologia proprietária unida à infraestrutura de uma corretora global para o melhor copy trading." />
+        <title>Hantec: corretora compatível | Trader AFK</title>
+        <meta name="description" content="Trader AFK e Hantec Markets: corretora compatível com o software de automação da Trader AFK para MetaTrader 5. Entenda os riscos e as condições antes de abrir conta." />
       </Helmet>
       <Navbar />
 
@@ -22,7 +23,7 @@ export const HantecPage = () => {
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green text-sm font-medium mb-6">
               <Shield size={14} />
-              <span>Parceria Oficial</span>
+              <span>Corretora compatível</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight flex items-center justify-center gap-4 flex-wrap">
@@ -35,7 +36,7 @@ export const HantecPage = () => {
             </h1>
             
             <p className="text-xl text-gray-400 max-w-2xl mb-10">
-              Unimos nossa tecnologia proprietária à infraestrutura de uma corretora global para oferecer a melhor experiência de copy trading.
+              O software da Trader AFK roda no MetaTrader 5 da sua conta na Hantec. Você instala, configura o risco e mantém o controle da conta o tempo todo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -56,15 +57,15 @@ export const HantecPage = () => {
         <Section className="bg-white/5 border-y border-white/5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Por que escolhemos a Hantec?</h2>
+              <h2 className="text-3xl font-bold mb-6">Sobre a Hantec</h2>
               <div className="space-y-6">
                 <FeatureItem 
-                  title="Execução Confiável" 
-                  description="Infraestrutura robusta para garantir que suas ordens sejam executadas com precisão e rapidez."
+                  title="Execução"
+                  description="Infraestrutura de execução da própria corretora, sujeita às condições de mercado, como slippage e variação de spread."
                 />
                 <FeatureItem 
-                  title="Regulação Internacional" 
-                  description="Compromisso com padrões globais de segurança financeira e proteção ao cliente."
+                  title="Custódia dos Fundos"
+                  description="A Trader AFK não custodia recursos. Os fundos ficam na corretora escolhida, sujeita à regulação do país dela, sem proteção da CVM ou do BCB."
                 />
                 <FeatureItem 
                   title="Condições Competitivas" 
@@ -78,9 +79,9 @@ export const HantecPage = () => {
                   <div className="w-32 h-32 mb-4">
                     <img src="/partners/logohantecredondo.webp" alt="hantec Logo redondo" className="w-full h-full object-contain rounded-full" />
                   </div>
-                  <h3 className="text-2xl font-bold">Parceria Estratégica</h3>
+                  <h3 className="text-2xl font-bold">Como funciona</h3>
                   <p className="text-gray-400">
-                    A Trader AFK utiliza a tecnologia da Hantec para conectar nossos sistemas ao mercado global.
+                    Você abre a conta diretamente com a Hantec. O software da Trader AFK é uma licença que você instala e controla no seu MetaTrader 5.
                   </p>
                </div>
             </div>
@@ -90,12 +91,12 @@ export const HantecPage = () => {
         {/* Copy Trading Section */}
         <Section>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Copy Trading Simplificado</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Automação na sua conta Hantec</h2>
             
 
 
             <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
-              Copie automaticamente as operações dos nossos algoritmos diretamente na sua conta Hantec.
+              Instale o software da Trader AFK no MetaTrader 5 da sua conta Hantec e configure os parâmetros de risco. Recursos de copy trading da corretora, quando existirem, são serviços da própria Hantec.
             </p>
             <div className="flex justify-center mb-12">
                <a href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" target="_blank" rel="noopener noreferrer">
@@ -126,7 +127,7 @@ export const HantecPage = () => {
              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                    <h3 className="text-2xl font-bold mb-2">Pronto para começar?</h3>
-                   <p className="text-gray-400">Abra sua conta na Hantec e conecte-se às estratégias da Trader AFK hoje mesmo.</p>
+                   <p className="text-gray-400">Abra sua conta na Hantec e instale o software da Trader AFK no seu MetaTrader 5, com os parâmetros de risco que você definir.</p>
                 </div>
                 <a 
                   href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" 
@@ -138,6 +139,8 @@ export const HantecPage = () => {
                 </a>
              </div>
           </div>
+
+          <BrokerDisclaimer className="mt-8" />
         
           <div className="flex justify-center mt-12">
                <a href="https://hmarkets.com/live-account-pre-registration/?refid=15990&cmp=0h1j9a8a+&ent=hm" target="_blank" rel="noopener noreferrer">

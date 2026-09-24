@@ -30,15 +30,15 @@ const FAQS = [
   },
   {
     question: 'Existe suporte ao cliente?',
-    answer: 'Sim. Oferecemos suporte via chat dentro da plataforma e por e-mail. Nossa equipe está disponível para auxiliar na instalação dos EAs, configuração das licenças, abertura de conta nas corretoras parceiras e dúvidas sobre a plataforma.',
+    answer: 'Sim. Oferecemos suporte via chat dentro da plataforma e por e-mail. Nossa equipe está disponível para auxiliar na instalação dos EAs, configuração das licenças, abertura de conta nas corretoras compatíveis e dúvidas sobre a plataforma.',
   },
   {
-    question: 'Meu dinheiro fica seguro na corretora?',
-    answer: 'Sim. A Trader AFK não tem acesso ao seu dinheiro em nenhum momento. Os robôs operam diretamente na sua conta da corretora através do MetaTrader 5. Você mantém controle total dos seus fundos, podendo depositar, sacar e fechar posições quando quiser.',
+    question: 'Onde fica o meu dinheiro? Ele está protegido?',
+    answer: 'A Trader AFK não custodia recursos e não tem acesso ao seu dinheiro. Os fundos ficam na corretora escolhida, sujeita à regulação do país dela, sem proteção da CVM ou do BCB. As corretoras citadas são estrangeiras e não são autorizadas a ofertar serviços no Brasil. Os robôs operam na sua conta via MetaTrader 5 e você pode depositar, sacar, pausar o EA e fechar posições quando quiser. Operar envolve risco de perda.',
   },
   {
     question: 'Posso usar mais de um robô ao mesmo tempo?',
-    answer: 'Sim. Cada EA tem sua própria licença e pode operar de forma independente na mesma ou em contas diferentes. Recomendamos diversificar entre os EAs para reduzir o risco de concentração em uma única estratégia.',
+    answer: 'Sim. Cada EA tem sua própria licença e pode operar de forma independente na mesma ou em contas diferentes. Usar mais de um EA não elimina o risco: estratégias podem ter perdas ao mesmo tempo, e o risco total da conta é a soma das exposições.',
   },
 ];
 

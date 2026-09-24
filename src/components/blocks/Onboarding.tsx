@@ -29,8 +29,8 @@ const STEPS = [
     number: 3,
     icon: <CreditCard size={22} />,
     title: 'Abra uma conta na corretora',
-    description: 'Escolha uma das corretoras parceiras homologadas. Clique no link e siga o guia de abertura de conta da sua corretora.',
-    detail: 'Hantec, HFM, Vantage e RoboForex — todas regulamentadas internacionalmente.',
+    description: 'Escolha a corretora de sua preferência compatível com MetaTrader 5 e siga o guia de abertura de conta dela.',
+    detail: 'Hantec, HFM, Vantage e RoboForex são estrangeiras e não são autorizadas pela CVM ou pelo BCB a ofertar serviços no Brasil.',
     color: '#a78bfa',
   },
   {
@@ -38,7 +38,7 @@ const STEPS = [
     icon: <Key size={22} />,
     title: 'Solicite sua licença MT5',
     description: 'Escolha o robô, informe o número da sua conta MT5 e aguarde a aprovação. Processo 100% dentro da plataforma.',
-    detail: 'A licença é vinculada ao seu número de conta — segurança máxima.',
+    detail: 'A licença é vinculada ao seu número de conta MT5.',
     color: '#f59e0b',
   },
   {
@@ -61,7 +61,7 @@ const STEPS = [
     number: 7,
     icon: <Users size={22} />,
     title: 'Torne-se Parceiro (opcional)',
-    description: 'Indique outros traders, gerencie seus leads e receba participações recorrentes baseadas em volume pelo painel de parceiros.',
+    description: 'Indique outros traders, gerencie seus leads e receba participação sobre o volume operado pelos seus indicados diretos.',
     detail: 'Programa de parceria disponível para todos os membros ativos.',
     color: '#f472b6',
   },

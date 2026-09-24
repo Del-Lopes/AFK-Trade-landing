@@ -59,7 +59,7 @@ export const MissionPage = () => {
                     Passar horas analisando gráficos, sofrendo com o estresse emocional e perdendo momentos importantes da vida não é liberdade.
                  </p>
                  <p className="text-gray-400 text-lg leading-relaxed">
-                    Se você precisa estar presente para ganhar dinheiro, você não tem um investimento, você tem um segundo emprego.
+                    Se você precisa estar diante da tela o tempo todo, o trading deixa de ser uma escolha e vira um segundo emprego.
                  </p>
               </div>
               <div className="order-1 md:order-2 flex justify-center">
@@ -72,9 +72,9 @@ export const MissionPage = () => {
         {/* The Solution: Automation */}
         <Section>
            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Liberdade Física e Financeira</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Liberdade de Tempo</h2>
               <p className="text-xl text-gray-400">
-                 A verdadeira liberdade é ter controle sobre o seu tempo. Nossos algoritmos operam 24 horas por dia, automatizando a execução enquanto você vive sua vida.
+                 A verdadeira liberdade é ter controle sobre o seu tempo. Nossos algoritmos executam as regras que você configurou durante o horário de mercado, enquanto você cuida da sua vida.
               </p>
            </div>
 
@@ -86,13 +86,13 @@ export const MissionPage = () => {
               />
               <PhilosophyCard 
                  icon={<Zap className="w-8 h-8 text-brand-green" />}
-                 title="Execução Perfeita"
-                 description="Elimine o fator emocional. Robôs não sentem medo, ganância ou hesitação. Eles executam a estratégia com precisão milimétrica."
+                 title="Execução Disciplinada"
+                 description="Reduza o fator emocional. Robôs seguem as regras sem medo ou hesitação, o que traz disciplina, mas não elimina o risco de mercado."
               />
               <PhilosophyCard 
                  icon={<ShieldCheck className="w-8 h-8 text-brand-green" />}
-                 title="Segurança Patrimonial"
-                 description="Seu capital fica na sua conta, em corretoras reguladas. Você mantém o controle total dos seus fundos o tempo todo."
+                 title="Custódia na Corretora"
+                 description="A Trader AFK não custodia recursos. Os fundos ficam na corretora escolhida, sujeita à regulação do país dela, sem proteção da CVM ou do BCB. Você mantém o controle da sua conta."
               />
            </div>
         </Section>
@@ -102,7 +102,7 @@ export const MissionPage = () => {
            <div className="text-center max-w-3xl mx-auto space-y-8">
               <h2 className="text-4xl font-bold">Pronto para viver o estilo de vida AFK?</h2>
               <p className="text-xl text-gray-400">
-                 Junte-se a centenas de pessoas que já automatizaram suas operações e recuperaram o controle do seu tempo.
+                 Crie sua conta gratuita, conheça as ferramentas e decida com calma se a automação faz sentido para você.
               </p>
               <Button size="lg" onClick={() => navigate('/start')}>
                  Começar Agora <ArrowRight className="ml-2 w-5 h-5" />

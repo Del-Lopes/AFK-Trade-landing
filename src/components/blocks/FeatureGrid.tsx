@@ -8,7 +8,7 @@ const FEATURES = [
   {
     icon: Cpu,
     title: "Expert Advisors",
-    description: "Acesse nossa curadoria de robôs validados. Plugue, ative e comece a operar automaticamente."
+    description: "Acesse nossa curadoria de robôs. Instale na sua conta, configure o risco e ative quando quiser."
   },
   {
     icon: Key,
@@ -17,23 +17,23 @@ const FEATURES = [
   },
   {
     icon: Zap,
-    title: "Brokers de Baixa Latência",
-    description: "Trabalhamos apenas com as melhores corretoras globais para garantir execução rápida e precisa das ordens."
+    title: "Corretoras Compatíveis",
+    description: "Funciona em corretoras que oferecem MetaTrader 5. A qualidade da execução depende da corretora e das condições de mercado."
   },
   {
     icon: Shield,
-    title: "Segurança Total",
-    description: "Seu dinheiro nunca sai da sua conta. As operações são executadas diretamente na sua corretora."
+    title: "Custódia na Corretora",
+    description: "A Trader AFK não custodia recursos. Os fundos ficam na corretora escolhida, sujeita à regulação do país dela, sem proteção da CVM ou do BCB."
   },
   {
     icon: BarChart3,
-    title: "Histórico Verificado",
-    description: "Transparência é nossa prioridade. Acompanhe o histórico de operações de cada estratégia via MyFxBook, com acesso direto ao registro completo."
+    title: "Histórico de Operações",
+    description: "Histórico das estratégias disponível mediante solicitação. Resultados passados não garantem resultados futuros."
   },
   {
     icon: Layers,
     title: "Desenvolvimento On Demand",
-    description: "Tem um setup vencedor? Nossa equipe pode desenvolver e automatizar sua estratégia personalizada."
+    description: "Tem um setup próprio? Nossa equipe pode desenvolver e automatizar sua estratégia personalizada."
   }
 ];
 

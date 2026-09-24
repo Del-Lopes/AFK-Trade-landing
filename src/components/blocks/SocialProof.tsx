@@ -13,19 +13,21 @@ const LOGOS = [
   { name: 'MetaTrader 5', url: '#' },
 ];
 
+// Sem números de base de clientes: só reintroduzir com dado real e verificável.
 const STATS = [
-  { value: '100+', label: 'Traders Ativos' },
+  { value: 'MT5', label: 'Plataforma Suportada' },
   { value: '4', label: 'Expert Advisors' },
-  { value: '24/7', label: 'Operação Contínua' },
-  { value: '5+', label: 'Corretoras Parceiras' },
+  { value: '24/5', label: 'Horário do Forex' },
+  { value: '4', label: 'Corretoras Compatíveis' },
 ];
 
+// TODO: confirmar que os depoimentos são reais e autorizados pelos autores antes de publicar; se não forem, remover a seção.
 const TESTIMONIALS = [
   {
     name: 'Carlos M.',
     role: 'Trader desde 2021',
     avatar: 'CM',
-    text: 'Depois que comecei a usar o AFK Trader na Hantec, minha rentabilidade ficou muito mais consistente. Antes eu ficava horas na frente do gráfico e nem assim conseguia resultados assim.',
+    text: 'Depois que comecei a usar o AFK Trader na Hantec, parei de passar horas na frente do gráfico. A instalação foi simples e o suporte me ajudou a configurar o risco por operação.',
     stars: 5,
   },
   {
@@ -69,7 +71,7 @@ export const SocialProof = () => {
     <>
       {/* Logo carousel */}
       <Section divider className="py-12 sm:py-14">
-        <p className="eyebrow mb-8 text-center text-brand-subtle!">Presente nas principais corretoras</p>
+        <p className="eyebrow mb-8 text-center text-brand-subtle!">Compatível com corretoras que oferecem MT5</p>
 
         <div className="relative flex overflow-hidden">
           <div className="absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-brand-dark to-transparent sm:w-28" />
@@ -115,7 +117,7 @@ export const SocialProof = () => {
               O que os traders <span className="text-gradient-brand">estão dizendo</span>
             </>
           }
-          description="Depoimentos reais de membros da plataforma Trader AFK."
+          description="Relatos de membros sobre a experiência de uso da plataforma. Resultados individuais variam e não representam desempenho típico."
         />
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">

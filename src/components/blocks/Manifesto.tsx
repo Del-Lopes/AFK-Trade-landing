@@ -40,7 +40,7 @@ export const Manifesto = () => {
             <p>
               <span className="font-medium text-white">AFK (Away From Keyboard)</span> não é apenas um nome. É um movimento.
               Acreditamos que a tecnologia deve libertar, não prender.
-              Enquanto você viaja, dorme ou passa tempo com quem ama, nossos algoritmos continuam caçando oportunidades.
+              Enquanto você viaja, dorme ou passa tempo com quem ama, o software segue as regras que você definiu.
             </p>
           </Reveal>
         </div>
