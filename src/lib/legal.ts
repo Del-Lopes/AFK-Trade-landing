@@ -7,4 +7,6 @@ export const LEGAL_URLS = {
   risk: `${APP_URL}/legal/risco.html`,
 } as const;
 
-export const CONTACT_EMAIL = 'contato@traderafk.com';
+// Formulário "Seja um Parceiro": edge function pública do Supabase do app, que
+// grava a solicitação para o staff ver em Painel Admin › Parceiros.
+export const PARTNER_APPLY_URL = 'https://armhlcnmaqgudqivkpgt.supabase.co/functions/v1/partner-apply';

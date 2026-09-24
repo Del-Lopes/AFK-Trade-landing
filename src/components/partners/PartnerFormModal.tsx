@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, Send, Phone, Mail, User, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { CONTACT_EMAIL, LEGAL_URLS } from '@/lib/legal';
-
-// TODO: preencher com o endpoint real do formulário no Formspree (formato https://formspree.io/f/XXXXXXXX).
-// O valor anterior ('https://formspree.io/f/contact@traderafk.com') não é um ID de formulário válido.
-const FORMSPREE_ENDPOINT = '';
+import { LEGAL_URLS, PARTNER_APPLY_URL } from '@/lib/legal';
 
 interface PartnerFormModalProps {
   isOpen: boolean;
@@ -18,7 +14,8 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    website: '', // honeypot: invisível para pessoas; bots costumam preencher
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -45,19 +42,20 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
     setError(null);
 
     try {
-      if (!FORMSPREE_ENDPOINT) {
-        throw new Error('FORMSPREE_ENDPOINT não configurado');
-      }
-
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(PARTNER_APPLY_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
+      if (response.status === 429) {
+        setError('Recebemos várias solicitações em pouco tempo. Tente novamente mais tarde.');
+        return;
+      }
+      if (response.status === 400) {
+        setError('Confira os dados: nome, e-mail válido e telefone com DDD.');
+        return;
+      }
       if (!response.ok) {
         throw new Error(`Falha no envio (HTTP ${response.status})`);
       }
@@ -65,7 +63,7 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
       setIsSuccess(true);
     } catch (err) {
       console.error('Erro ao enviar formulário:', err);
-      setError(`Não foi possível enviar sua solicitação agora. Tente novamente em instantes ou escreva para ${CONTACT_EMAIL}.`);
+      setError('Não foi possível enviar sua solicitação agora. Tente novamente em instantes.');
     } finally {
       setIsSubmitting(false);
     }
@@ -195,6 +193,21 @@ export const PartnerFormModal = ({ isOpen, onClose }: PartnerFormModalProps) => 
                         onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                       />
                     </div>
+                  </div>
+
+                  {/* Honeypot anti-spam: fora da tela e fora da navegação por teclado. */}
+                  <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                    <label>
+                      Site
+                      <input
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={(e) => setFormData(prev => ({ ...prev, website: e.target.value }))}
+                      />
+                    </label>
                   </div>
 
                   {error && (

@@ -104,15 +104,6 @@ export const FAQ = () => {
             );
           })}
         </div>
-
-        <div className="mt-10 text-center">
-          <p className="text-sm text-brand-subtle">
-            Não encontrou o que procurava?{' '}
-            <a href="mailto:contato@traderafk.com" className="text-brand-green underline-offset-4 transition-colors hover:underline">
-              Fale com nosso suporte
-            </a>
-          </p>
-        </div>
       </div>
     </Section>
   );

@@ -144,7 +144,7 @@ export const PartnersPage = () => {
                         </div>
                         <div className="space-y-4">
                             <div className="bg-white/5 p-4 rounded-lg text-sm text-white leading-relaxed">
-                                Comissão calculada sobre [PREENCHER: critério], conforme regulamento do programa.
+                                Comissão calculada sobre o volume operado pelos clientes indicados, conforme o regulamento do programa.
                             </div>
                             <div className="bg-white/5 p-4 rounded-lg text-sm text-white leading-relaxed">
                                 Remuneração apenas sobre clientes indicados diretamente. Não há remuneração por recrutar outros parceiros.

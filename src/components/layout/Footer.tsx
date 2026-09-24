@@ -68,8 +68,6 @@ export const Footer = () => {
 
         <div className="flex flex-col gap-3 border-t border-white/[0.06] pt-8 text-xs text-brand-subtle md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Trader AFK. Todos os direitos reservados.</p>
-          {/* TODO: preencher razão social, CNPJ e e-mail de contato antes de publicar */}
-          <p className="md:text-right">[PREENCHER: Razão social] · CNPJ [PREENCHER] · [PREENCHER: e-mail]</p>
         </div>
       </div>
     </footer>
