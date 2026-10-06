@@ -4,7 +4,7 @@ A production-oriented landing page for the Trader AFK ecosystem, built with Reac
 
 ## Overview
 
-The project focuses on a responsive marketing experience for a financial technology product, with reusable UI sections, animations, forms and structured page composition.
+The project focuses on a responsive marketing experience for a financial-technology product, with reusable UI sections, animation, validated forms and structured page composition.
 
 ## Tech Stack
 
@@ -16,6 +16,16 @@ The project focuses on a responsive marketing experience for a financial technol
 - React Hook Form
 - Zod
 - React Router
+
+## Engineering Focus
+
+- Component-based UI architecture
+- Responsive design
+- Form validation with Zod and React Hook Form
+- Client-side routing
+- Animation and interaction with Framer Motion
+- Reusable marketing sections
+- Production-oriented Vite builds
 
 ## Development
 
@@ -31,15 +41,8 @@ npm run build
 npm run preview
 ~~~
 
-## Engineering Focus
+## Portfolio Notes
 
-- Component-based UI architecture
-- Responsive design
-- Form validation
-- Client-side routing
-- Animation and interaction
-- Production-ready Vite build
+This project demonstrates frontend product delivery for a financial-technology brand, including the intersection of UX, conversion-oriented interfaces and reusable engineering patterns.
 
-## Note
-
-This repository may contain product branding, third-party assets or proprietary content. Any public release should be reviewed for licensing and intellectual-property restrictions first.
+Branding, third-party assets and proprietary material remain subject to applicable ownership and licensing terms.
