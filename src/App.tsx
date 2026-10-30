@@ -9,10 +9,8 @@ import { Robots } from '@/components/blocks/Robots';
 import { AlgoEngine } from '@/components/blocks/AlgoEngine';
 import { Licensing } from '@/components/blocks/Licensing';
 import { Onboarding } from '@/components/blocks/Onboarding';
-import { Ecosystem } from '@/components/blocks/Ecosystem';
 import { Downloads } from '@/components/blocks/Downloads';
 import { Partners } from '@/components/blocks/Partners';
-import { Profiles } from '@/components/blocks/Profiles';
 import { Pricing } from '@/components/blocks/Pricing';
 import { FAQ } from '@/components/blocks/FAQ';
 import { FinalCTA } from '@/components/blocks/FinalCTA';
@@ -20,6 +18,11 @@ import { Comparison } from '@/components/blocks/Comparison';
 import { FeatureGrid } from '@/components/blocks/FeatureGrid';
 import { TradingJournal } from '@/components/blocks/TradingJournal';
 import { AIAssistant } from '@/components/blocks/AIAssistant';
+import { TrilhaGain } from '@/components/blocks/TrilhaGain';
+import { EconCalendar } from '@/components/blocks/EconCalendar';
+import { CryptoIntel } from '@/components/blocks/CryptoIntel';
+import { Articles } from '@/components/blocks/Articles';
+import { ResultsAnalysis } from '@/components/blocks/ResultsAnalysis';
 import { SparklesCore } from '@/components/ui/SparklesCore';
 
 function LandingPage() {
@@ -64,52 +67,61 @@ function LandingPage() {
         {/* 2. Social Proof (logos + stats + depoimentos) */}
         <SocialProof />
 
-        {/* 3. Manifesto / Filosofia */}
+        {/* 3. Trilha Gain */}
+        <TrilhaGain />
+
+        {/* 4. Calendário Econômico com análise por IA */}
+        <EconCalendar />
+
+        {/* 5. Crypto */}
+        <CryptoIntel />
+
+        {/* 6. Artigos e Análises + Biblioteca */}
+        <Articles />
+
+        {/* 7. Manifesto / Filosofia */}
         <Manifesto />
 
-        {/* 4. Comparativo Manual vs Automatizado */}
+        {/* 8. Comparativo Manual vs Automatizado */}
         <Comparison />
 
-        {/* 5. Robôs / Expert Advisors */}
+        {/* 9. Robôs / Expert Advisors */}
         <Robots />
 
-        {/* 6. Ecossistema visual / AlgoEngine */}
+        {/* 10. Ecossistema visual / AlgoEngine */}
         <AlgoEngine />
 
-        {/* 7. Gestão de Licenças MT5 */}
+        {/* 11. Gestão de Licenças MT5 */}
         <Licensing />
 
-        {/* 8. Onboarding guiado (7 passos) */}
+        {/* 12. Onboarding guiado */}
         <Onboarding />
 
-        {/* 9. Diário de Operações */}
+        {/* 13. Diário de Operações */}
         <TradingJournal />
 
-        {/* 10. Biblioteca de Conteúdo (cursos + artigos) */}
-        <Ecosystem />
-
-        {/* 11. Centro de Downloads */}
+        {/* 14. Centro de Downloads */}
         <Downloads />
 
-        {/* 12. Assistente de IA */}
+        {/* 15. Assistente de IA */}
         <AIAssistant />
 
-        {/* 13. Programa de Parceiros */}
+        {/* 16. Programa de Parceiros */}
         <Partners />
 
-        {/* 12. Para Quem É (4 perfis) */}
-        <Profiles />
+        {/* 17. Análise de Resultados (relatórios MT5) */}
+        <ResultsAnalysis />
 
-        {/* 13. Features gerais */}
+        {/* 18. Features gerais */}
         <FeatureGrid />
 
-        {/* 14. Preços */}
+        {/* 19. Preços */}
         <Pricing />
 
-        {/* 15. FAQ */}
+        {/* 20. FAQ */}
         <FAQ />
 
-        {/* 16. CTA Final */}
+        {/* 21. CTA Final */}
         <FinalCTA />
       </main>
 

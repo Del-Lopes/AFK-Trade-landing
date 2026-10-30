@@ -253,6 +253,31 @@ Acrescentar os links "Robôs e automação" (`#automacao`), "Corretoras" (as 4 p
 
 ---
 
+## Seções dedicadas (ajuste do usuário, 2026-10-30)
+
+O texto implementado está nos próprios blocos. Resumo:
+
+- **Trilha Gain** (`#aprender`, logo após os depoimentos)
+  - Eyebrow e título: "Aprenda o mercado ==uma lição por vez.=="
+  - Destaques: os 5 tipos de lição, mais Coins e sequência.
+- **Calendário Econômico** (`#ia`)
+  - Título: "Cada notícia econômica, ==analisada por IA.=="
+  - Destaques: eventos dos próximos 7 dias; projeção, anterior e resultado; análise automática por IA; reação por ativo (XAUUSD, NAS100, US30, WIN, WDO, BTC).
+  - Aviso informativo.
+- **Crypto** (`#crypto`)
+  - Título: "Inteligência de mercado ==para cripto.=="
+  - Destaques: termômetro, maiores altas e trending, narrativas, DeFi e desbloqueios, minha lista, relatório por IA.
+  - Aviso de volatilidade.
+- **Artigos e Análises** (`#artigos`)
+  - Título: "Conteúdo de estudo ==que acompanha o mercado.=="
+  - Destaques: análises, conteúdo de estudo, cursos em vídeo da Biblioteca.
+- **Análise de Resultados** (`#resultados`, no lugar de "Para quem é")
+  - Título: "Seu relatório do MT5, ==lido de verdade.=="
+  - Destaques: upload do HTML do MT5, indicadores, drawdown, curva, acertos em compras e vendas, resultado por par e por dia da semana.
+  - Aviso de que resultados passados não garantem resultados futuros.
+
+Com isso, a seção 12 ("Para quem é") e as abas da seção 7 deixam de existir.
+
 ## Status
 
 **Aprovado em 2026-10-30.** Por enquanto, a landing não menciona suporte. A candidatura de parceiros é feita pelo formulário em `/partners`.
