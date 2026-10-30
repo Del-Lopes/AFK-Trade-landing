@@ -124,6 +124,28 @@ traders".
 > usuário o valor do bônus e se ele vale só durante o lançamento. Até o valor ser definido, a
 > landing escreve "tokens de boas-vindas para a IA", sem número.
 
+## Ajuste de estrutura pedido pelo usuário (2026-10-30, depois da Fase 2)
+
+Cinco **seções dedicadas** substituem a ideia de agrupar as ferramentas em abas (`AIToolkit`) e a seção "Para quem é":
+
+| Seção | Bloco | Âncora | Posição |
+|---|---|---|---|
+| Trilha Gain | `TrilhaGain.tsx` | `#aprender` | **logo após os depoimentos** (`SocialProof`) |
+| Calendário Econômico com análise por IA | `EconCalendar.tsx` | `#ia` | após a Trilha |
+| Crypto | `CryptoIntel.tsx` | `#crypto` | após o Calendário |
+| Artigos e Análises + Biblioteca | `Articles.tsx` | `#artigos` | após Crypto; **substitui `Ecosystem`** |
+| Análise de Resultados (relatórios MT5) | `ResultsAnalysis.tsx` | `#resultados` | **no lugar de "Para quem é" (`Profiles`)** |
+
+Todas usam o layout compartilhado `src/components/ui/FeatureShowcase.tsx` (texto + destaques + mock em `MockFrame`).
+Menu atual: Trilha Gain, Calendário IA, Crypto, Resultados, Preços, FAQ. "Comunidade" volta ao menu quando a seção dela existir.
+
+**Efeito nas fases seguintes:**
+- **Fase 3:** a seção Aprender já está pronta. Faltam `Pillars` e `CoinsLoop`.
+- **Fase 4:** `AIToolkit` não será criado. Calendário e Crypto já estão prontos. A Análise por IA do XAU/USD e o painel multi-timeframe ainda precisam de lugar, por exemplo uma seção dedicada no mesmo padrão. O ajuste do `AIAssistant` continua pendente.
+- **Fase 5:** a Análise de Resultados já está pronta. Faltam `LiveCommunity`, o Live Portfólio e o novo `Onboarding`.
+- **Fase 6:** `Profiles` sai, então não precisa ser reescrito.
+- **Fase 7:** `Ecosystem.tsx` e `Profiles.tsx` entram na lista de limpeza.
+
 ## Regras para todas as fases
 
 1. **Só anuncie o que existe no app.** Na dúvida, abra o componente em `../WebApp`. Nada de "em breve" sem aprovação.

@@ -213,7 +213,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => document.getElementById('pilares')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('aprender')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Ver como funciona
               </Button>
