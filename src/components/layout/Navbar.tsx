@@ -8,10 +8,9 @@ import { cn } from '@/lib/cn';
 const PLATFORM_URL = 'https://app.traderafk.com';
 
 const navLinks = [
-  { name: 'Robôs', href: '#robots' },
-  { name: 'Licenças', href: '#licensing' },
-  { name: 'Biblioteca', href: '#academy' },
-  { name: 'Parceiros', href: '#partners' },
+  { name: 'Aprender', href: '#aprender' },
+  { name: 'IA', href: '#ia' },
+  { name: 'Comunidade', href: '#comunidade' },
   { name: 'Preços', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
 ];

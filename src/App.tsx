@@ -26,18 +26,18 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans">
       <Helmet>
-        <title>Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex e MT5</title>
-        <meta name="description" content="Plataforma SaaS completa para trading automatizado. Robôs forex (Expert Advisors), licenças MT5, cursos, análises de mercado e programa de parceiros. Software que você instala e controla na sua conta MT5." />
-        <meta name="keywords" content="robô forex, trading automatizado brasil, MetaTrader 5 robô, expert advisor MT5, robô de trading, trading algorítmico, AFK Trader, Trader AFK" />
-        <meta property="og:title" content="Trader AFK | Plataforma de Trading Algorítmico com Robôs Forex" />
-        <meta property="og:description" content="Robôs de trading, licenças MT5, educação completa e programa de parceiros — tudo em uma única plataforma. Software que você instala e controla na sua conta MT5." />
+        <title>Trader AFK | Aprenda a operar com método, IA e comunidade</title>
+        <meta name="description" content="Plataforma de aprendizado para traders: trilha interativa do zero ao avançado, ferramentas de IA para ler o mercado, calendário econômico interpretado e sessões ao vivo com a equipe. Comece grátis." />
+        <meta name="keywords" content="aprender trading, curso de trading, educação para traders, análise de mercado com IA, calendário econômico, day trade para iniciantes, comunidade de traders, Trader AFK" />
+        <meta property="og:title" content="Trader AFK | Do primeiro candle à sua própria leitura de mercado" />
+        <meta property="og:description" content="Lições interativas, ferramentas de IA e uma comunidade de aprendizado em uma única plataforma. Comece grátis e receba tokens de boas-vindas para a IA de trading." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://traderafk.com" />
         <meta property="og:image" content="https://traderafk.com/images/og-image.png" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Trader AFK | Trading Algorítmico com Robôs Forex" />
-        <meta name="twitter:description" content="Expert Advisors para MetaTrader 5 com gestão de risco configurável, licenças e educação." />
+        <meta name="twitter:title" content="Trader AFK | Do primeiro candle à sua própria leitura de mercado" />
+        <meta name="twitter:description" content="Lições interativas, ferramentas de IA e uma comunidade de aprendizado em uma única plataforma. Comece grátis." />
         <link rel="canonical" href="https://traderafk.com" />
       </Helmet>
 
